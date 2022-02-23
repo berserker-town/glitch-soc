@@ -67,12 +67,14 @@ class MediaAttachment < ApplicationRecord
 
   IMAGE_STYLES = {
     original: {
-      pixels: 2_073_600, # 1920x1080px
+#      pixels: 2_073_600, # 1920x1080px
+      pixels: 8_294_400, # 3840x2160px (HiDPI patch)
       file_geometry_parser: FastGeometryParser,
     }.freeze,
 
     small: {
-      pixels: 160_000, # 400x400px
+#      pixels: 160_000, # 400x400px
+      pixels: 640_000, # 800x800px (HiDPI patch)
       file_geometry_parser: FastGeometryParser,
       blurhash: BLURHASH_OPTIONS,
     }.freeze,
@@ -121,7 +123,7 @@ class MediaAttachment < ApplicationRecord
       convert_options: {
         output: {
           'loglevel' => 'fatal',
-          vf: 'scale=\'min(400\, iw):min(400\, ih)\':force_original_aspect_ratio=decrease',
+          vf: 'scale=\'min(800\, iw):min(800\, ih)\':force_original_aspect_ratio=decrease',
         }.freeze,
       }.freeze,
       format: 'png',
