@@ -17,7 +17,7 @@ const noop = () => { };
 const messages = defineMessages({
   home_title: { id: 'column.home', defaultMessage: 'Home' },
   notifications_title: { id: 'column.notifications', defaultMessage: 'Notifications' },
-  local_title: { id: 'column.community', defaultMessage: 'Local timeline' },
+  local_title: { id: 'column.community', defaultMessage: 'The Tavern' },
   federated_title: { id: 'column.public', defaultMessage: 'Federated timeline' },
 });
 
@@ -114,7 +114,7 @@ const PageFour = ({ domain, intl }) => (
         </div>
       </div>
 
-      <p><FormattedMessage id='onboarding.page_five.public_timelines' defaultMessage='The local timeline shows public posts from everyone on {domain}. The federated timeline shows public posts from everyone who people on {domain} follow. These are the Public Timelines, a great way to discover new people.' values={{ domain }} /></p>
+      <p><FormattedMessage id='onboarding.page_five.public_timelines' defaultMessage='The Tavern shows public posts from everyone on {domain}. The federated timeline shows public posts from everyone who people on {domain} follow. These are the Public Timelines, a great way to discover new people.' values={{ domain }} /></p>
     </div>
   </div>
 );

@@ -16,7 +16,7 @@ import { signOutLink } from 'flavours/glitch/util/backend_links';
 //  Messages.
 const messages = defineMessages({
   community: {
-    defaultMessage: 'Local timeline',
+    defaultMessage: 'The Tavern',
     id: 'navigation_bar.community_timeline',
   },
   home_timeline: {
