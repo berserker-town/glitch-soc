@@ -101,52 +101,45 @@ class Item extends React.PureComponent {
   render () {
     const { attachment, index, size, standalone, letterbox, displayWidth, visible } = this.props;
 
-    let width  = 50;
+    let width  = 100;
     let height = 100;
     let top    = 'auto';
     let left   = 'auto';
     let bottom = 'auto';
     let right  = 'auto';
 
-    if (size === 1) {
-      width = 100;
-    }
+    let root = Math.sqrt(size);
+    let numCols = Math.ceil(root);
+    let numRows = Math.ceil(size / numCols);
 
-    if (size === 4 || (size === 3 && index > 0)) {
-      height = 50;
+    let col = index % numCols;
+    let row = Math.floor(index / numCols);
+    if(row === numRows - 1) {
+      width = 100 / (1 + ((size - 1) % numCols));
+    } else {
+      width = 100 / numCols;
     }
-
-    if (size === 2) {
-      if (index === 0) {
+    height = 100 / numRows;
+   
+    if(numCols > 1) {
+      if(col === 0) {
         right = '2px';
+      } else if(col === numCols - 1) {
+        left = '2px';;
       } else {
         left = '2px';
-      }
-    } else if (size === 3) {
-      if (index === 0) {
         right = '2px';
-      } else if (index > 0) {
-        left = '2px';
       }
+    }
 
-      if (index === 1) {
+    if(numRows > 1) {
+      if(row === 0) {
         bottom = '2px';
-      } else if (index > 1) {
+      } else if(row === numRows - 1) {
         top = '2px';
-      }
-    } else if (size === 4) {
-      if (index === 0 || index === 2) {
-        right = '2px';
-      }
-
-      if (index === 1 || index === 3) {
-        left = '2px';
-      }
-
-      if (index < 2) {
-        bottom = '2px';
       } else {
         top = '2px';
+        bottom = '2px';
       }
     }
 
@@ -154,7 +147,7 @@ class Item extends React.PureComponent {
 
     if (attachment.get('type') === 'unknown') {
       return (
-        <div className={classNames('media-gallery__item', { standalone })} key={attachment.get('id')} style={{ left: left, top: top, right: right, bottom: bottom, width: `${width}%`, height: `${height}%` }}>
+        <div className={classNames('media-gallery__item', { standalone })} key={attachment.get('id')} style={{ 'padding-left': left, 'padding-top': top, 'padding-right': right, 'padding-bottom': bottom, width: `${width}%`, height: `${height}%` }}>
           <a className='media-gallery__item-thumbnail' href={attachment.get('remote_url') || attachment.get('url')} style={{ cursor: 'pointer' }} title={attachment.get('description')} target='_blank' rel='noopener noreferrer'>
             <Blurhash
               hash={attachment.get('blurhash')}
@@ -226,7 +219,7 @@ class Item extends React.PureComponent {
     }
 
     return (
-      <div className={classNames('media-gallery__item', { standalone, letterbox })} key={attachment.get('id')} style={{ left: left, top: top, right: right, bottom: bottom, width: `${width}%`, height: `${height}%` }}>
+      <div className={classNames('media-gallery__item', { standalone, letterbox })} key={attachment.get('id')} style={{ 'padding-left': left, 'padding-top': top, 'padding-right': right, 'padding-bottom': bottom, width: `${width}%`, height: `${height}%` }}>
         <Blurhash
           hash={attachment.get('blurhash')}
           dummy={!useBlurhash}
@@ -344,7 +337,7 @@ class MediaGallery extends React.PureComponent {
   render () {
     const { media, intl, sensitive, letterbox, fullwidth, defaultWidth, autoplay } = this.props;
     const { visible } = this.state;
-    const size     = media.take(4).size;
+    const size     = media.take(20).size; // Attachment limit patch
     const uncached = media.every(attachment => attachment.get('type') === 'unknown');
 
     const width = this.state.width || defaultWidth;
@@ -366,7 +359,7 @@ class MediaGallery extends React.PureComponent {
     if (this.isStandaloneEligible()) {
       children = <Item standalone autoplay={autoplay} onClick={this.handleClick} attachment={media.get(0)} displayWidth={width} visible={visible} />;
     } else {
-      children = media.take(4).map((attachment, i) => <Item key={attachment.get('id')} autoplay={autoplay} onClick={this.handleClick} attachment={attachment} index={i} size={size} letterbox={letterbox} displayWidth={width} visible={visible || uncached} />);
+      children = media.take(20).map((attachment, i) => <Item key={attachment.get('id')} autoplay={autoplay} onClick={this.handleClick} attachment={attachment} index={i} size={size} letterbox={letterbox} displayWidth={width} visible={visible || uncached} />); // Attachment limit patch
     }
 
     if (uncached) {
