@@ -11,7 +11,7 @@ import ColumnSettingsContainer from './containers/column_settings_container';
 import { connectCommunityStream } from '../../actions/streaming';
 
 const messages = defineMessages({
-  title: { id: 'column.community', defaultMessage: 'The Tavern' },
+  title: { id: 'column.community', defaultMessage: 'Local timeline' },
 });
 
 const mapStateToProps = (state, { columnId }) => {
