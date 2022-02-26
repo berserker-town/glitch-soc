@@ -92,14 +92,6 @@ class Item extends React.PureComponent {
     let numCols = Math.ceil(root);
     let numRows = Math.ceil(size / numCols);
 
-    let row = Math.floor(index / numCols);
-    if(row === numRows - 1) {
-      width = 100 / (1 + ((size - 1) % numCols));
-    } else {
-      width = 100 / numCols;
-    }   
-    height = 100 / numRows;
-
     let col = index % numCols;
     let row = Math.floor(index / numCols);
     if(row === numRows - 1) {
