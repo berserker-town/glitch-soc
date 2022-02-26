@@ -197,9 +197,7 @@ export function submitCompose(routerHistory) {
 
       if (statusId === null && response.data.in_reply_to_id === null && response.data.visibility === 'public') {
         insertIfOnline('community');
-        if (!response.data.local_only) {
-          insertIfOnline('public');
-        }
+        insertIfOnline('public');
         insertIfOnline(`account:${response.data.account.id}`);
       }
     }).catch(function (error) {
@@ -230,7 +228,7 @@ export function submitComposeFail(error) {
 
 export function uploadCompose(files) {
   return function (dispatch, getState) {
-    const uploadLimit = 20; // attachment limit patch
+    const uploadLimit = 4;
     const media  = getState().getIn(['compose', 'media_attachments']);
     const pending  = getState().getIn(['compose', 'pending_media_attachments']);
     const progress = new Array(files.length).fill(0);
@@ -249,7 +247,7 @@ export function uploadCompose(files) {
     dispatch(uploadComposeRequest());
 
     for (const [i, f] of Array.from(files).entries()) {
-        if (media.size + i > 19) break; // attachment limit patch
+      if (media.size + i > 3) break;
 
       resizeImage(f).then(file => {
         const data = new FormData();
