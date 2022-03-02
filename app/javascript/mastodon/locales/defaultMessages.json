@@ -1096,11 +1096,11 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Local timeline",
+        "defaultMessage": "The Tavern",
         "id": "column.community"
       },
       {
-        "defaultMessage": "The local timeline is empty. Write something publicly to get the ball rolling!",
+        "defaultMessage": "The Tavern is empty. Write something publicly to get the ball rolling!",
         "id": "empty_column.community"
       }
     ],
@@ -1542,7 +1542,7 @@
         "id": "navigation_bar.public_timeline"
       },
       {
-        "defaultMessage": "Local timeline",
+        "defaultMessage": "The Tavern",
         "id": "navigation_bar.community_timeline"
       },
       {
@@ -1895,7 +1895,7 @@
         "id": "column_subheading.settings"
       },
       {
-        "defaultMessage": "Local timeline",
+        "defaultMessage": "The Tavern",
         "id": "navigation_bar.community_timeline"
       },
       {
@@ -1988,7 +1988,7 @@
         "id": "hashtag.column_settings.tag_toggle"
       },
       {
-        "defaultMessage": "Local only",
+        "defaultMessage": "Tavern only",
         "id": "community.column_settings.local_only"
       }
     ],
@@ -2152,7 +2152,7 @@
         "id": "keyboard_shortcuts.notifications"
       },
       {
-        "defaultMessage": "to open local timeline",
+        "defaultMessage": "to open the Tavern",
         "id": "keyboard_shortcuts.local"
       },
       {
@@ -3255,7 +3255,7 @@
         "id": "tabs_bar.notifications"
       },
       {
-        "defaultMessage": "Local",
+        "defaultMessage": "The Tavern",
         "id": "tabs_bar.local_timeline"
       },
       {
@@ -3337,7 +3337,7 @@
         "id": "tabs_bar.notifications"
       },
       {
-        "defaultMessage": "Local",
+        "defaultMessage": "The Tavern",
         "id": "tabs_bar.local_timeline"
       },
       {
