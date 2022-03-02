@@ -545,6 +545,10 @@ en:
       created_msg: Successfully added new IP rule
       delete: Delete
       expires_in:
+        '172800': 2 days
+        '259200': 3 days
+        '432000': 5 days
+        '604800': 1 week
         '1209600': 2 weeks
         '15778476': 6 months
         '2629746': 1 month
