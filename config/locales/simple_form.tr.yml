@@ -37,8 +37,7 @@ tr:
         current_password: Güvenlik nedeniyle lütfen şu anki hesabın parolasını girin
         current_username: Onaylamak için lütfen şu anki hesabın kullanıcı adını girin
         digest: Sadece uzun bir süre hareketsiz kaldıktan sonra ve yalnızca yokluğunuzda herhangi bir kişisel mesaj aldıysanız gönderilir
-        discoverable: Profil dizini, hesabınızın daha geniş bir kitleye ulaşmasının başka bir yoludur
-        discoverable_no_directory: Hesabınızın, öneriler ve diğer özellikler aracılığıyla yabancılar tarafından keşfedilmesine izin verin
+        discoverable: Hesabınızın öneriler, trendler ve diğer özellikler aracılığıyla yabancılar tarafından keşfedilmesine izin verin
         email: Onay e-postası gönderilir
         fields: Profilinizde tablo olarak görüntülenen en fazla 4 ögeye sahip olabilirsiniz
         header: PNG, GIF ya da JPG. En fazla %{size}. %{dimensions}px boyutuna küçültülecek
@@ -64,7 +63,7 @@ tr:
       domain_allow:
         domain: Bu alan adı, bu sunucudan veri alabilecek ve ondan gelen veri işlenecek ve saklanacaktır
       email_domain_block:
-        domain: Bu, e-posta adresinde görünen etki alanı adı, etki alanının çözümlediği MX kaydı veya MX kaydının çözümlediği sunucunun IP'si olabilir. Bunlar kullanıcı kaydı ile kontrol edilecek ve kayıt reddedilecektir.
+        domain: Bu e-posta adresinde görünen veya kullanılan MX kaydındaki alan adı olabilir. Kayıt sırasında denetleneceklerdir.
         with_dns_records: Belirli bir alanın DNS kayıtlarını çözmeyi deneyecek ve sonuçlar kara listeye eklenecek
       featured_tag:
         name: 'Bunlardan birini kullanmak isteyebilirsiniz:'

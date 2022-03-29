@@ -28,7 +28,7 @@ gl:
         starts_at: Opcional. No caso de que o teu anuncio estea vinculado a un intre de tempo específico
         text: Podes empregar a sintaxe na publicación. Ten en conta o espazo que ocupará o anuncio na pantalla da usuaria
       appeal:
-        text: Só podes apelar a decesión unha vez
+        text: Só podes apelar a decisión unha vez
       defaults:
         autofollow: As persoas que se conectaron a través dun convite seguirante automáticamente
         avatar: PNG, GIF ou JPG. Máximo %{size}. Será reducida a %{dimensions}px
@@ -37,8 +37,7 @@ gl:
         current_password: Por razóns de seguridade, introduce o contrasinal da conta actual
         current_username: Para confirmar, introduce o nome de usuaria da conta actual
         digest: Enviar só tras un longo período de inactividade e só se recibiches algunha mensaxe directa na tua ausencia
-        discoverable: Permite que a túa conta poida ser descuberta por persoas descoñecidas a través de recomendacións, directorio de perfil e outras ferramentas
-        discoverable_no_directory: Permitir que a túa conta poida ser descuberta por persoas descoñecidas a través das recomendacións e outras ferramentas
+        discoverable: Permite que a túa conta poida ser descuberta por persoas descoñecidas a través de recomendacións, tendencias e outras ferramentas
         email: Ímosche enviar un correo de confirmación
         fields: Podes ter ate 4 elementos no teu perfil mostrados como unha táboa
         header: PNG, GIF ou JPG. Máximo %{size}. Será reducida a %{dimensions}px
@@ -64,7 +63,7 @@ gl:
       domain_allow:
         domain: Este dominio estará en disposición de obter datos desde este servidor e datos de entrada a el poderán ser procesados e gardados
       email_domain_block:
-        domain: Esto pode ser o nome de dominio que aparece no enderezo do correo, o rexistro MX que resolve o dominio, ou o IP do servidor que resolve o rexistro MX. Estos confrontaranse contra o rexistro da usuaria e o rexistro será rexeitado.
+        domain: Este pode ser o nome de dominio que aparece no enderezo de email ou o rexistro MX que utiliza. Será comprobado no momento do rexistro.
         with_dns_records: Vaise facer un intento de resolver os rexistros DNS proporcionados e os resultados tamén irán a lista de bloqueo
       featured_tag:
         name: 'Poderías usar algunha destas:'

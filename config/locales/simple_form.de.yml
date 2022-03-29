@@ -37,8 +37,7 @@ de:
         current_password: Aus Sicherheitsgründen gib bitte das Passwort des aktuellen Kontos ein
         current_username: Um das zu bestätigen, gib den Benutzernamen des aktuellen Kontos ein
         digest: Wenn du eine lange Zeit inaktiv bist, wird dir eine Zusammenfassung von Erwähnungen zugeschickt, die du in deiner Abwesenheit empfangen hast
-        discoverable: Das Profilverzeichnis ist eine andere Möglichkeit, mit der dein Konto ein größeres Publikum erreichen kann
-        discoverable_no_directory: Erlaube deinem Konto durch Empfehlungen und andere Funktionen von Fremden entdeckt zu werden
+        discoverable: Erlaube deinem Konto durch Empfehlungen, Trends und andere Funktionen von Fremden entdeckt zu werden
         email: Du wirst eine Bestätigungs-E-Mail erhalten
         fields: Du kannst bis zu 4 Elemente auf deinem Profil anzeigen lassen, die als Tabelle dargestellt werden
         header: PNG, GIF oder JPG. Maximal %{size}. Wird auf %{dimensions} px herunterskaliert
@@ -64,7 +63,7 @@ de:
       domain_allow:
         domain: Diese Domain kann Daten von diesem Server abrufen und eingehende Daten werden verarbeitet und gespeichert
       email_domain_block:
-        domain: Dies kann der Domainname sein, der in der E-Mail-Adresse angezeigt wird, den MX-Datensatz, der aufgelöst wird oder die IP des Servers, auf dem der MX-Eintrag aufgelöst wird. Diese werden bei der Registrierung überprüft und die Registrierung wird abgelehnt.
+        domain: Dies kann der Domänenname sein, der in der E-Mail-Adresse oder dem von ihm verwendeten MX-Eintrag angezeigt wird. Er wird bei der Anmeldung überprüft.
         with_dns_records: Ein Versuch die DNS-Einträge der Domain aufzulösen wurde unternommen und diese Ergebnisse werden unter anderem auch geblockt
       featured_tag:
         name: 'Du möchtest vielleicht einen von diesen benutzen:'

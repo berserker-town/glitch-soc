@@ -37,8 +37,7 @@ es:
         current_password: Por razones de seguridad por favor ingrese la contraseña de la cuenta actual
         current_username: Para confirmar, por favor ingrese el nombre de usuario de la cuenta actual
         digest: Solo enviado tras un largo periodo de inactividad y solo si has recibido mensajes personales durante tu ausencia
-        discoverable: Permite que tu cuenta sea encontrada por desconocidos por medio de recomendaciones y otras herramientas
-        discoverable_no_directory: Permite que tu cuenta sea encontrada por desconocidos por medio de recomendaciones y otras herramientas
+        discoverable: Permite que tu cuenta sea descubierta por extraños a través de recomendaciones, tendencias y otras características
         email: Se le enviará un correo de confirmación
         fields: Puedes tener hasta 4 elementos mostrándose como una tabla en tu perfil
         header: PNG, GIF o JPG. Máximo %{size}. Será escalado a %{dimensions}px
@@ -64,7 +63,7 @@ es:
       domain_allow:
         domain: Este dominio podrá obtener datos de este servidor y los datos entrantes serán procesados y archivados
       email_domain_block:
-        domain: Puede ser el nombre de dominio que aparece en la dirección de correo, el registro MX hacia el cual resuelve el dominio, o la IP del servidor hacia el cual resuelve ese registro MX. Esto se comprobará en el momento del alta del usuario y el alta se rechazará.
+        domain: Este puede ser el nombre de dominio que aparece en la dirección de correo electrónico o el registro MX que utiliza. Se comprobarán al registrarse.
         with_dns_records: Se hará un intento de resolver los registros DNS del dominio dado y los resultados serán también puestos en lista negra
       featured_tag:
         name: 'Puede que quieras usar uno de estos:'

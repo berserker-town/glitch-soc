@@ -37,8 +37,7 @@ hu:
         current_password: Biztonsági okok miatt kérlek, írd be a jelenlegi fiók jelszavát
         current_username: A jóváhagyáshoz írd be a jelenlegi fiók felhasználói nevét
         digest: Csak hosszú távollét esetén küldődik és csak ha személyes üzenetet kaptál távollétedben
-        discoverable: A profil adatbázis egy újabb mód, ahogyan a fiókod szélesebb tömegeket érhet el
-        discoverable_no_directory: Engedélyezzük, hogy a fiókod idegenek által megtalálható legyen javaslatokon és más funkciókon keresztül
+        discoverable: Engedélyezzük, hogy a fiókod idegenek által megtalálható legyen javaslatokon, trendeken és más funkciókon keresztül
         email: Kapsz egy megerősítő e-mailt
         fields: A profilodon legfeljebb 4 bejegyzés szerepelhet táblázatos formában
         header: PNG, GIF vagy JPG. Maximum %{size}. Átméretezzük %{dimensions} pixelre
@@ -64,7 +63,7 @@ hu:
       domain_allow:
         domain: Ez a domain adatot kérhet le a szerverünkről és az ettől érkező adatokat feldolgozzuk és mentjük
       email_domain_block:
-        domain: Lehet domain név, mely az email címben szerepel, MX rekord, amire a domain hivatkozik vagy a szerver IP címe, amire az MX rekord hivatkozik. Ezeket regisztrációkor ellenőrizzük és visszautasítjuk a regisztrációt, ha szükséges.
+        domain: Ez lehet az e-mail címben szereplő domain név vagy az MX rekord, melyet ez használ. Ezeket feliratkozáskor ellenőrizzük.
         with_dns_records: Megpróbáljuk a megadott domain DNS rekordjait lekérni, és az eredményeket hozzáadjuk a tiltólistához
       featured_tag:
         name: 'Ezeket esetleg használhatod:'
