@@ -132,7 +132,7 @@
 
     sub {
       font-size: smaller;
-      text-align: sub;
+      vertical-align: sub;
     }
 
     sup {
@@ -194,7 +194,7 @@
   }
 
   a.unhandled-link {
-    color: lighten($ui-highlight-color, 8%);
+    color: $highlight-text-color;
 
     .link-origin-tag {
       color: $gold-star;
@@ -495,7 +495,8 @@
 
   .status__media-icon,
   .status__visibility-icon,
-  .status__reply-icon {
+  .status__reply-icon,
+  .text-icon {
     padding-left: 2px;
     padding-right: 2px;
   }

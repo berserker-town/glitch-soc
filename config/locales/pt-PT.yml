@@ -38,7 +38,7 @@ pt-PT:
       one: publicação
       other: publicações
     status_count_before: Que fizeram
-    tagline: Siga os seus amigos e descubra novas amizades
+    tagline: Rede social descentralizada
     terms: Termos de serviço
     unavailable_content: Conteúdo indisponível
     unavailable_content_description:
@@ -168,7 +168,6 @@ pt-PT:
       previous_strikes_description_html:
         one: Esta conta tem <strong>1</strong> punição.
         other: Esta conta tem <strong>%{count}</strong> punições.
-        zero: Esta conta está <strong>em situação regular</strong>.
       promote: Promover
       protocol: Protocolo
       public: Público
@@ -200,7 +199,6 @@ pt-PT:
       security_measures:
         only_password: Apenas palavra-passe
         password_and_2fa: Palavra-passe e 2FA
-        password_and_sign_in_token: Palavra-passe e token por e-mail
       sensitive: Marcar como sensível
       sensitized: marcada como sensível
       shared_inbox_url: URL da caixa de entrada compartilhada
@@ -430,6 +428,7 @@ pt-PT:
       destroyed_msg: Bloqueio de domínio está a ser removido
       domain: Domínio
       edit: Editar bloqueio de domínio
+      existing_domain_block: Já impôs limites mais rigorosos a %{name}.
       existing_domain_block_html: Você já impôs limites mais restritivos a %{name}, é necessário primeiro <a href="%{unblock_url}">desbloqueá-lo</a>.
       new:
         create: Criar bloqueio
@@ -490,6 +489,7 @@ pt-PT:
           other: Tentativas em %{count} dias diferentes.
         no_failures_recorded: Sem falhas registadas.
         title: Disponibilidade
+        warning: A última tentativa de conectar a este servidor não foi bem sucedida
       back_to_all: Todas
       back_to_limited: Limitadas
       back_to_warning: Aviso
@@ -518,6 +518,7 @@ pt-PT:
       delivery:
         all: Todas
         clear: Limpar erros de entrega
+        failing: A falhar
         restart: Reiniciar entrega
         stop: Parar entrega
         unavailable: Indisponível
@@ -529,7 +530,6 @@ pt-PT:
       known_accounts:
         one: "%{count} conta conhecida"
         other: "%{count} contas conhecidas"
-        zero: Nenhuma conta conhecida
       moderation:
         all: Todas
         limited: Limitadas
@@ -774,6 +774,11 @@ pt-PT:
     system_checks:
       database_schema_check:
         message_html: Existem migrações de base de dados pendentes. Por favor, execute-as para garantir que o aplicativo se comporte como esperado
+      elasticsearch_running_check:
+        message_html: Não foi possível conectar ao Elasticsearch. Por favor, verifique se está em execução, ou desabilite a pesquisa de texto completo
+      elasticsearch_version_check:
+        message_html: 'Versão de Elasticsearch incompatível: %{value}'
+        version_comparison: A versão de Elasticsearch %{running_version} está em execução. No entanto, é obrigatória a versão %{required_version}
       rules_check:
         action: Gerir regras da instância
         message_html: Não definiu nenhuma regra para a instância.
@@ -796,9 +801,9 @@ pt-PT:
         shared_by_over_week:
           one: Partilhado por uma pessoa na última semana
           other: Partilhado por %{count} pessoas na última semana
-          zero: Partilhado por ninguém na última semana
         title: Links em destaque
         usage_comparison: Partilhado %{today} vezes hoje, em comparação com %{yesterday} ontem
+      only_allowed: Apenas permitidos
       pending_review: Pendente de revisão
       preview_card_providers:
         allowed: Links deste editor poderão ser incluídos nos destaques
@@ -839,14 +844,34 @@ pt-PT:
         used_by_over_week:
           one: Utilizada por uma pessoa na última semana
           other: Utilizada por %{count} pessoas na última semana
-          zero: Utilizada por ninguém na última semana
       title: Tendências
+      trending: Em destaque
     warning_presets:
       add_new: Adicionar novo
       delete: Eliminar
       edit_preset: Editar o aviso predefinido
       empty: Ainda não definiu nenhum aviso predefinido.
       title: Gerir os avisos predefinidos
+    webhooks:
+      add_new: Adicionar endpoint
+      delete: Eliminar
+      description_html: Um <strong>webhook</strong> possibilita que o Mastodon envie <strong>notificações em tempo real</strong> de eventos seleccionados, para um seu aplicativo, para que este possa <strong>acionar ações automaticamente</strong>.
+      disable: Desativar
+      disabled: Desativado
+      edit: Editar endpoint
+      empty: Não tem ainda qualquer endpoint de webhook configurado.
+      enable: Ativar
+      enabled: Activo
+      enabled_events:
+        one: 1 evento ativado
+        other: "%{count} eventos ativados"
+      events: Eventos
+      new: Novo webhook
+      rotate_secret: Alternar segredo
+      secret: Segredo de assinatura
+      status: Estado
+      title: Webhooks
+      webhook: Webhook
   admin_mailer:
     new_appeal:
       actions:
@@ -911,7 +936,6 @@ pt-PT:
   applications:
     created: Aplicação criada com sucesso
     destroyed: Aplicação eliminada com sucesso
-    invalid_url: O URL é inválido
     regenerate_token: Regenerar token de acesso
     token_regenerated: Token de acesso regenerado com sucesso
     warning: Cuidado com estes dados. Não partilhar com ninguém!
@@ -1032,10 +1056,12 @@ pt-PT:
       appealed_msg: O seu recurso foi submetido. Se ele for aprovado, será notificado.
       appeals:
         submit: Submeter recurso
+      approve_appeal: Aprovar recurso
       associated_report: Denúncia associada
       created_at: Data
       description_html: Estas são ações tomadas contra a sua conta e avisos que lhe foram enviados pela equipa de %{instance}.
       recipient: Endereçado a
+      reject_appeal: Rejeitar recurso
       status: 'Publicação #%{id}'
       status_removed: Publicação já eliminada do sistema
       title: "%{action} de %{date}"
@@ -1235,8 +1261,8 @@ pt-PT:
         one: Tens um novo seguidor! Boa!
         other: Tens %{count} novos seguidores! Fantástico!
       subject:
-        one: "1 nova notificação desde o último acesso \U0001F418"
-        other: "%{count} novas notificações desde o  último acesso \U0001F418"
+        one: "1 nova notificação desde o seu último acesso 🐘"
+        other: "%{count} novas notificações desde o seu último acesso 🐘"
       title: Enquanto estiveste ausente…
     favourite:
       body: 'O teu post foi adicionado aos favoritos por %{name}:'
@@ -1350,6 +1376,11 @@ pt-PT:
   reports:
     errors:
       invalid_rules: não faz referência a regras válidas
+  rss:
+    content_warning: 'Aviso de conteúdo:'
+    descriptions:
+      account: Publicações públicas de @%{acct}
+      tag: 'Publicações públicas marcadas com #%{hashtag}'
   scheduled_statuses:
     over_daily_limit: Excedeste o limite de %{limit} publicações agendadas para esse dia
     over_total_limit: Tu excedeste o limite de %{limit} publicações agendadas
@@ -1508,90 +1539,12 @@ pt-PT:
     pinned: Toot fixado
     reblogged: partilhado
     sensitive_content: Conteúdo sensível
+  strikes:
+    errors:
+      too_late: É tarde demais para apelar desta punição
   tags:
     does_not_match_previous_name: não coincide com o nome anterior
   terms:
-    body_html: |
-      <h2>Política de privacidade</h2>
-      <h3 id="collect">Que informação nós recolhemos?</h3>
-
-      <ul>
-      <li><em>Informação básica da conta</em>: Se te registares neste servidor, pode-te ser pedido que indiques um nome de utilizador, um endereço de email e uma palavra-passe. Também podes introduzir informação adicional de perfil, tal como um nome a mostrar e dados biográficos, que carregues uma fotografia para o teu perfil e para o cabeçalho. O nome de utilizador, o nome a mostrar, a biografia, a imagem de perfil e a imagem de cabeçalho são sempre listados publicamente.</li>
-      <li><em>Publicações, seguimento e outra informação pública</em>: A lista de pessoas que tu segues é pública, o mesmo é verdade para os teus seguidores. Quando tu publicas uma mensagem, a data e a hora são guardados, tal como a aplicação a partir da qual a mensagem foi enviada. As mensagens podem conter anexos média, tais como fotografias ou vídeos. Publicações públicas e não listadas são acessíveis publicamente. Quando expões uma publicação no teu perfil, isso é também informação disponível publicamente. As tuas publicações são enviadas aos teus seguidores. Em alguns casos isso significa que elas são enviadas para servidores diferentes onde são guardadas cópias. Quando tu apagas publicações, isso também é enviado para os teus seguidores. A ação de republicar ou favoritar outra publicação é sempre pública.</li>
-      <li><em>Publicações diretas e exclusivas para seguidores</em>: Todas as publicações são guardadas e processadas no servidor. Publicações exclusivas para seguidores são enviadas para os teus seguidores e para utilizadores que são nelas mencionados. As publicações diretas são enviadas apenas para os utilizadores nelas mencionados. Em alguns casos isso significa que elas são enviadas para diferentes servidores onde são guardadas cópias das mesmas. Nós fazemos um grande esforço para limitar o acesso a estas publicações aos utilizadores autorizados, mas outros servidores podem falhar neste objetivo. Por isso, tu deves rever os servidores a que os teus seguidores pertencem. Tu podes ativar uma opção para aprovar e rejeitar manualmente novos seguidores nas configurações. <em>Por favor, tem em mente que os gestores do servidor e qualquer servidor que receba a publicação pode lê-la</em> e que os destinatários podem fazer uma captura de tela, copiar ou partilhar a publicação. <em>Não partilhes qualquer informação perigosa no Mastodon.</em></li>
-      <li><em>IPs e outros metadados</em>: Quando inicias sessão, nós guardamos o endereço de IP a partir do qual iniciaste a sessão, tal como o nome do teu navegador. Todas as sessões estão disponíveis para verificação e revogação nas configurações. O último endereço de IP usado é guardado até 12 meses. Nós também podemos guardar registos de servidor, os quais incluem o endereço de IP de cada pedido dirigido ao nosso servidor.</li>
-      </ul>
-
-      <hr class="spacer" />
-
-      <h3 id="use">Para que usamos a tua informação?</h3>
-
-      <p>Qualquer informação que recolhemos sobre ti pode ser usada dos seguintes modos:</p>
-
-      <ul>
-      <li>Para providenciar a funcionalidade central do Mastodon. Tu só podes interagir com o conteúdo de outras pessoas e publicar o teu próprio conteúdo depois de teres iniciado sessão. Por exemplo, tu podes seguir outras pessoas para veres as suas publicações na tua cronologia inicial personalizada. </li>
-      <li>Para ajudar na moderação da comunidade para, por exemplo, comparar o teu endereço IP com outros conhecidos, para determinar a fuga ao banimento ou outras violações.</li>
-      <li>O endereço de e-mail que tu forneces pode ser usado para te enviar informações e/ou notificações sobre outras pessoas que estão a interagir com o teu conteúdo ou a enviar-te mensagens, para responderes a inquéritos e/ou outros pedidos ou questões.</li>
-      </ul>
-
-      <hr class="spacer" />
-
-      <h3 id="protect">Como é que nós protegemos a tua informação?</h3>
-
-      <p>Nós implementamos uma variedade de medidas de segurança para garantir a segurança da tua informação pessoal quando tu introduzes, submetes ou acedes à mesma. Entre outras coisas, a tua sessão de navegação, tal como o tráfego entre as tuas aplicações e a API, estão seguras por SSL e a tua palavra-passe é codificada usando um forte algoritmo de sentido único. Tu podes activar a autenticação em dois passos para aumentares ainda mais a segurança do acesso à tua conta.</p>
-
-      <hr class="spacer" />
-
-      <h3 id="data-retention">Qual é a nossa política de retenção de dados?</h3>
-
-      <p>Nós envidaremos todos os esforços no sentido de:</p>
-
-      <ul>
-      <li>Guardar registos do servidor contendo o endereço de IP de todos os pedidos feitos a este servidor, considerando que estes registos não serão guardados por mais de 90 dias.</li>
-      <li>Guardar os endereços de IP associados aos utilizadores registados durante um período que não ultrapassará os 12 meses.</li>
-      </ul>
-
-      <p>Tu podes pedir e descarregar um ficheiro com o teu conteúdo, incluindo as tuas publicações, os ficheiros multimédia, a imagem de perfil e a imagem de cabeçalho.</p>
-
-      <p>Tu podes apagar a tua conta de modo definitivo e a qualquer momento.</p>
-
-      <hr class="spacer"/>
-
-      <h3 id="cookies">Usamos cookies?</h3>
-
-      <p>Sim. Cookies são pequenos ficheiros que um site ou o seu fornecedor de serviço transfere para o disco rígido do teu computador através do teu navegador (se tu permitires). Estes cookies permitem ao site reconhecer o teu navegador e, se tu tiveres uma conta registada, associá-lo a ela.</p>
-
-      <p>Nós usamos os cookies para compreender e guardar as tuas preferências para as visitas futuras.</p>
-
-      <hr class="spacer" />
-
-      <h3 id="disclose">Nós divulgamos alguma informação para entidades externas?</h3>
-
-      <p>Nós não vendemos, trocamos ou transferimos de qualquer modo a tua informação pessoal que seja identificável para qualquer entidade externa. Isto não inclui terceiros de confiança que nos ajudam a manter o nosso site, conduzir o nosso negócio ou prestar-te este serviço, desde que esses terceiros concordem em manter essa informação confidencial. Poderemos também revelar a tua informação quando nós acreditamos que isso é apropriado para cumprir a lei, forçar a aplicação dos nossos termos de serviço ou proteger os direitos, propriedade e segurança, nossos e de outrem.</p>
-
-      <p>O teu conteúdo público pode ser descarregado por outros servidores na rede. As tuas publicações públicas e exclusivas para os teus seguidores são enviadas para os servidores onde os teus seguidores residem e as mensagens directas são entregues aos servidores dos seus destinatários, no caso desses seguidores ou destinatários residirem num servidor diferente deste.</p>
-
-      <p>Quando tu autorizas uma aplicação a usar a tua conta, dependendo da abrangência das permissões que tu aprovas, ela pode ter acesso à informação pública do teu perfil, à lista de quem segues, aos teus seguidores, às tuas listas, a todas as tuas publicações e aos teus favoritos. As aplicações nunca terão acesso ao teu endereço de e-mail ou à tua palavra-passe.</p>
-
-      <hr class="spacer" />
-
-      <h3 id="children">Utilização do site por crianças</h3>
-
-      <p>Se este servidor estiver na EU ou na EEA: O nosso site, produtos e serviços são todos dirigidos a pessoas que têm, pelo menos, 16 de idade. Se tu tens menos de 16 anos, devido aos requisitos da GDPR (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>) não uses este site.</p>
-
-      <p>Se este servidor estiver nos EUA: O nosso site, produtos e serviços são todos dirigidos a pessoas que têm, pelo menos, 13 anos de idade. Se tu tens menos de 13 anos de idade, devido aos requisitos da COPPA (<a href="https://en.wikipedia.org/wiki/Children%27s_Online_Privacy_Protection_Act">Children's Online Privacy Protection Act</a>) não uses este site.</p>
-
-      <p>Os requisitos legais poderão ser diferentes se este servidor estiver noutra jurisdição.</p>
-
-      <hr class="spacer" />
-
-      <h3 id="changes">Alterações à nossa Política de Privacidade</h3>
-
-      <p>Se nós decidirmos alterar a nossa política de privacidade, nós iremos publicar essas alterações nesta página.</p>
-
-      <p>Este documento é CC-BY-SA. Ele foi actualizado pela última vez em 7 de Março 2018.</p>
-
-      <p>Originalmente adaptado de <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
     title: "%{instance} Termos de Serviço e Política de Privacidade"
   themes:
     contrast: Mastodon (Elevado contraste)
@@ -1631,12 +1584,13 @@ pt-PT:
       explanation: Pediste uma cópia completa da tua conta Mastodon. Ela já está pronta para descarregares!
       subject: O teu arquivo está pronto para descarregar
       title: Arquivo de ficheiros
-    sign_in_token:
-      details: 'Aqui estão os detalhes da tentativa:'
-      explanation: 'Detectamos uma tentativa de entrar na sua conta a partir de um endereço IP não reconhecido. Se é você, por favor, insira o código de segurança abaixo na página de acesso:'
-      further_actions: 'Se não foi você, por favor altere a sua palavra-passe e ative a autenticação em duas etapzs na sua conta. Pode fazê-lo aqui:'
-      subject: Por favor, confirme a tentativa de acesso
-      title: Tentativa de acesso
+    suspicious_sign_in:
+      change_password: alterar a sua palavra-passe
+      details: 'Aqui estão os detalhes do inicio de sessão:'
+      explanation: Detetamos um inicio de sessão na sua conta a partir de um novo endereço IP.
+      further_actions_html: Se não foi você, recomendamos que %{action} imediatamente e ative a autenticação de dois fatores para manter a sua conta segura.
+      subject: A sua conta foi acessada a partir de um novo endereço IP
+      title: Novo inicio de sessão
     warning:
       appeal: Submeter um recurso
       appeal_description: Se acredita que isso é um erro, pode submeter um recurso para a equipa de %{instance}.
@@ -1669,15 +1623,15 @@ pt-PT:
         silence: Conta limitada
         suspend: Conta suspensa
     welcome:
-      edit_profile_action: Configura o perfil
-      edit_profile_step: Podes personalizar o teu perfil carregando uma imagem de perfil e de cabeçalho ou alterando o nome a exibir, entre outras opções. Se preferires rever os novos seguidores antes deles te poderem seguir, podes tornar a tua conta privada.
-      explanation: Aqui estão algumas dicas para começares
-      final_action: Começa a publicar
-      final_step: 'Começa a publicar! Mesmo sem seguidores, as tuas mensagens públicas podem ser vistas por outros, por exemplo, na cronologia local e em hashtags. Tu podes querer apresentar-te na hashtag #introductions.'
-      full_handle: O teu nome completo
-      full_handle_hint: Isto é o que você diria aos seus amigos para que eles lhe possam enviar mensagens ou seguir a partir de outra instância.
+      edit_profile_action: Configurar o perfil
+      edit_profile_step: Pode personalizar o seu perfil carregando uma imagem de perfil e de cabeçalho ou alterando o nome a exibir, entre outras opções. Se preferir rever os novos seguidores antes de estes o poderem seguir, pode tornar a sua conta privada.
+      explanation: Aqui estão algumas dicas para começar
+      final_action: Começar a publicar
+      final_step: 'Começa a publicar! Mesmo sem seguidores, as suas mensagens públicas podem ser vistas por outros, por exemplo, na cronologia local e em hashtags. Pode querer apresentar-se utilizando a hashtag #introduções ou #introductions.'
+      full_handle: O seu nome completo
+      full_handle_hint: Isto é o que tem de facultar aos seus amigos para que eles lhe possam enviar mensagens ou seguir a partir de outra instância.
       review_preferences_action: Alterar preferências
-      review_preferences_step: Certifique-se de configurar as suas preferências, tais como os e-mails que gostaria de receber ou o nível de privacidade que deseja que as suas publicações tenham por defeito. Se não sofres de enjoo, podes ativar a opção de auto-iniciar GIFs.
+      review_preferences_step: Certifique-se de configurar as suas preferências, tais como os e-mails que gostaria de receber ou o nível de privacidade que deseja que as suas publicações tenham por defeito. Se não sofre de enjoo de movimento, pode ativar a opção de auto-iniciar GIFs.
       subject: Bem-vindo ao Mastodon
       tip_federated_timeline: A cronologia federativa é uma visão global da rede Mastodon. Mas só inclui pessoas que os teus vizinhos subscrevem, por isso não é uma visão completa.
       tip_following: Segues o(s) administrador(es) do teu servidor por defeito. Para encontrar mais pessoas interessantes, procura nas cronologias local e federada.
@@ -1687,13 +1641,10 @@ pt-PT:
       title: Bem-vindo a bordo, %{name}!
   users:
     follow_limit_reached: Não podes seguir mais do que %{limit} pessoas
-    generic_access_help_html: Problemas para aceder à sua conta? Pode entrar em contacto com %{email} para obter ajuda
     invalid_otp_token: Código de autenticação inválido
-    invalid_sign_in_token: Cógido de segurança inválido
     otp_lost_help_html: Se perdeu acesso a ambos, pode entrar em contacto com %{email}
     seamless_external_login: Tu estás ligado via um serviço externo. Por isso, as configurações da palavra-passe e do e-mail não estão disponíveis.
     signed_in_as: 'Registado como:'
-    suspicious_sign_in_confirmation: Parece que não iniciou sessão através deste dispositivo antes, e não acede à sua conta há algum tempo. Portanto, enviámos um código de segurança para o seu endereço de e-mail para confirmar que é você.
   verification:
     explanation_html: 'Pode <strong>comprovar que é o dono dos links nos metadados do seu perfil</strong>. Para isso, o website para o qual o link aponta tem de conter um link para o seu perfil do Mastodon. Esse link <strong>tem</strong> de ter um atributo <code>rel="me"</code>. O conteúdo do texto não é relevante. Aqui está um exemplo:'
     verification: Verificação

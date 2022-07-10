@@ -37,6 +37,7 @@ class Status < ApplicationRecord
   include Paginable
   include Cacheable
   include StatusThreadingConcern
+  include StatusSnapshotConcern
   include RateLimitable
 
   rate_limit by: :account, family: :statuses
@@ -60,8 +61,6 @@ class Status < ApplicationRecord
 
   belongs_to :thread, foreign_key: 'in_reply_to_id', class_name: 'Status', inverse_of: :replies, optional: true
   belongs_to :reblog, foreign_key: 'reblog_of_id', class_name: 'Status', inverse_of: :reblogs, optional: true
-
-  has_many :edits, class_name: 'StatusEdit', inverse_of: :status, dependent: :destroy
 
   has_many :favourites, inverse_of: :status, dependent: :destroy
   has_many :bookmarks, inverse_of: :status, dependent: :destroy
@@ -151,14 +150,25 @@ class Status < ApplicationRecord
       ids += favourites.where(account: Account.local).pluck(:account_id)
       ids += reblogs.where(account: Account.local).pluck(:account_id)
       ids += bookmarks.where(account: Account.local).pluck(:account_id)
+      ids += poll.votes.where(account: Account.local).pluck(:account_id) if poll.present?
     else
       ids += preloaded.mentions[id] || []
       ids += preloaded.favourites[id] || []
       ids += preloaded.reblogs[id] || []
       ids += preloaded.bookmarks[id] || []
+      ids += preloaded.votes[id] || []
     end
 
     ids.uniq
+  end
+
+  def searchable_text
+    [
+      spoiler_text,
+      FormattingHelper.extract_status_plain_text(self),
+      preloadable_poll ? preloadable_poll.options.join("\n\n") : nil,
+      ordered_media_attachments.map(&:description).join("\n\n"),
+    ].compact.join("\n\n")
   end
 
   def reply?
@@ -217,25 +227,6 @@ class Status < ApplicationRecord
     public_visibility? || unlisted_visibility?
   end
 
-  def snapshot!(account_id: nil, at_time: nil, rate_limit: true)
-    edits.create!(
-      text: text,
-      spoiler_text: spoiler_text,
-      sensitive: sensitive,
-      ordered_media_attachment_ids: ordered_media_attachment_ids || media_attachments.pluck(:id),
-      media_descriptions: ordered_media_attachments.map(&:description),
-      poll_options: preloadable_poll&.options,
-      account_id: account_id || self.account_id,
-      content_type: content_type,
-      created_at: at_time || edited_at,
-      rate_limit: rate_limit
-    )
-  end
-
-  def edited?
-    edited_at.present?
-  end
-
   alias sign? distributable?
 
   def with_media?
@@ -268,7 +259,7 @@ class Status < ApplicationRecord
       media_attachments
     else
       map = media_attachments.index_by(&:id)
-      ordered_media_attachment_ids.map { |media_attachment_id| map[media_attachment_id] }
+      ordered_media_attachment_ids.filter_map { |media_attachment_id| map[media_attachment_id] }
     end
   end
 
@@ -329,10 +320,6 @@ class Status < ApplicationRecord
   class << self
     def selectable_visibilities
       visibilities.keys - %w(direct limited)
-    end
-
-    def in_chosen_languages(account)
-      where(language: nil).or where(language: account.chosen_languages)
     end
 
     def as_direct_timeline(account, limit = 20, max_id = nil, since_id = nil, cache_ids = false)
@@ -524,7 +511,7 @@ class Status < ApplicationRecord
   end
 
   def set_poll_id
-    update_column(:poll_id, poll.id) unless poll.nil?
+    update_column(:poll_id, poll.id) if association(:poll).loaded? && poll.present?
   end
 
   def set_visibility

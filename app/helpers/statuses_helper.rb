@@ -101,7 +101,7 @@ module StatusesHelper
     when 'private'
       fa_icon 'lock fw'
     when 'direct'
-      fa_icon 'envelope fw'
+      fa_icon 'at fw'
     end
   end
 
@@ -110,20 +110,6 @@ module StatusesHelper
       status.sensitive
     else
       status.account.sensitized? || status.sensitive
-    end
-  end
-
-  private
-
-  def simplified_text(text)
-    text.dup.tap do |new_text|
-      URI.extract(new_text).each do |url|
-        new_text.gsub!(url, '')
-      end
-
-      new_text.gsub!(Account::MENTION_RE, '')
-      new_text.gsub!(Tag::HASHTAG_RE, '')
-      new_text.gsub!(/\s+/, '')
     end
   end
 

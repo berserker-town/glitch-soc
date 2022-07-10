@@ -34,7 +34,6 @@ class UserSettingsDecorator
     user.settings['noindex']             = noindex_preference if change?('setting_noindex')
     user.settings['flavour']             = flavour_preference if change?('setting_flavour')
     user.settings['skin']                = skin_preference if change?('setting_skin')
-    user.settings['hide_network']        = hide_network_preference if change?('setting_hide_network')
     user.settings['aggregate_reblogs']   = aggregate_reblogs_preference if change?('setting_aggregate_reblogs')
     user.settings['show_application']    = show_application_preference if change?('setting_show_application')
     user.settings['advanced_layout']     = advanced_layout_preference if change?('setting_advanced_layout')
@@ -43,6 +42,7 @@ class UserSettingsDecorator
     user.settings['use_pending_items']   = use_pending_items_preference if change?('setting_use_pending_items')
     user.settings['trends']              = trends_preference if change?('setting_trends')
     user.settings['crop_images']         = crop_images_preference if change?('setting_crop_images')
+    user.settings['always_send_emails']  = always_send_emails_preference if change?('setting_always_send_emails')
   end
 
   def merged_notification_emails
@@ -117,10 +117,6 @@ class UserSettingsDecorator
     settings['setting_skin']
   end
 
-  def hide_network_preference
-    boolean_cast_setting 'setting_hide_network'
-  end
-
   def show_application_preference
     boolean_cast_setting 'setting_show_application'
   end
@@ -155,6 +151,10 @@ class UserSettingsDecorator
 
   def crop_images_preference
     boolean_cast_setting 'setting_crop_images'
+  end
+
+  def always_send_emails_preference
+    boolean_cast_setting 'setting_always_send_emails'
   end
 
   def boolean_cast_setting(key)

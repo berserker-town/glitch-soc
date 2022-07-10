@@ -79,8 +79,6 @@ hr:
   application_mailer:
     settings: 'Promijeni postavke e-pošte: %{link}'
     view: 'Vidi:'
-  applications:
-    invalid_url: Unesena poveznica nije valjana
   auth:
     didnt_get_confirmation: Niste primili upute za potvrđivanje?
     forgot_password: Zaboravljena lozinka?
@@ -267,7 +265,6 @@ hr:
       tips: Savjeti
   users:
     invalid_otp_token: Nevažeći dvo-faktorski kôd
-    invalid_sign_in_token: Nevažeći sigurnosni kôd
     signed_in_as: 'Prijavljeni kao:'
   verification:
     verification: Verifikacija
