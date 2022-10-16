@@ -28,7 +28,7 @@ lv:
     learn_more: Uzzināt vairāk
     logged_in_as_html: Tu pašlaik esi pieteicies kā %{username}.
     logout_before_registering: Tu jau esi pieteicies.
-    privacy_policy: Privātuma politika
+    privacy_policy: Privātuma Politika
     rules: Servera noteikumi
     rules_html: 'Tālāk ir sniegts noteikumu kopsavilkums, kas jāievēro, ja vēlies izveidot kontu šajā Mastodon serverī:'
     see_whats_happening: Redzēt, kas notiek
@@ -40,13 +40,12 @@ lv:
       zero: nav
     status_count_before: Kurš publicējis
     tagline: Decentralizēts sociālais tīkls
-    terms: Pakalpojuma noteikumi
     unavailable_content: Moderētie serveri
     unavailable_content_description:
       domain: Serveris
       reason: Iemesls
-      rejecting_media: 's faili no šiem serveriem netiks apstrādāti vai saglabāti, un netiks parādīti sīktēli, kuriem nepieciešama manuāla noklikšķināšana uz sākotnējā faila:'
-      rejecting_media_title: Filtrēts saturs
+      rejecting_media: 'Multivides faili no šiem serveriem netiks apstrādāti vai saglabāti, un netiks parādīti sīktēli, kuriem nepieciešama manuāla noklikšķināšana uz sākotnējā faila:'
+      rejecting_media_title: Filtrēta multivide
       silenced: 'Ziņas no šiem serveriem tiks paslēptas publiskās ziņu lentās un sarunās, un no lietotāju mijiedarbības netiks ģenerēti paziņojumi, ja vien tu tiem nesekosi:'
       silenced_title: Ierobežoti serveri
       suspended: 'Nekādi dati no šiem serveriem netiks apstrādāti, uzglabāti vai apmainīti, padarot neiespējamu jebkādu mijiedarbību vai saziņu ar lietotājiem no šiem serveriem:'
@@ -62,7 +61,7 @@ lv:
     choices_html: "%{name} izvēles:"
     endorsements_hint: Jūs varat apstiprināt cilvēkus, kuriem sekojat no tīmekļa saskarnes, un viņi tiks parādīti šeit.
     featured_tags_hint: Šeit vari norādīt īpašus tēmturus, kuri tiks parādīti šeit.
-    follow: Seko
+    follow: Sekot
     followers:
       one: Sekotājs
       other: Sekotāji
@@ -87,10 +86,8 @@ lv:
     posts_tab_heading: Ziņas
     posts_with_replies: Ziņas un atbildes
     roles:
-      admin: Admins
       bot: Bots
       group: Grupa
-      moderator: Moder
     unavailable: Profils nav pieejams
     unfollow: Pārstāt sekot
   admin:
@@ -109,12 +106,17 @@ lv:
       avatar: Avatars
       by_domain: Domēns
       change_email:
-        changed_msg: Konta e-pasts veiksmīgi nomainīts!
+        changed_msg: E-pasts veiksmīgi nomainīts!
         current_email: Pašreizējais e-pasts
         label: Mainīt e-pastu
         new_email: Jaunā e-pasta adrese
         submit: Mainīt e-pastu
         title: Mainīt e-pastu %{username}
+      change_role:
+        changed_msg: Loma veiksmīgi nomainīta!
+        label: Mainīt lomu
+        no_role: Nav lomas
+        title: Mainīt lomu %{username}
       confirm: Apstiprināt
       confirmed: Apstiprināts
       confirming: Apstiprina
@@ -150,7 +152,7 @@ lv:
         remote: Attālinātie
         title: Atrašanās vieta
       login_status: Pieteikšanās statuss
-      media_attachments: Mediju pielikumi
+      media_attachments: Multivides pielikumi
       memorialize: Pārvērst atmiņās
       memorialized: Piemiņa saglabāta
       memorialized_msg: "%{username} veiksmīgi pārvērsts par piemiņas kontu"
@@ -158,6 +160,7 @@ lv:
         active: Aktīvie
         all: Visi
         pending: Gaida
+        silenced: Ierobežotie
         suspended: Apturētie
         title: Moderācija
       moderation_notes: Moderācijas piezīmes
@@ -165,6 +168,7 @@ lv:
       most_recent_ip: Pati pēdējā IP
       no_account_selected: Neviens konts netika mainīts, jo neviens netika atlasīts
       no_limits_imposed: Nav noteikti ierobežojumi
+      no_role_assigned: Loma nav piešķirta
       not_subscribed: Nav abonēts
       pending: Gaida pārskatīšanu
       perform_full_suspension: Apturēt
@@ -192,12 +196,7 @@ lv:
       reset: Atiestatīt
       reset_password: Atiestatīt paroli
       resubscribe: Pieteikties vēlreiz
-      role: Privilēģijas
-      roles:
-        admin: Administrators
-        moderator: Moderators
-        staff: Personāls
-        user: Lietotājs
+      role: Loma
       search: Meklēt
       search_same_email_domain: Citi lietotāji ar tādu pašu e-pasta domēnu
       search_same_ip: Citi lietotāji ar tādu pašu IP
@@ -240,17 +239,21 @@ lv:
         approve_user: Apstiprināt lietotāju
         assigned_to_self_report: Piešķirt Pārskatu
         change_email_user: Mainīt e-pastu lietotājam
+        change_role_user: Mainīt lietotāja lomu
         confirm_user: Apstiprināt lietotāju
         create_account_warning: Izveidot Brīdinājumu
         create_announcement: Izveidot Paziņojumu
+        create_canonical_email_block: Izveidot E-pasta Bloku
         create_custom_emoji: Izveidot pielāgotu emocijzīmi
         create_domain_allow: Izveidot Domēna Atļauju
         create_domain_block: Izveidot Domēna Bloku
         create_email_domain_block: Izveidot E-pasta Domēna Bloku
         create_ip_block: Izveidot IP noteikumu
         create_unavailable_domain: Izveidot Nepieejamu Domēnu
+        create_user_role: Izveidot lomu
         demote_user: Pazemināt Lietotāju
         destroy_announcement: Dzēst Paziņojumu
+        destroy_canonical_email_block: Dzēst E-pasta Bloku
         destroy_custom_emoji: Dzēst pielāgoto emocijzīmi
         destroy_domain_allow: Dzēst Domēna Atļauju
         destroy_domain_block: Dzēst Domēna Bloku
@@ -259,6 +262,7 @@ lv:
         destroy_ip_block: Dzēst IP noteikumu
         destroy_status: Izdzēst Rakstu
         destroy_unavailable_domain: Dzēst Nepieejamu Domēnu
+        destroy_user_role: Iznīcināt lomu
         disable_2fa_user: Atspējot 2FA
         disable_custom_emoji: Atspējot pielāgotu emocijzīmi
         disable_sign_in_token_auth_user: Atspējoja e-pasta marķiera autentifikāciju lietotājam
@@ -285,24 +289,30 @@ lv:
         update_announcement: Atjaunināt Paziņojumu
         update_custom_emoji: Atjaunināt pielāgoto emocijzīmi
         update_domain_block: Atjaunināt Domēna Bloku
+        update_ip_block: Atjaunināt IP noteikumu
         update_status: Atjaunināt ziņu
+        update_user_role: Atjaunināt lomu
       actions:
         approve_appeal_html: "%{name} apstiprināja moderācijas lēmuma apelāciju no %{target}"
         approve_user_html: "%{name} apstiprināja reģistrēšanos no %{target}"
         assigned_to_self_report_html: "%{name} piešķīra pārskatu %{target} sev"
         change_email_user_html: "%{name} nomainīja e-pasta adresi lietotājam %{target}"
+        change_role_user_html: "%{name} nomainīja lomu uz %{target}"
         confirm_user_html: "%{name} apstiprināja e-pasta adresi lietotājam %{target}"
         create_account_warning_html: "%{name} nosūtīja brīdinājumu %{target}"
         create_announcement_html: "%{name} izveidoja jaunu paziņojumu %{target}"
+        create_canonical_email_block_html: "%{name} bloķēja e-pastu ar hešu %{target}"
         create_custom_emoji_html: "%{name} augšupielādēja jaunu emocijzīmi %{target}"
         create_domain_allow_html: "%{name} atļāva federāciju ar domēnu %{target}"
         create_domain_block_html: "%{name} bloķēja domēnu %{target}"
         create_email_domain_block_html: "%{name} bloķēja e-pasta domēnu %{target}"
         create_ip_block_html: "%{name} izveidoja nosacījumu priekš IP %{target}"
         create_unavailable_domain_html: "%{name} apturēja piegādi uz domēnu %{target}"
+        create_user_role_html: "%{name} nomainīja %{target} lomu"
         demote_user_html: "%{name} pazemināja lietotāju %{target}"
         destroy_announcement_html: "%{name} izdzēsa paziņojumu %{target}"
-        destroy_custom_emoji_html: "%{name} iznīcināja emocijzīmi %{target}"
+        destroy_canonical_email_block_html: "%{name} atbloķēja e-pastu ar hešu %{target}"
+        destroy_custom_emoji_html: "%{name} izdzēsa emocijzīmi %{target}"
         destroy_domain_allow_html: "%{name} neatļāva federāciju ar domēnu %{target}"
         destroy_domain_block_html: "%{name} atbloķēja domēnu %{target}"
         destroy_email_domain_block_html: "%{name} atbloķēja e-pasta domēnu %{target}"
@@ -310,6 +320,7 @@ lv:
         destroy_ip_block_html: "%{name} izdzēsa nosacījumu priekš IP %{target}"
         destroy_status_html: "%{name} noņēma ziņu %{target}"
         destroy_unavailable_domain_html: "%{name} atjaunoja piegādi uz domēnu %{target}"
+        destroy_user_role_html: "%{name} izdzēsa %{target} lomu"
         disable_2fa_user_html: "%{name} atspējoja divfaktoru prasības lietotājam %{target}"
         disable_custom_emoji_html: "%{name} atspējoja emocijzīmi %{target}"
         disable_sign_in_token_auth_user_html: "%{name} atspējoja e-pasta marķiera autentifikāciju %{target}"
@@ -336,8 +347,9 @@ lv:
         update_announcement_html: "%{name} atjaunināja paziņojumu %{target}"
         update_custom_emoji_html: "%{name} atjaunināja emocijzīmi %{target}"
         update_domain_block_html: "%{name} atjaunināja domēna bloku %{target}"
+        update_ip_block_html: "%{name} mainīja nosacījumu priekš IP %{target}"
         update_status_html: "%{name} atjaunināja ziņu %{target}"
-      deleted_status: "(dzēsta ziņa)"
+        update_user_role_html: "%{name} nomainīja %{target} lomu"
       empty: Žurnāli nav atrasti.
       filter_by_action: Filtrēt pēc darbības
       filter_by_user: Filtrēt pēc lietotāja
@@ -663,6 +675,69 @@ lv:
       unresolved: Neatrisinātie
       updated_at: Atjaunināts
       view_profile: Skatīt profilu
+    roles:
+      add_new: Pievienot lomu
+      assigned_users:
+        one: "%{count} lietotājs"
+        other: "%{count} lietotāji"
+        zero: "%{count} lietotāju"
+      categories:
+        administration: Administrēšana
+        devops: Izstrādātāji
+        invites: Uzaicinājumi
+        moderation: Moderācija
+        special: Īpašās
+      delete: Dzēst
+      description_html: Izmantojot <strong>lietotāju lomas</strong>, vari pielāgot, kurām Mastodon funkcijām un apgabaliem var piekļūt tavi lietotāji.
+      edit: Rediģēt lomu '%{name}'
+      everyone: Noklusētās atļaujas
+      everyone_full_description_html: Šī ir <strong>pamata loma</strong>, kas ietekmē <strong>visus lietotājus</strong>, pat tos, kuriem nav piešķirta loma. Visas pārējās lomas manto atļaujas no šīs.
+      permissions_count:
+        one: "%{count} atļauja"
+        other: "%{count} atļaujas"
+        zero: "%{count} atļauju"
+      privileges:
+        administrator: Administrators
+        administrator_description: Lietotāji ar šo atļauju apies visas atļaujas
+        delete_user_data: Dzēst Lietotāja Datus
+        delete_user_data_description: Ļauj lietotājiem bez kavēšanās dzēst citu lietotāju datus
+        invite_users: Uzaicināt Lietotājus
+        invite_users_description: Ļauj lietotājiem uzaicināt jaunus cilvēkus uz šo serveri
+        manage_announcements: Pārvaldīt Paziņojumus
+        manage_announcements_description: Ļauj lietotājiem pārvaldīt paziņojumus serverī
+        manage_appeals: Pārvaldīt Pārsūdzības
+        manage_appeals_description: Ļauj lietotājiem izskatīt apelācijas pret regulēšanas darbībām
+        manage_blocks: Pārvaldīt Bloķus
+        manage_blocks_description: Ļauj lietotājiem bloķēt e-pasta pakalpojumu sniedzējus un IP adreses
+        manage_custom_emojis: Pārvaldīt Pielāgotās Emocijzīmes
+        manage_custom_emojis_description: Ļauj lietotājiem pārvaldīt pielāgotās emocijzīmes serverī
+        manage_federation: Pārvaldīt Federāciju
+        manage_federation_description: Ļauj lietotājiem bloķēt vai atļaut federāciju ar citiem domēniem un kontrolēt piegādi
+        manage_invites: Pārvaldīt Uzaicinājumus
+        manage_invites_description: Ļauj lietotājiem pārlūkot un deaktivizēt uzaicinājuma saites
+        manage_reports: Pārvaldīt Pārskatus
+        manage_reports_description: Ļauj lietotājiem pārskatīt pārskatus un veikt pret tiem regulēšanas darbības
+        manage_roles: Pārvaldīt Lomas
+        manage_roles_description: Ļauj lietotājiem pārvaldīt un piešķirt lomas, kas ir zemākas par viņu lomu
+        manage_rules: Pārvaldīt Noteikumus
+        manage_rules_description: Ļauj lietotājiem mainīt servera noteikumus
+        manage_settings: Pārvaldīt Iestatījumus
+        manage_settings_description: Ļauj lietotājiem mainīt vietnes uzstādījumus
+        manage_taxonomies: Pārvaldīt Taksonomijas
+        manage_taxonomies_description: Ļauj lietotājiem pārskatīt aktuālo saturu un atjaunināt atsauces iestatījumus
+        manage_user_access: Pārvaldīt Lietotāju Piekļuves
+        manage_user_access_description: Ļauj lietotājiem atspējot citu lietotāju divu faktoru autentifikāciju, mainīt savu e-pasta adresi un atiestatīt paroli
+        manage_users: Pārvaldīt Lietotājus
+        manage_users_description: Ļauj lietotājiem skatīt citu lietotāju informāciju un veikt pret viņiem regulēšanas darbības
+        manage_webhooks: Pārvaldīt Tīmekļa Aizķeres
+        manage_webhooks_description: Ļauj lietotājiem iestatīt tīmekļa aizķeres administratīviem pasākumiem
+        view_audit_log: Skatīt Audita Žurnālu
+        view_audit_log_description: Ļauj lietotājiem redzēt serverī veikto administratīvo darbību vēsturi
+        view_dashboard: Skatīt Informācijas Paneli
+        view_dashboard_description: Ļauj lietotājiem piekļūt informācijas panelim un dažādiem rādītājiem
+        view_devops: Izstrādātāji
+        view_devops_description: Ļauj lietotājiem piekļūt Sidekiq un pgHero informācijas paneļiem
+      title: Lomas
     rules:
       add_new: Pievienot noteikumu
       delete: Dzēst
@@ -715,9 +790,6 @@ lv:
         deletion:
           desc_html: Atļaut ikvienam dzēst savu kontu
           title: Atvērt konta dzēšanu
-        min_invite_role:
-          disabled: Nevienam
-          title: Atļaut uzaicinājumus
         require_invite_text:
           desc_html: 'Ja reģistrācijai nepieciešama manuāla apstiprināšana, izdari, lai teksta: “Kāpēc vēlaties pievienoties?” ievade ir obligāta, nevis neobligāts'
           title: Pieprasīt jauniem lietotājiem ievadīt pievienošanās iemeslu
@@ -730,9 +802,6 @@ lv:
       show_known_fediverse_at_about_page:
         desc_html: Ja šī funkcija ir atspējota, tā ierobežo publisko ziņu lentu, kas ir saistīta ar galveno lapu, lai parādītu tikai vietējo saturu
         title: Iekļaut federēto saturu neautentificētā publiskā ziņu lentas lapā
-      show_staff_badge:
-        desc_html: Parāda personāla emblēmu lietotāja lapā
-        title: Parādīt personāla emblēmu
       site_description:
         desc_html: Ievadpunkts par API. Apraksti, kas padara šo Mastodon serveri īpašu, un jebko citu svarīgu. Vari izmantot HTML tagus, jo īpaši <code>&lt;a&gt;</code> un <code>&lt;em&gt;</code>.
         title: Servera apraksts
@@ -743,8 +812,8 @@ lv:
         desc_html: Tiek parādīts sānjoslā un metatagos. Vienā rindkopā apraksti, kas ir Mastodon un ar ko šis serveris ir īpašs.
         title: Īss servera apraksts
       site_terms:
-        desc_html: Tu vari uzrakstīt savu privātuma politiku, pakalpojumu sniegšanas noteikumus vai citu likumīgu. Tu vari izmantot HTML tagus
-        title: Pielāgoti pakalpojuma sniegšanas noteikumi
+        desc_html: Tu vari uzrakstīt pats savu privātuma politiku. Vari izmantot HTML tagus
+        title: Pielāgot privātuma politiku
       site_title: Servera nosaukums
       thumbnail:
         desc_html: Izmanto priekšskatījumiem, izmantojot OpenGraph un API. Ieteicams 1200x630 pikseļi
@@ -754,8 +823,8 @@ lv:
         title: Atļaut neautentificētu piekļuvi publiskai ziņu lentai
       title: Vietnes iestatījumi
       trendable_by_default:
-        desc_html: Ietekmē tēmturus, kas iepriekš nav bijuši aizliegti
-        title: Ļaujiet tēmturiem mainīties bez iepriekšējas pārskatīšanas
+        desc_html: Konkrētais populārais saturs joprojām var būt nepārprotami aizliegts
+        title: Atļaut tendences bez iepriekšējas pārskatīšanas
       trends:
         desc_html: Publiski parādīt iepriekš pārskatītus tēmturus, kas pašlaik ir populāri
         title: Populārākie tēmturi
@@ -945,9 +1014,9 @@ lv:
     sensitive_content: Sensitīvs saturs
     toot_layout: Ziņas izskats
   application_mailer:
-    notification_preferences: Mainīt e-pasta preferences
+    notification_preferences: Mainīt e-pasta uztādījumus
     salutation: "%{name},"
-    settings: 'Mainīt e-pasta preferences: %{link}'
+    settings: 'Mainīt e-pasta uztādījumus: %{link}'
     view: 'Skatījums:'
     view_profile: Skatīt profilu
     view_status: Skatīt ziņu
@@ -1142,16 +1211,43 @@ lv:
       public: Publiskās ziņu lentas
       thread: Sarunas
     edit:
+      add_keyword: Pievienot atslēgvārdu
+      keywords: Atslēgvārdi
+      statuses: Individuālās ziņas
+      statuses_hint_html: Šis filtrs attiecas uz atsevišķām ziņām neatkarīgi no tā, vai tās atbilst tālāk norādītajiem atslēgvārdiem. <a href="%{path}">Pārskatīt vai noņemt ziņas no filtra</a>.
       title: Rediģēt filtru
     errors:
+      deprecated_api_multiple_keywords: Šos parametrus šajā lietojumprogrammā nevar mainīt, jo tie attiecas uz vairāk nekā vienu filtra atslēgvārdu. Izmanto jaunāku lietojumprogrammu vai tīmekļa saskarni.
       invalid_context: Nav, vai piegādāts nederīgs konteksts
-      invalid_irreversible: Neatgriezeniskā filtrēšana darbojas tikai sākuma vai paziņojumu kontekstā
     index:
+      contexts: Filtri %{contexts}
       delete: Dzēst
       empty: Tev nav filtru.
+      expires_in: Beidzas %{distance}
+      expires_on: Beidzas %{date}
+      keywords:
+        one: "%{count} atsēgvārds"
+        other: "%{count} atslēgvārdi"
+        zero: "%{count} atslēgvārdu"
+      statuses:
+        one: "%{count} ziņa"
+        other: "%{count} ziņas"
+        zero: "%{count} ziņu"
+      statuses_long:
+        one: paslēpta %{count} individuālā ziņa
+        other: slēptas %{count} individuālās ziņas
+        zero: "%{count} paslēptu ziņu"
       title: Filtri
     new:
+      save: Saglabāt jauno filtru
       title: Pievienot jaunu filtru
+    statuses:
+      back_to_filter: Atpakaļ pie filtra
+      batch:
+        remove: Noņemt no filtra
+      index:
+        hint: Šis filtrs attiecas uz atsevišķu ziņu atlasi neatkarīgi no citiem kritērijiem. Šim filtram tu vari pievienot vairāk ziņu, izmantojot tīmekļa saskarni.
+        title: Filtrētās ziņas
   footer:
     developers: Izstrādātāji
     more: Vairāk…
@@ -1159,12 +1255,25 @@ lv:
     trending_now: Šobrīd tendences
   generic:
     all: Visi
+    all_items_on_page_selected_html:
+      one: Šajā lapā ir atlasīts <strong>%{count}</strong> vienums.
+      other: Šajā lapā ir atlasīti <strong>%{count}</strong> vienumi.
+      zero: Šajā lapā ir atlasīts <strong>%{count}</strong> vienumu.
+    all_matching_items_selected_html:
+      one: Atlasīts <strong>%{count}</strong> vienums, kas atbilst tavam meklēšanas vaicājumam.
+      other: Atlasīti visi <strong>%{count}</strong> vienumi, kas atbilst tavam meklēšanas vaicājumam.
+      zero: Atlasīts <strong>%{count}</strong> vienumu, kas atbilst tavam meklēšanas vaicājumam.
     changes_saved_msg: Izmaiņas veiksmīgi saglabātas!
     copy: Kopēt
     delete: Dzēst
+    deselect: Atcelt visu atlasi
     none: Neviens
     order_by: Kārtot pēc
     save_changes: Saglabāt izmaiņas
+    select_all_matching_items:
+      one: Atlasi %{count} vienumu, kas atbilst tavam meklēšanas vaicājumam.
+      other: Atlasi visus %{count} vienumus, kas atbilst tavam meklēšanas vaicājumam.
+      zero: Atlasi %{count} vienumu, kas atbilst tavam meklēšanas vaicājumam.
     today: šodien
     validation_errors:
       one: Kaut kas vēl nav īsti kārtībā! Lūdzu, pārskati zemāk norādīto kļūdu
@@ -1271,21 +1380,10 @@ lv:
     copy_account_note_text: 'Šis lietotājs pārcēlās no %{acct}, šeit bija tavas iepriekšējās piezīmes par viņu:'
   notification_mailer:
     admin:
+      report:
+        subject: "%{name} iesniedza ziņojumu"
       sign_up:
         subject: "%{name} ir pierakstījies"
-    digest:
-      action: Rādīt visus paziņojumus
-      body: Šeit ir īss kopsavilkums par ziņojumiem, kurus tu esi palaidis garām kopš pēdējā apmeklējuma %{since}
-      mention: "%{name} pieminēja tevi:"
-      new_followers_summary:
-        one: Tāpat, atrodoties prom, esi ieguvis vienu jaunu sekotāju! Jip!
-        other: Turklāt, atrodoties prom, esi ieguvis %{count} jaunus sekotājus! Apbrīnojami!
-        zero: "%{count} jaunu sekotāju!"
-      subject:
-        one: "1 jauns paziņojums kopš tava pēdējā apmeklējuma 🐘"
-        other: "%{count} jauni paziņojumi kopš tava pēdējā apmeklējuma 🐘"
-        zero: "%{count} jaunu paziņojumu kopš tava pēdējā apmeklējuma"
-      title: Tavas prombūtnes laikā...
     favourite:
       body: 'Tavu ziņu izlasei pievienoja %{name}:'
       subject: "%{name} pievienoja tavu ziņu izlasei"
@@ -1623,7 +1721,7 @@ lv:
 
       <p>Jā. Sīkfaili ir nelieli faili, ko vietne vai tās pakalpojumu sniedzējs pārsūta uz jūsu datora cieto disku, izmantojot jūsu tīmekļa pārlūkprogrammu (ja atļaujat). Šīs sīkdatnes ļauj vietnei atpazīt jūsu pārlūkprogrammu un, ja jums ir reģistrēts konts, saistīt to ar jūsu reģistrēto kontu.</p>
 
-      <p>Mēs izmantojam sīkfailus, lai saprastu un saglabātu jūsu preferences turpmākiem apmeklējumiem.</p>
+      <p>Mēs izmantojam sīkfailus, lai saprastu un saglabātu jūsu uztādījumus turpmākiem apmeklējumiem.</p>
 
       <hr class="spacer" />
 
@@ -1654,7 +1752,7 @@ lv:
       <p>Šis dokuments ir CC-BY-SA. Pēdējo reizi tas tika atjaunināts 2022. gada 26. maijā.</p>
 
       <p>Sākotnēji adaptēts no <a href="https://github.com/discourse/discourse">Discourse konfidencialitātes politikas</a>.</p>
-    title: "%{instance} Pakalpojuma Noteikumi un Privātuma Politika"
+    title: "%{instance} Privātuma Politika"
   themes:
     contrast: Mastodon (Augsts kontrasts)
     default: Mastodon (Tumšs)
@@ -1739,8 +1837,8 @@ lv:
       final_step: 'Sāc publicēt! Pat bez sekotājiem tavas publiskās ziņas var redzēt citi, piemēram, vietējā ziņu lentā un atsaucēs. Iespējams, tu vēlēsies iepazīstināt ar sevi, izmantojot tēmturi #introductions.'
       full_handle: Tavs pilnais rokturis
       full_handle_hint: Šis ir tas, ko tu pasaki saviem draugiem, lai viņi varētu tev ziņot vai sekot tev no cita servera.
-      review_preferences_action: Mainīt preferences
-      review_preferences_step: Noteikti iestati savas preferences, piemēram, kādus e-pasta ziņojumus vēlies saņemt vai kādu konfidencialitātes līmeni vēlies iestatīt savām ziņām pēc noklusējuma. Ja tev nav kustību slimības, vari izvēlēties iespējot GIF automātisko atskaņošanu.
+      review_preferences_action: Mainīt uztādījumus
+      review_preferences_step: Noteikti iestati savas uztādījumus, piemēram, kādus e-pasta ziņojumus vēlies saņemt vai kādu konfidencialitātes līmeni vēlies iestatīt savām ziņām pēc noklusējuma. Ja tev nav kustību slimības, vari izvēlēties iespējot GIF automātisko atskaņošanu.
       subject: Laipni lūgts Mastodon
       tip_federated_timeline: Apvienotā ziņu lenta ir skats caur ugunsdzēsības šļūteni uz Mastodon tīklu. Bet tajā ir iekļauti tikai tie cilvēki, kurus abonē tavi kaimiņi, tāpēc tas nav pilnīgs.
       tip_following: Pēc noklusējuma tu seko sava servera administratoram(-iem). Lai atrastu vairāk interesantu cilvēku, pārbaudi vietējās un federālās ziņu lentas.

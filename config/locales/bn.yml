@@ -23,7 +23,6 @@ bn:
     hosted_on: এই মাস্টাডনটি আছে %{domain} এ
     instance_actor_flash: "এই অ্যাকাউন্টটি ভার্চুয়াল এক্টর যা নিজে কোনও সার্ভারের প্রতিনিধিত্ব করতে ব্যবহৃত হয় এবং কোনও পৃথক ব্যবহারকারী নয়। এটি ফেডারেশনের উদ্দেশ্যে ব্যবহৃত হয় এবং আপনি যদি পুরো ইনস্ট্যান্স ব্লক করতে না চান তবে অবরুদ্ধ করা উচিত নয়, সেক্ষেত্রে আপনার ডোমেন ব্লক ব্যবহার করা উচিত। \n"
     learn_more: বিস্তারিত জানুন
-    privacy_policy: গোপনীয়তা নীতি
     see_whats_happening: কী কী হচ্ছে দেখুন
     server_stats: 'সার্ভারের অবস্থা:'
     source_code: আসল তৈরীপত্র
@@ -31,7 +30,6 @@ bn:
       one: অবস্থা
       other: স্থিতিগুলি
     status_count_before: কে লিখেছে
-    terms: ব্যবহারের শর্তাবলী
     unavailable_content: অনুপলব্ধ সামগ্রী
     unavailable_content_description:
       domain: সার্ভার
@@ -74,10 +72,8 @@ bn:
     posts_tab_heading: লেখাগুলো
     posts_with_replies: লেখা এবং মতামত
     roles:
-      admin: পরিচালক
       bot: রোবট
       group: গোষ্ঠী
-      moderator: পরিচালক
     unavailable: প্রোফাইল অনুপলব্ধ
     unfollow: অনুসরণ বাদ
   admin:
@@ -95,7 +91,6 @@ bn:
       avatar: অবতার
       by_domain: ওয়েবসাইট/কার্যক্ষেত্র
       change_email:
-        changed_msg: নিবন্ধনের ইমেইল সঠিকভাবে পরিবর্তন হয়েছে!
         current_email: এখনকার ইমেইল
         label: ইমেইল পরিবর্তন
         new_email: নতুন ইমেইল
@@ -160,12 +155,6 @@ bn:
       reset: পুনরায় সেট করুন
       reset_password: পাসওয়ার্ড পুনঃস্থাপন করুন
       resubscribe: পুনরায় সদস্যতা নিন
-      role: অনুমতিসমূহ
-      roles:
-        admin: পরিচালক
-        moderator: নিয়ামক
-        staff: কর্মী
-        user: ব্যবহারকারী
       search: অনুসন্ধান
       search_same_email_domain: একই ইমেল ডোমেন সহ অন্যান্য ব্যবহারকারীরা
       search_same_ip: একই IP সহ অন্যান্য ব্যবহারকারীরা

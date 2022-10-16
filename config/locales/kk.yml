@@ -24,7 +24,6 @@ kk:
       Бұл аккаунт кез-келген жеке пайдаланушыны емес, сервердің өзін көрсету үшін қолданылатын виртуалды актер.
       Ол федерация мақсаттарында қолданылады және сіз барлығын бұғаттағыңыз келмейінше, бұғатталмауы керек, бұл жағдайда сіз домен блогын қолданған жөн.
     learn_more: Көбірек білу
-    privacy_policy: Құпиялылық саясаты
     see_whats_happening: Не болып жатқанын қараңыз
     server_stats: 'Сервер статистикасы:'
     source_code: Ашық коды
@@ -32,7 +31,6 @@ kk:
       one: жазба
       other: жазба
     status_count_before: Барлығы
-    terms: Қолдану шарттары
     unavailable_content: Қолжетімсіз контент
     unavailable_content_description:
       domain: Сервер
@@ -72,10 +70,8 @@ kk:
     posts_tab_heading: Жазба
     posts_with_replies: Жазбалар және жауаптар
     roles:
-      admin: Админ
       bot: Бот
       group: Топ
-      moderator: Мод
     unavailable: Профиль қолжетімді емес
     unfollow: Оқымау
   admin:
@@ -92,7 +88,6 @@ kk:
       avatar: Аватар
       by_domain: Домен
       change_email:
-        changed_msg: Аккаунт email-і сәтті өзгертілді!
         current_email: Қазіргі email
         label: email өзгерту
         new_email: Жаңа email
@@ -157,12 +152,6 @@ kk:
       reset: Қалпына келтіру
       reset_password: Құпиясөзді қалпына келтіру
       resubscribe: Resubscribе
-      role: Рұқсаттар
-      roles:
-        admin: Админ
-        moderator: Модератор
-        staff: Қызметкерлер
-        user: Қолданушы
       search: Іздеу
       search_same_ip: Осы ІРмен кірген басқа қолданушылар
       shared_inbox_url: Бөлісілген инбокс URL
@@ -184,7 +173,6 @@ kk:
       web: Веб
       whitelisted: Рұқсат тізімі
     action_logs:
-      deleted_status: "(өшірілген жазба)"
       title: Аудит логы
     announcements:
       destroyed_msg: Анонс сәтті өшірілді!
@@ -385,9 +373,6 @@ kk:
         deletion:
           desc_html: Allow anyone to delete their аккаунт
           title: Open аккаунт deletion
-        min_invite_role:
-          disabled: Ешкім
-          title: Allow шақырулар by
       registrations_mode:
         modes:
           approved: Тіркелу үшін мақұлдау қажет
@@ -397,9 +382,6 @@ kk:
       show_known_fediverse_at_about_page:
         desc_html: When toggled, it will show toots from all the known fediverse on preview. Otherwise it will only show жергілікті toots.
         title: Show known fediverse on timeline превью
-      show_staff_badge:
-        desc_html: Show a staff badge on a user бет
-        title: Көрсет staff badge
       site_description:
         desc_html: Introductory paragraph on the басты бет. Describe what makes this Mastodon server special and anything else important. You can use HTML tags, in particular <code>&lt;a&gt;</code> and <code>&lt;em&gt;</code>.
         title: Сервер туралы
@@ -409,9 +391,6 @@ kk:
       site_short_description:
         desc_html: Displayed in sidebar and meta tags. Describe what Mastodon is and what makes this server special in a single paragraph. If empty, defaults to сервер description.
         title: Short сервер description
-      site_terms:
-        desc_html: You can write your own privacy policy, terms of service or other legalese. You can use HTML тег
-        title: Қолдану шарттары мен ережелер
       site_title: Сервер аты
       thumbnail:
         desc_html: Used for previews via OpenGraph and API. 1200x630px рекоменделеді
@@ -420,9 +399,6 @@ kk:
         desc_html: Display public timeline on лендинг пейдж
         title: Таймлайн превьюі
       title: Сайт баптаулары
-      trendable_by_default:
-        desc_html: Бұрын тыйым салынбаған хэштегтерге әсер етеді
-        title: Хэштегтерге алдын-ала шолусыз тренд беруге рұқсат етіңіз
       trends:
         desc_html: Бұрын қарастырылған хэштегтерді қазіргі уақытта трендте көпшілікке көрсету
         title: Тренд хештегтер
@@ -618,7 +594,6 @@ kk:
       title: Фильтр өңдеу
     errors:
       invalid_context: Жоқ немесе жарамсыз контекст берілген
-      invalid_irreversible: Қайтарылмайтын сүзгі тек ішкі немесе ескертпелер контекстімен жұмыс істейді
     index:
       delete: Өшіру
       empty: Сізде ешқандай фильтр жоқ.
@@ -701,14 +676,6 @@ kk:
   moderation:
     title: Модерация
   notification_mailer:
-    digest:
-      action: Барлық ескертпелер
-      body: Міне, соңғы кірген уақыттан кейін келген хаттардың қысқаша мазмұны %{since}
-      mention: "%{name} сізді атап өтіпті:"
-      new_followers_summary:
-        one: Сондай-ақ, сіз бір жаңа оқырман таптыңыз! Алақай!
-        other: Сондай-ақ, сіз %{count} жаңа оқырман таптыңыз! Керемет!
-      title: Сіз жоқ кезде...
     favourite:
       body: 'Жазбаңызды ұнатып, таңдаулыға қосты %{name}:'
       subject: "%{name} жазбаңызды таңдаулыға қосты"
@@ -908,8 +875,6 @@ kk:
     sensitive_content: Нәзік мазмұн
   tags:
     does_not_match_previous_name: алдыңғы атқа сәйкес келмейді
-  terms:
-    title: "%{instance} Қызмет көрсету шарттары және Құпиялылық саясаты"
   themes:
     contrast: Mastodon (Жоғары контраст)
     default: Mastodon (Қою)

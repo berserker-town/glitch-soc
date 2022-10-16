@@ -6,8 +6,9 @@ import IconButton from './icon_button';
 import DropdownMenuContainer from '../containers/dropdown_menu_container';
 import { defineMessages, injectIntl } from 'react-intl';
 import ImmutablePureComponent from 'react-immutable-pure-component';
-import { me, isStaff } from '../initial_state';
+import { me } from '../initial_state';
 import classNames from 'classnames';
+import { PERMISSION_MANAGE_USERS } from 'mastodon/permissions';
 
 const messages = defineMessages({
   delete: { id: 'status.delete', defaultMessage: 'Delete' },
@@ -43,6 +44,7 @@ const messages = defineMessages({
   unblockDomain: { id: 'account.unblock_domain', defaultMessage: 'Unblock domain {domain}' },
   unmute: { id: 'account.unmute', defaultMessage: 'Unmute @{name}' },
   unblock: { id: 'account.unblock', defaultMessage: 'Unblock @{name}' },
+  filter: { id: 'status.filter', defaultMessage: 'Filter this post' },
 });
 
 const mapStateToProps = (state, { status }) => ({
@@ -55,6 +57,7 @@ class StatusActionBar extends ImmutablePureComponent {
 
   static contextTypes = {
     router: PropTypes.object,
+    identity: PropTypes.object,
   };
 
   static propTypes = {
@@ -78,6 +81,7 @@ class StatusActionBar extends ImmutablePureComponent {
     onPin: PropTypes.func,
     onBookmark: PropTypes.func,
     onFilter: PropTypes.func,
+    onAddFilter: PropTypes.func,
     withDismiss: PropTypes.bool,
     withCounters: PropTypes.bool,
     scrollKey: PropTypes.string,
@@ -209,8 +213,8 @@ class StatusActionBar extends ImmutablePureComponent {
     this.props.onMuteConversation(this.props.status);
   }
 
-  handleFilter = () => {
-    this.props.onFilter();
+  handleFilterClick = () => {
+    this.props.onAddFilter(this.props.status);
   }
 
   handleCopy = () => {
@@ -233,7 +237,7 @@ class StatusActionBar extends ImmutablePureComponent {
   }
 
 
-  handleFilterClick = () => {
+  handleHideClick = () => {
     this.props.onFilter();
   }
 
@@ -292,6 +296,12 @@ class StatusActionBar extends ImmutablePureComponent {
         menu.push({ text: intl.formatMessage(messages.block, { name: account.get('username') }), action: this.handleBlockClick });
       }
 
+      if (!this.props.onFilter) {
+        menu.push(null);
+        menu.push({ text: intl.formatMessage(messages.filter), action: this.handleFilterClick });
+        menu.push(null);
+      }
+
       menu.push({ text: intl.formatMessage(messages.report, { name: account.get('username') }), action: this.handleReport });
 
       if (account.get('acct') !== account.get('username')) {
@@ -306,7 +316,7 @@ class StatusActionBar extends ImmutablePureComponent {
         }
       }
 
-      if (isStaff) {
+      if ((this.context.identity.permissions & PERMISSION_MANAGE_USERS) === PERMISSION_MANAGE_USERS) {
         menu.push(null);
         menu.push({ text: intl.formatMessage(messages.admin_account, { name: account.get('username') }), href: `/admin/accounts/${status.getIn(['account', 'id'])}` });
         menu.push({ text: intl.formatMessage(messages.admin_status), href: `/admin/accounts/${status.getIn(['account', 'id'])}/statuses?id=${status.get('id')}` });
@@ -341,7 +351,7 @@ class StatusActionBar extends ImmutablePureComponent {
     );
 
     const filterButton = this.props.onFilter && (
-      <IconButton className='status__action-bar-button' title={intl.formatMessage(messages.hide)} icon='eye' onClick={this.handleFilterClick} />
+      <IconButton className='status__action-bar-button' title={intl.formatMessage(messages.hide)} icon='eye' onClick={this.handleHideClick} />
     );
 
     return (

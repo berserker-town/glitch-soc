@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 class InitialStateSerializer < ActiveModel::Serializer
+  include RoutingHelper
+
   attributes :meta, :compose, :accounts,
              :media_attachments, :settings,
              :max_toot_chars, :poll_limits,
              :languages
 
   has_one :push_subscription, serializer: REST::WebPushSubscriptionSerializer
+  has_one :role, serializer: REST::RoleSerializer
 
   def max_toot_chars
     StatusLengthValidator::MAX_CHARS
@@ -21,23 +24,24 @@ class InitialStateSerializer < ActiveModel::Serializer
     }
   end
 
+  # rubocop:disable Metrics/AbcSize
   def meta
     store = {
       streaming_api_base_url: Rails.configuration.x.streaming_api_base_url,
       access_token: object.token,
       locale: I18n.locale,
-      domain: Rails.configuration.x.local_domain,
-      title: instance_presenter.site_title,
+      domain: instance_presenter.domain,
+      title: instance_presenter.title,
       admin: object.admin&.id&.to_s,
       search_enabled: Chewy.enabled?,
       repository: Mastodon::Version.repository,
-      source_url: Mastodon::Version.source_url,
-      version: Mastodon::Version.to_s,
-      invites_enabled: Setting.min_invite_role == 'user',
+      source_url: instance_presenter.source_url,
+      version: instance_presenter.version,
       limited_federation_mode: Rails.configuration.x.whitelist_mode,
       mascot: instance_presenter.mascot&.file&.url,
       profile_directory: Setting.profile_directory,
       trends: Setting.trends,
+      registrations_open: Setting.registrations_mode != 'none' && !Rails.configuration.x.single_user_mode,
     }
 
     if object.current_account
@@ -54,7 +58,6 @@ class InitialStateSerializer < ActiveModel::Serializer
       store[:advanced_layout]   = object.current_account.user.setting_advanced_layout
       store[:use_blurhash]      = object.current_account.user.setting_use_blurhash
       store[:use_pending_items] = object.current_account.user.setting_use_pending_items
-      store[:is_staff]          = object.current_account.user.staff?
       store[:trends]            = Setting.trends && object.current_account.user.setting_trends
       store[:default_content_type] = object.current_account.user.setting_default_content_type
       store[:system_emoji_font] = object.current_account.user.setting_system_emoji_font
@@ -69,6 +72,7 @@ class InitialStateSerializer < ActiveModel::Serializer
 
     store
   end
+  # rubocop:enable Metrics/AbcSize
 
   def compose
     store = {}

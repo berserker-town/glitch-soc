@@ -1,7 +1,7 @@
 ---
 tr:
   about:
-    about_hashtag_html: Bunlar <strong>#%{hashtag}</strong> ile etiketlenen genel tootlar. Fediverse içinde herhangi bir yerde bir hesabınız varsa, onlarla etkileşime geçebilirsiniz.
+    about_hashtag_html: Bunlar <strong>#%{hashtag}</strong> ile etiketlenen genel gönderiler. Fediverse içinde herhangi bir yerde bir hesabınız varsa, onlarla etkileşime geçebilirsiniz.
     about_mastodon_html: Mastodon <em>ücretsiz ve açık kaynaklı</em> bir sosyal ağdır. <em>Merkezileştirilmemiş</em> yapısı sayesinde diğer ticari sosyal platformların aksine iletişimininizin tek bir firmada tutulmasının/yönetilmesinin önüne geçer. Güvendiğiniz bir sunucuyu seçerek oradaki kişilerle etkileşimde bulunabilirsiniz. Herkes kendi Mastodon sunucusunu kurabilir ve sorunsuz bir şekilde Mastodon <em>sosyal ağına</em> dahil edebilir.
     about_this: Hakkında
     active_count_after: etkin
@@ -28,7 +28,7 @@ tr:
     learn_more: Daha fazla bilgi edinin
     logged_in_as_html: Şu an %{username} olarak oturum açmışsınız.
     logout_before_registering: Zaten oturumunuz açık.
-    privacy_policy: Gizlilik politikası
+    privacy_policy: Gizlilik Politikası
     rules: Sunucu kuralları
     rules_html: 'Aşağıda, bu Mastodon sunucusu üzerinde bir hesap açmak istiyorsanız uymanız gereken kuralların bir özeti var:'
     see_whats_happening: Neler olduğunu görün
@@ -39,7 +39,6 @@ tr:
       other: durum yazıldı
     status_count_before: Şu ana kadar
     tagline: Merkezi olmayan sosyal ağ
-    terms: Kullanım şartları
     unavailable_content: Denetlenen sunucular
     unavailable_content_description:
       domain: Sunucu
@@ -79,14 +78,12 @@ tr:
       following: Onaylamak istediğiniz kişiyi zaten takip ediyor olmalısınız
     posts:
       one: Gönderi
-      other: Toot
+      other: Gönderiler
     posts_tab_heading: Tootlar
     posts_with_replies: Tootlar ve yanıtlar
     roles:
-      admin: Yönetici
       bot: Bot
       group: Grup
-      moderator: Denetleyici
     unavailable: Profil kullanılamıyor
     unfollow: Takibi bırak
   admin:
@@ -105,12 +102,17 @@ tr:
       avatar: Profil resmi
       by_domain: Alan adı
       change_email:
-        changed_msg: Hesap e-postası başarıyla değiştirildi!
+        changed_msg: E-posta başarıyla değiştirildi!
         current_email: Mevcut e-posta
         label: E-postayı değiştir
         new_email: Yeni e-posta
         submit: E-postayı değiştir
         title: "%{username} için e-postayı değiştir"
+      change_role:
+        changed_msg: Rol başarıyla değiştirildi!
+        label: Rolü değiştir
+        no_role: Rol yok
+        title: "%{username} için rolü değiştir"
       confirm: Onayla
       confirmed: Onaylandı
       confirming: Onaylanıyor
@@ -154,6 +156,7 @@ tr:
         active: Etkin
         all: Hepsi
         pending: Bekliyor
+        silenced: Sınırlı
         suspended: Uzaklaştırılanlar
         title: Denetim
       moderation_notes: Denetleme notları
@@ -161,6 +164,7 @@ tr:
       most_recent_ip: Son IP
       no_account_selected: Hiçbiri seçilmediğinden hiçbir hesap değiştirilmedi
       no_limits_imposed: Sınır koymaz
+      no_role_assigned: Rol atanmamış
       not_subscribed: Abone edilmedi
       pending: Bekleyen yorum
       perform_full_suspension: Askıya al
@@ -187,12 +191,7 @@ tr:
       reset: Sıfırla
       reset_password: Parolayı sıfırla
       resubscribe: Yeniden abone ol
-      role: İzinler
-      roles:
-        admin: Yönetici
-        moderator: Denetleyici
-        staff: Personel
-        user: Kullanıcı
+      role: Rol
       search: Ara
       search_same_email_domain: Aynı e-posta alan adına sahip diğer kullanıcılar
       search_same_ip: Aynı IP adresine sahip diğer kullanıcılar
@@ -235,17 +234,21 @@ tr:
         approve_user: Kullanıcıyı Onayla
         assigned_to_self_report: Raporu Ata
         change_email_user: Kullanıcı E-postasını Değiştir
+        change_role_user: Kullanıcının Rolünü Değiştir
         confirm_user: Kullanıcıyı Onayla
         create_account_warning: Uyarı Oluştur
         create_announcement: Duyuru Oluştur
+        create_canonical_email_block: E-posta Engeli Oluştur
         create_custom_emoji: Özel İfade Oluştur
         create_domain_allow: İzin Verilen Alan Adı Oluştur
         create_domain_block: Engellenen Alan Adı Oluştur
         create_email_domain_block: E-Posta Alan Adı Engeli Oluştur
         create_ip_block: IP kuralı oluştur
         create_unavailable_domain: Mevcut Olmayan Alan Adı Oluştur
+        create_user_role: Rol Oluştur
         demote_user: Kullanıcıyı Düşür
         destroy_announcement: Duyuru Sil
+        destroy_canonical_email_block: E-Posta Engelini Sil
         destroy_custom_emoji: Özel İfadeyi Sil
         destroy_domain_allow: İzin Verilen Alan Adını Sil
         destroy_domain_block: Engellenen Alan Adını Sil
@@ -254,6 +257,7 @@ tr:
         destroy_ip_block: IP kuralını sil
         destroy_status: Durumu Sil
         destroy_unavailable_domain: Mevcut Olmayan Alan Adı Sil
+        destroy_user_role: Rolü Kaldır
         disable_2fa_user: 2AD Kapat
         disable_custom_emoji: Özel İfadeyi Devre Dışı Bırak
         disable_sign_in_token_auth_user: Kullanıcı için E-posta Token Doğrulamayı devre dışı bırak
@@ -280,24 +284,30 @@ tr:
         update_announcement: Duyuruyu Güncelle
         update_custom_emoji: Özel İfadeyi Güncelle
         update_domain_block: Engellenen Alan Adını Güncelle
+        update_ip_block: IP kuralını güncelle
         update_status: Durumu Güncelle
+        update_user_role: Rolü Güncelle
       actions:
         approve_appeal_html: "%{name}, %{target} kullanıcısının yönetim kararına itirazını kabul etti"
         approve_user_html: "%{name}, %{target} konumundan kaydı onayladı"
         assigned_to_self_report_html: "%{name} kendilerine %{target} adlı raporu verdi"
         change_email_user_html: "%{name}, %{target} kullanıcısının e-posta adresini değiştirdi"
+        change_role_user_html: "%{name}, %{target} kişisinin rolünü değiştirdi"
         confirm_user_html: "%{name} %{target} kullanıcısının e-posta adresini onayladı"
         create_account_warning_html: "%{name} %{target} 'a bir uyarı gönderdi"
         create_announcement_html: "%{name}, yeni %{target} duyurusunu oluşturdu"
+        create_canonical_email_block_html: "%{name}, %{target} karmasıyla e-posta engelledi"
         create_custom_emoji_html: "%{name} yeni %{target} ifadesini yükledi"
         create_domain_allow_html: "%{name}, %{target} alan adıyla birliğe izin verdi"
         create_domain_block_html: "%{name}, %{target} alan adını engelledi"
         create_email_domain_block_html: "%{name}, %{target} e-posta alan adını engelledi"
         create_ip_block_html: "%{name}, %{target} IP adresi için kural oluşturdu"
         create_unavailable_domain_html: "%{name}, %{target} alan adına teslimatı durdurdu"
+        create_user_role_html: "%{name}, %{target} rolünü oluşturdu"
         demote_user_html: "%{name}, %{target} kullanıcısını düşürdü"
         destroy_announcement_html: "%{name}, %{target} duyurusunu sildi"
-        destroy_custom_emoji_html: "%{name}, %{target} emojisini yok etti"
+        destroy_canonical_email_block_html: "%{name}, %{target} karmasıyla e-posta engelini kaldırdı"
+        destroy_custom_emoji_html: "%{name}, %{target} ifadesini sildi"
         destroy_domain_allow_html: "%{name}, %{target} alan adıyla birlik iznini kaldırdı"
         destroy_domain_block_html: "%{name}, %{target} alan adı engelini kaldırdı"
         destroy_email_domain_block_html: "%{name}, %{target} e-posta alan adı engelini kaldırdı"
@@ -305,6 +315,7 @@ tr:
         destroy_ip_block_html: "%{name}, %{target} IP adresi kuralını sildi"
         destroy_status_html: "%{name}, %{target} kullanıcısının gönderisini kaldırdı"
         destroy_unavailable_domain_html: "%{name}, %{target} alan adına teslimatı sürdürdü"
+        destroy_user_role_html: "%{name}, %{target} rolünü sildi"
         disable_2fa_user_html: "%{name}, %{target} kullanıcısının iki aşamalı doğrulama gereksinimini kapattı"
         disable_custom_emoji_html: "%{name}, %{target} emojisini devre dışı bıraktı"
         disable_sign_in_token_auth_user_html: "%{name}, %{target} için e-posta token doğrulamayı devre dışı bıraktı"
@@ -331,8 +342,9 @@ tr:
         update_announcement_html: "%{name}, %{target} duyurusunu güncelledi"
         update_custom_emoji_html: "%{name}, %{target} emojisini güncelledi"
         update_domain_block_html: "%{name}, %{target} alan adının engelini güncelledi"
+        update_ip_block_html: "%{name}, %{target} IP adresi için kuralı güncelledi"
         update_status_html: "%{name}, %{target} kullanıcısının gönderisini güncelledi"
-      deleted_status: "(silinmiş durum)"
+        update_user_role_html: "%{name}, %{target} rolünü değiştirdi"
       empty: Kayıt bulunamadı.
       filter_by_action: Eyleme göre filtre
       filter_by_user: Kullanıcıya göre filtre
@@ -649,6 +661,67 @@ tr:
       unresolved: Giderilmedi
       updated_at: Güncellendi
       view_profile: Profili görüntüle
+    roles:
+      add_new: Rol ekle
+      assigned_users:
+        one: "%{count} kullanıcı"
+        other: "%{count} kullanıcı"
+      categories:
+        administration: Yönetim
+        devops: Devops
+        invites: Davetler
+        moderation: Denetim
+        special: Özel
+      delete: Sil
+      description_html: "<strong>Kullanıcı rolleri</strong> ile, kullanıcılarınızın Mastodon'un hangi işlevlerine ve alanlarına erişebileceğini düzenleyebilirsiniz."
+      edit: "'%{name}' rolünü düzenle"
+      everyone: Varsayılan izinler
+      everyone_full_description_html: Bu, herhangi bir rol atanmamış olanlar da olmak üzere <strong>tüm kullanıcıları</strong> etkileyen <strong>temel rol</strong>dür. Diğer tüm roller izinleri bu rolden alıyorlar.
+      permissions_count:
+        one: "%{count} izin"
+        other: "%{count} izin"
+      privileges:
+        administrator: Yönetici
+        administrator_description: Bu izne sahip kullanıcılar tüm diğer izinleri atlıyorlar
+        delete_user_data: Kullanıcı Verilerini Silme
+        delete_user_data_description: Kullanıcıların, diğer kullanıcıların verisini gecikme olmaksızın silmesine izin verir
+        invite_users: Kullanıcıları Davet Etme
+        invite_users_description: Kullanıcıların yeni kişileri sunucuya davet etmesine izin verir
+        manage_announcements: Duyuruları Yönetme
+        manage_announcements_description: Kullanıcıların sunucudaki duyuruları yönetmesine izin verir
+        manage_appeals: İtirazları Yönetme
+        manage_appeals_description: Kullanıcıların denetleme eylemlerine itirazları gözden geçirmesine izin verir
+        manage_blocks: Engelleri Yönetme
+        manage_blocks_description: Kullanıcıların e-posta sağlayıcıları ve IP adreslerini engellemesine izin verir
+        manage_custom_emojis: Özel İfadeleri Yönetme
+        manage_custom_emojis_description: Kullanıcıların sunucudaki özel ifadeleri yönetmesine izin verir
+        manage_federation: Birleştirme Yönetme
+        manage_federation_description: Kullanıcıların diğer alan adlarıyla birleştirmeye izin vermesi veya engellemesine ve teslim edilebilirliği denetlemesine izin verir
+        manage_invites: Davetleri Yönetme
+        manage_invites_description: Kullanıcıların davet bağlantılarını görüntüleme ve etkisizleştirmesine izin verir
+        manage_reports: Raporları Yönetme
+        manage_reports_description: Kullanıcıların bildirimleri incelemesine ve onlara yönelik denetim eylemleri gerçekleştirmesine izin verir
+        manage_roles: Rolleri Yönetme
+        manage_roles_description: Kullanıcıların kendi rollerinden düşük rolleri atamasına izin verir
+        manage_rules: Kuralları Yönetme
+        manage_rules_description: Kullanıcıların sunucu kurallarını değiştirmesine izin ver
+        manage_settings: Ayarları Yönetme
+        manage_settings_description: Kullanıcıların site ayarlarını değiştirmesine izin verir
+        manage_taxonomies: Kategorileri Yönetme
+        manage_taxonomies_description: Kullanıcıların öne çıkan içeriği incelemesine ve etiket ayarlarını güncellemesine izin verir
+        manage_user_access: Kullanıcı Erişimini Yönetme
+        manage_user_access_description: Kullanıcıların, diğer kullanıcıların işi aşamalı yetkilendirme, e-posta adreslerini değiştirme ve parolalarını sıfırlama eylemlerini etkisizleştirmesine izin verir
+        manage_users: Kullanıcıları Yönetme
+        manage_users_description: Kullanıcıların, diğer kullanıcıların ayrıntılarını görüntülemesine ve onlara karşı denetim eylemleri gerçekleştirmesine izin verir
+        manage_webhooks: Webhookları Yönetme
+        manage_webhooks_description: Kullanıcıların yönetsel olaylar için webhook kurmasına izin verir
+        view_audit_log: Denetim Kaydını Görüntüleme
+        view_audit_log_description: Kullanıcıların sunucudaki yönetsel eylemlerin bir tarihçesini görüntülemesine izin verir
+        view_dashboard: Ana Paneli Görüntüleme
+        view_dashboard_description: Kullanıcıların ana panele ve çeşitli ölçütlere erişmesine izin verir
+        view_devops: Devops
+        view_devops_description: Kullanıcıların Sidekiq ve pgHero panellerine erişmesine izin verir
+      title: Roller
     rules:
       add_new: Kural ekle
       delete: Sil
@@ -701,9 +774,6 @@ tr:
         deletion:
           desc_html: Herkese hesabını silme izni ver
           title: Hesap silmeyi aç
-        min_invite_role:
-          disabled: Hiç kimse
-          title: tarafından yapılan davetlere izin ver
         require_invite_text:
           desc_html: Kayıtlar elle doğrulama gerektiriyorsa, "Neden katılmak istiyorsunuz?" metin girdisini isteğe bağlı yerine zorunlu yapın
           title: Yeni kullanıcıların katılmak için bir gerekçe sunmasını gerektir
@@ -716,9 +786,6 @@ tr:
       show_known_fediverse_at_about_page:
         desc_html: Değiştirildiğinde, bilinen bütün fediverse'lerden gönderileri ön izlemede gösterir. Diğer türlü sadece yerel gönderileri gösterecektir.
         title: Zaman çizelgesi ön izlemesinde bilinen fediverse'i göster
-      show_staff_badge:
-        desc_html: Kullanıcının sayfasında bir personel rozeti göster
-        title: Personel rozeti göster
       site_description:
         desc_html: Ana sayfada paragraf olarak görüntülenecek bilgidir.<br>Özellikle <code>&lt;a&gt;</code> ve <code>&lt;em&gt;</code> olmak suretiyle HTML etiketlerini kullanabilirsiniz.
         title: Site açıklaması
@@ -729,8 +796,8 @@ tr:
         desc_html: Kenar çubuğunda ve meta etiketlerinde görüntülenir. Mastodon'un ne olduğunu ve bu sunucuyu özel kılan şeyleri tek bir paragrafta açıklayın.
         title: Kısa sunucu açıklaması
       site_terms:
-        desc_html: Kendi gizlilik politikanızı, hizmet şartlarınızı ya da diğer hukuki metinlerinizi yazabilirsiniz. HTML etiketleri kullanabilirsiniz
-        title: Özel hizmet şartları
+        desc_html: Kendi gizlilik politikanızı yazabilirsiniz. HTML etiketlerini kullanabilirsiniz
+        title: Özel gizlilik politikası
       site_title: Site başlığı
       thumbnail:
         desc_html: OpenGraph ve API ile ön izlemeler için kullanılır. 1200x630px tavsiye edilir
@@ -740,8 +807,8 @@ tr:
         title: Zaman çizelgesi önizlemesi
       title: Site Ayarları
       trendable_by_default:
-        desc_html: Daha önce izin verilmeyen etiketleri etkiler
-        title: Ön inceleme yapmadan etiketlerin trend olmasına izin ver
+        desc_html: Belirli öne çıkan içeriğe yine de açıkça izin verilmeyebilir
+        title: Ön inceleme yapmadan öne çıkmalara izin ver
       trends:
         desc_html: Şu anda trend olan ve daha önce incelenen etiketleri herkese açık olarak göster
         title: Gündem etiketleri
@@ -1124,16 +1191,40 @@ tr:
       public: Genel zaman çizelgesi
       thread: Sohbetler
     edit:
+      add_keyword: Anahtar sözcük ekle
+      keywords: Anahtar Sözcükler
+      statuses: Tekil gönderiler
+      statuses_hint_html: Bu filtre, aşağıdaki anahtar kelimelerle eşleşip eşleşmediklerinden bağımsız olarak tekil gönderileri seçmek için uygulanıyor. <a href="%{path}">Filtredeki gönderileri inceleyin veya kaldırın</a>.
       title: Filtreyi düzenle
     errors:
+      deprecated_api_multiple_keywords: Bu parametreler, birden fazla filtre anahtar sözcüğü için geçerli olduğundan dolayı bu uygulama içerisinden değiştirilemezler. Daha yeni bir uygulama veya web arayüzünü kullanın.
       invalid_context: Sıfır ya da geçersiz içerik sağlandı
-      invalid_irreversible: Geri dönüşümsüz filtreleme sadece anasayfa ya da bildirim bağlamında çalışır
     index:
+      contexts: "%{contexts} içindeki filtreler"
       delete: Sil
       empty: Hiç filtreniz yok.
+      expires_in: "%{distance} sürede sona eriyor"
+      expires_on: "%{date} tarihinde sona eriyor"
+      keywords:
+        one: "%{count} anahtar sözcük"
+        other: "%{count} anahtar sözcük"
+      statuses:
+        one: "%{count} gönderi"
+        other: "%{count} gönderi"
+      statuses_long:
+        one: "%{count} tekil gönderi gizli"
+        other: "%{count} tekil gönderi gizli"
       title: Filtreler
     new:
+      save: Yeni filtre kaydet
       title: Yeni filtre ekle
+    statuses:
+      back_to_filter: Filtreye dön
+      batch:
+        remove: Filtreden kaldır
+      index:
+        hint: Bu filtre diğer ölçütlerden bağımsız olarak tekil gönderileri seçmek için uygulanıyor. Web arayüzünü kullanarak bu filtreye daha fazla gönderi ekleyebilirsiniz.
+        title: Filtrelenmiş gönderiler
   footer:
     developers: Geliştiriciler
     more: Daha Fazla…
@@ -1141,12 +1232,22 @@ tr:
     trending_now: Şu an gündemde
   generic:
     all: Tümü
+    all_items_on_page_selected_html:
+      one: Bu sayfadaki <strong>%{count}</strong> öğe seçilmiş.
+      other: Bu sayfadaki tüm <strong>%{count}</strong> öğe seçilmiş.
+    all_matching_items_selected_html:
+      one: Aramanızla eşleşen <strong>%{count}</strong> öğe seçilmiş.
+      other: Aramanızla eşleşen tüm <strong>%{count}</strong> öğe seçilmiş.
     changes_saved_msg: Değişiklikler başarıyla kaydedildi!
     copy: Kopyala
     delete: Sil
+    deselect: Hiçbirini seçme
     none: Hiçbiri
     order_by: Sıralama ölçütü
     save_changes: Değişiklikleri kaydet
+    select_all_matching_items:
+      one: Aramanızla eşleşen %{count} öğeyi seç.
+      other: Aramanızla eşleşen tüm %{count} öğeyi seç.
     today: bugün
     validation_errors:
       one: Bir şeyler ters gitti! Lütfen aşağıdaki hatayı gözden geçiriniz
@@ -1251,19 +1352,10 @@ tr:
     copy_account_note_text: 'Bu kullanıcı %{acct} adresinden taşındı, işte onlarla ilgili önceki notlarınız:'
   notification_mailer:
     admin:
+      report:
+        subject: "%{name} bir bildirim gönderdi"
       sign_up:
         subject: "%{name} kaydoldu"
-    digest:
-      action: Tüm bildirimleri görüntüle
-      body: Son ziyaretiniz olan %{since}'den beri'da kaçırdığınız şeylerin özeti
-      mention: "%{name} senden bahsetti:"
-      new_followers_summary:
-        one: Ayrıca, uzaktayken yeni bir takipçi kazandınız! Yaşasın!
-        other: Ayrıca, uzaktayken %{count} yeni takipçi kazandınız! İnanılmaz!
-      subject:
-        one: "Son ziyaretinizden bu yana 1 yeni bildirim 🐘"
-        other: "Son ziyaretinizden bu yana %{count} yeni bildirim 🐘"
-      title: Senin yokluğunda...
     favourite:
       body: "%{name} durumunu beğendi:"
       subject: "%{name} durumunu beğendi"
@@ -1625,7 +1717,7 @@ tr:
       <p>Bu belge CC-BY-SA altında lisanslanmıştır. En son 26 Mayıs 2022 tarihinde güncellenmiştir.</p>
 
       <p><a href="https://github.com/discourse/discourse">Discourse gizlilik politikasından uyarlanmıştır</a>.</p>
-    title: "%{instance} Hizmet Şartları ve Gizlilik Politikası"
+    title: "%{instance} Gizlilik Politikası"
   themes:
     contrast: Mastodon (Yüksek karşıtlık)
     default: Mastodon (Karanlık)

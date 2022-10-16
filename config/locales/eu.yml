@@ -26,7 +26,6 @@ eu:
     learn_more: Ikasi gehiago
     logged_in_as_html: "%{username} bezala saioa hasita zaude."
     logout_before_registering: Saioa hasi duzu jada.
-    privacy_policy: Pribatutasun politika
     rules: Zerbitzariaren arauak
     rules_html: 'Behean Mastodon zerbitzari honetan kontua eduki nahi baduzu jarraitu beharreko arauen laburpena daukazu:'
     see_whats_happening: Ikusi zer gertatzen ari den
@@ -36,7 +35,6 @@ eu:
       one: bidalketa
       other: bidalketa
     status_count_before: Hauek
-    terms: Erabilera baldintzak
     unavailable_content: Eduki eskuraezina
     unavailable_content_description:
       domain: Zerbitzaria
@@ -80,10 +78,8 @@ eu:
     posts_tab_heading: Bidalketa
     posts_with_replies: Bidalketak eta erantzunak
     roles:
-      admin: Administratzailea
       bot: Bot-a
       group: Taldea
-      moderator: Moderatzailea
     unavailable: Profila ez dago eskuragarri
     unfollow: Utzi jarraitzeari
   admin:
@@ -102,7 +98,6 @@ eu:
       avatar: Abatarra
       by_domain: Domeinua
       change_email:
-        changed_msg: e-mail kontua ongi aldatu da!
         current_email: Uneko e-mail helbidea
         label: Aldatu e-mail helbidea
         new_email: E-mail berria
@@ -184,12 +179,6 @@ eu:
       reset: Berrezarri
       reset_password: Berrezarri pasahitza
       resubscribe: Berriro harpidetu
-      role: Baimenak
-      roles:
-        admin: Administratzailea
-        moderator: Moderatzailea
-        staff: Langilea
-        user: Erabiltzailea
       search: Bilatu
       search_same_email_domain: E-mail domeinu bera duten beste erabiltzailean
       search_same_ip: IP bera duten beste erabiltzaileak
@@ -294,7 +283,6 @@ eu:
         create_unavailable_domain_html: "%{name}(e)k %{target} domeinurako banaketa gelditu du"
         demote_user_html: "%{name} erabiltzaileak %{target} erabiltzailea mailaz jaitsi du"
         destroy_announcement_html: "%{name} erabiltzaileak %{target} iragarpena ezabatu du"
-        destroy_custom_emoji_html: "%{name} erabiltzaileak %{target} emojia suntsitu du"
         destroy_domain_allow_html: "%{name} erabiltzaileak %{target} domeinuarekin federatzea debekatu du"
         destroy_domain_block_html: "%{name} erabiltzaileak %{target} domeinua desblokeatu du"
         destroy_email_domain_block_html: "%{name} erabiltzaileak %{target} e-posta helbideen domeinua desblokeatu du"
@@ -329,7 +317,6 @@ eu:
         update_custom_emoji_html: "%{name} erabiltzaileak %{target} emoji-a eguneratu du"
         update_domain_block_html: "%{name} erabiltzaileak %{target} domeinu-blokeoa eguneratu du"
         update_status_html: "%{name} erabiltzaileak %{target} erabiltzailearen bidalketa eguneratu du"
-      deleted_status: "(ezabatutako bidalketa)"
       empty: Ez da egunkaririk aurkitu.
       filter_by_action: Iragazi ekintzen arabera
       filter_by_user: Iragazi erabiltzaileen arabera
@@ -674,9 +661,6 @@ eu:
         deletion:
           desc_html: Baimendu edonori bere kontua ezabatzea
           title: Ireki kontu ezabaketa
-        min_invite_role:
-          disabled: Inor ez
-          title: Baimendu hauen gobidapenak
         require_invite_text:
           desc_html: Izen emateak eskuz onartu behar direnean, "Zergatik elkartu nahi duzu?" testu sarrera derrigorrezko bezala ezarri, ez hautazko
           title: Eskatu erabiltzaile berriei bat egiteko arrazoia sartzeko
@@ -689,9 +673,6 @@ eu:
       show_known_fediverse_at_about_page:
         desc_html: Txandakatzean, fedibertso ezagun osoko tootak bistaratuko ditu aurrebistan. Bestela, toot lokalak besterik ez ditu erakutsiko
         title: Erakutsi fedibertsu ezagun osoko denbora-lerroa aurrebistan
-      show_staff_badge:
-        desc_html: Erakutsi langile banda erabiltzailearen orrian
-        title: Erakutsi langile banda
       site_description:
         desc_html: Azaleko orrian agertuko den sarrera paragrafoa. Azaldu zerk egiten duen berezi Mastodon zerbitzari hau eta garrantzizko beste edozer. HTML etiketak erabili ditzakezu, zehazki <code>&lt;a&gt;</code> eta <code>&lt;em&gt;</code>.
         title: Zerbitzariaren deskripzioa
@@ -701,9 +682,6 @@ eu:
       site_short_description:
         desc_html: Albo-barra eta meta etiketetan bistaratua. Deskribatu zerk egiten duen Mastodon zerbitzari hau berezia paragrafo batean. Hutsik lagatzekotan lehenetsitako deskripzioa agertuko da.
         title: Zerbitzariaren deskripzio laburra
-      site_terms:
-        desc_html: Zure pribatutasun politika, erabilera baldintzak eta bestelako testu legalak idatzi ditzakezu. HTML etiketak erabili ditzakezu
-        title: Erabilera baldintza pertsonalizatuak
       site_title: Zerbitzariaren izena
       thumbnail:
         desc_html: Aurrebistetarako erabilia OpenGraph eta API bidez. 1200x630px aholkatzen da
@@ -712,9 +690,6 @@ eu:
         desc_html: Bistaratu denbora-lerro publikoa hasiera orrian
         title: Denbora-lerroaren aurrebista
       title: Gunearen ezarpenak
-      trendable_by_default:
-        desc_html: Aurretik debekatu ez diren traola guztiei eragiten dio
-        title: Baimendu traolak joera bihurtzea aurretik errebisatu gabe
       trends:
         desc_html: Erakutsi publikoki orain joeran dauden aurretik errebisatutako traolak
         title: Traolak joeran
@@ -1020,7 +995,6 @@ eu:
       title: Editatu iragazkia
     errors:
       invalid_context: Testuinguru baliogabe edo hutsa eman da
-      invalid_irreversible: Behin betiko iragazketa hasiera edo jakinarazpenen testuinguruan besterik ez dabil
     index:
       delete: Ezabatu
       empty: Ez duzu iragazkirik.
@@ -1143,14 +1117,6 @@ eu:
     carry_mutes_over_text: Erabiltzaile hau %{acct} kontutik dator, zeina isilarazita daukazun.
     copy_account_note_text: 'Erabiltzaile hau %{acct} kontutik dator, hemen berari buruzko zure aurreko oharrak:'
   notification_mailer:
-    digest:
-      action: Ikusi jakinarazpen guztiak
-      body: Hona zure %{since}(e)ko azken bisitatik galdu dituzun mezuen laburpen bat
-      mention: "%{name}(e)k aipatu zaitu:"
-      new_followers_summary:
-        one: Kanpoan zeundela jarraitzaile berri bat gehitu zaizu!
-        other: Kanpoan zeundela %{count} jarraitzaile berri bat gehitu zaizkizu!
-      title: Kanpoan zeundela...
     favourite:
       body: "%{name}(e)k zure bidalketa gogoko du:"
       subject: "%{name}(e)k zure bidalketa gogoko du"
@@ -1414,8 +1380,6 @@ eu:
     sensitive_content: 'Kontuz: Eduki hunkigarria'
   tags:
     does_not_match_previous_name: ez dator aurreko izenarekin bat
-  terms:
-    title: "%{instance} instantziaren erabilera baldintzak eta pribatutasun politika"
   themes:
     contrast: Mastodon (Kontraste altua)
     default: Mastodon (Iluna)

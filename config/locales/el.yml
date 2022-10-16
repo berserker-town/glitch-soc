@@ -26,7 +26,7 @@ el:
       Χρησιμεύει στη λειτουργία της ομοσπονδίας και δε θα πρέπει να αποκλειστεί, εκτός κι αν είναι επιθυμητός ο αποκλεισμός ολόκληρου του κόμβου. Σε αυτή την περίπτωση θα πρέπει να χρησιμοποιηθεί η λειτουργία αποκλεισμού τομέα.
     learn_more: Μάθε περισσότερα
     logout_before_registering: Είστε ήδη συνδεδεμένοι.
-    privacy_policy: Πολιτική απορρήτου
+    privacy_policy: Πολιτική Απορρήτου
     rules: Κανόνες διακομιστή
     rules_html: 'Παρακάτω είναι μια σύνοψη των κανόνων που πρέπει να ακολουθήσετε αν θέλετε να έχετε ένα λογαριασμό σε αυτόν τον διακομιστή Mastodon:'
     see_whats_happening: Μάθε τι συμβαίνει
@@ -37,7 +37,6 @@ el:
       other: δημοσιεύσεις
     status_count_before: Που έγραψαν
     tagline: Αποκεντρωμένο κοινωνικό δίκτυο
-    terms: Όροι χρήσης
     unavailable_content: Μη διαθέσιμο
     unavailable_content_description:
       domain: Διακομιστής
@@ -80,10 +79,8 @@ el:
     posts_tab_heading: Τουτ
     posts_with_replies: Τουτ και απαντήσεις
     roles:
-      admin: Διαχειριστής
       bot: Μποτ (αυτόματος λογαριασμός)
       group: Ομάδα
-      moderator: Μεσολαβητής
     unavailable: Το προφίλ δεν είναι διαθέσιμο
     unfollow: Διακοπή παρακολούθησης
   admin:
@@ -102,12 +99,15 @@ el:
       avatar: Αβατάρ
       by_domain: Τομέας
       change_email:
-        changed_msg: Επιτυχής αλλαγή email λογαριασμού!
         current_email: Τρέχον email
         label: Αλλαγή email
         new_email: Νέο email
         submit: Αλλαγή email
         title: Αλλαγή email για %{username}
+      change_role:
+        label: Αλλαγή ρόλου
+        no_role: Κανένας ρόλος
+        title: Αλλαγή ρόλου για %{username}
       confirm: Επιβεβαίωση
       confirmed: Επιβεβαιώθηκε
       confirming: Προς επιβεβαίωση
@@ -148,6 +148,7 @@ el:
         active: Ενεργός/ή
         all: Όλα
         pending: Εκκρεμούν
+        silenced: Περιορισμένοι
         suspended: Σε αναστολή
         title: Μεσολάβηση
       moderation_notes: Σημειώσεις μεσολάβησης
@@ -155,6 +156,7 @@ el:
       most_recent_ip: Πιο πρόσφατη IP
       no_account_selected: Κανείς λογαριασμός δεν ενημερώθηκε αφού κανείς δεν ήταν επιλεγμένος
       no_limits_imposed: Χωρίς όρια
+      no_role_assigned: Δεν έχει ανατεθεί ρόλος
       not_subscribed: Άνευ συνδρομής
       pending: Εκκρεμεί έγκριση
       perform_full_suspension: Αναστολή
@@ -177,12 +179,7 @@ el:
       reset: Επαναφορά
       reset_password: Επαναφορά συνθηματικού
       resubscribe: Επανεγγραφή
-      role: Δικαιώματα
-      roles:
-        admin: Διαχειριστής
-        moderator: Συντονιστής
-        staff: Προσωπικό
-        user: Χρήστης
+      role: Ρόλος
       search: Αναζήτηση
       search_same_email_domain: Άλλοι χρήστες με τον ίδιο τομέα e-mail
       search_same_ip: Υπόλοιποι χρήστες με την ίδια διεύθυνση IP
@@ -267,7 +264,6 @@ el:
         destroy_instance_html: Ο/Η %{name} εκκαθάρισε τον τομέα %{target}
         reject_user_html: "%{name} απορρίφθηκε εγγραφή από %{target}"
         unblock_email_account_html: "%{name} ξεμπλόκαρε τη διεύθυνση ηλεκτρονικού ταχυδρομείου του %{target}"
-      deleted_status: "(διαγραμμένη δημοσίευση)"
       empty: Δεν βρέθηκαν αρχεία καταγραφής.
       filter_by_action: Φιλτράρισμα ανά ενέργεια
       filter_by_user: Φιλτράρισμα ανά χρήστη
@@ -492,6 +488,16 @@ el:
       unresolved: Άλυτη
       updated_at: Ενημερωμένη
       view_profile: Προβολή προφίλ
+    roles:
+      add_new: Προσθήκη ρόλου
+      assigned_users:
+        one: "%{count} χρήστης"
+        other: "%{count} χρήστες"
+      categories:
+        administration: Διαχείριση
+        devops: Devops
+        invites: Προσκλήσεις
+      delete: Διαγραφή
     rules:
       add_new: Προσθήκη κανόνα
       delete: Διαγραφή
@@ -544,9 +550,6 @@ el:
         deletion:
           desc_html: Επέτρεψε σε οποιονδήποτε να διαγράψει το λογαριασμό του/της
           title: Άνοιξε τη διαγραφή λογαριασμού
-        min_invite_role:
-          disabled: Κανείς
-          title: Επέτρεψε προσκλήσεις από
       registrations_mode:
         modes:
           approved: Απαιτείται έγκριση για εγγραφή
@@ -556,9 +559,6 @@ el:
       show_known_fediverse_at_about_page:
         desc_html: Όταν αντιστραφεί, θα δείχνει τα τουτ από όλο το γνωστό fediverse στην προεπισκόπηση. Διαφορετικά θα δείχνει μόνο τοπικά τουτ.
         title: Εμφάνιση του γνωστού fediverse στην προεπισκόπηση ροής
-      show_staff_badge:
-        desc_html: Δείξε ένα σήμα προσωπικού στη σελίδα ενός χρήστη
-        title: Δείξε διακριτικό προσωπικού
       site_description:
         desc_html: Εισαγωγική παράγραφος στην αρχική σελίδα. Περιέγραψε τι κάνει αυτό τον διακομιστή Mastodon διαφορετικό και ό,τι άλλο ενδιαφέρον. Μπορείς να χρησιμοποιήσεις HTML tags, συγκεκριμένα <code>&lt; a&gt;</code> και <code> &lt; em&gt;</code>.
         title: Περιγραφή κόμβου
@@ -569,8 +569,8 @@ el:
         desc_html: Εμφανίζεται στην πλαϊνή μπάρα και στα meta tags. Περιέγραψε τι είναι το Mastodon και τι κάνει αυτό τον διακομιστή ιδιαίτερο σε μια παράγραφο. Αν μείνει κενό, θα χρησιμοποιήσει την προκαθορισμένη περιγραφή του κόμβου.
         title: Σύντομη περιγραφή του κόμβου
       site_terms:
-        desc_html: Μπορείς να γράψεις τη δική σου πολιτική απορρήτου, όρους χρήσης ή άλλους νομικούς όρους. Μπορείς να χρησιμοποιήσεις HTML tags
-        title: Προσαρμοσμένοι όροι χρήσης της υπηρεσίας
+        desc_html: Μπορείτε να γράψετε τη δική σας πολιτική απορρήτου. Μπορείτε να χρησιμοποιήσετε ετικέτες HTML
+        title: Προσαρμοσμένη πολιτική απορρήτου
       site_title: Όνομα κόμβου
       thumbnail:
         desc_html: Χρησιμοποιείται για προεπισκοπήσεις μέσω του OpenGraph και του API. Συστήνεται 1200x630px
@@ -579,9 +579,6 @@ el:
         desc_html: Εμφάνισε τη δημόσια ροή στην αρχική σελίδα
         title: Προεπισκόπιση ροής
       title: Ρυθμίσεις ιστότοπου
-      trendable_by_default:
-        desc_html: Επηρεάζει όσες ετικέτες δεν είχαν απαγορευτεί νωρίτερα
-        title: Επέτρεψε στις ετικέτες να εμφανίζονται στις τάσεις χωρίς να χρειάζεται πρώτα έγκριση
       trends:
         desc_html: Δημόσια εμφάνιση ετικετών που έχουν ήδη εγκριθεί και είναι δημοφιλείς
         title: Δημοφιλείς ετικέτες
@@ -820,15 +817,20 @@ el:
       public: Δημόσιες ροές
       thread: Συζητήσεις
     edit:
+      add_keyword: Προσθήκη λέξης-κλειδιού
+      keywords: Λέξεις-κλειδιά
       title: Ενημέρωση φίλτρου
     errors:
       invalid_context: Έδωσες λάθος ή ανύπαρκτο πλαίσιο
-      invalid_irreversible: Τα μη αντιστρέψιμα φίλτρα δουλεύουν μόνο στα πλαίσια της αρχικής ροής και των ειδοποιήσεων
     index:
+      contexts: Φίλτρα σε %{contexts}
       delete: Διαγραφή
       empty: Δεν έχεις φίλτρα.
+      expires_in: Λήγει σε %{distance}
+      expires_on: Λήγει στις %{date}
       title: Φίλτρα
     new:
+      save: Αποθήκευση νέου φίλτρου
       title: Πρόσθεσε νέο φίλτρο
   footer:
     developers: Ανάπτυξη
@@ -935,19 +937,10 @@ el:
     copy_account_note_text: 'Ο/Η χρήστης μετακόμισε από το %{acct}, ορίστε οι προηγούμενες σημειώσεις σου:'
   notification_mailer:
     admin:
+      report:
+        subject: "%{name} υπέβαλε μια αναφορά"
       sign_up:
         subject: "%{name} έχει εγγραφεί"
-    digest:
-      action: Δες όλες τις ειδοποιήσεις
-      body: Μια σύνοψη των μηνυμάτων που έχασες από την τελευταία επίσκεψή σου στις %{since}
-      mention: 'Ο/Η %{name} σε ανέφερε στις:'
-      new_followers_summary:
-        one: Επίσης, απέκτησες έναν νέο ακόλουθο ενώ ήσουν μακριά!
-        other: Επίσης, απέκτησες %{count} νέους ακόλουθους ενώ ήσουν μακριά! Εκπληκτικό!
-      subject:
-        one: "1 νέα ειδοποίηση από την τελευταία επίσκεψή σου 🐘"
-        other: "%{count} νέες ειδοποιήσεις από την τελευταία επίσκεψή σου 🐘"
-      title: Ενώ έλειπες...
     favourite:
       body: 'Η κατάστασή σου αγαπήθηκε από τον/την %{name}:'
       subject: Ο/Η %{name} αγάπησε την κατάστασή σου
@@ -1158,7 +1151,7 @@ el:
   tags:
     does_not_match_previous_name: δεν ταιριάζει με το προηγούμενο όνομα
   terms:
-    title: Όροι Χρήσης και Πολιτική Απορρήτου του κόμβου %{instance}
+    title: "%{instance} Πολιτική Απορρήτου"
   themes:
     contrast: Mastodon (Υψηλή αντίθεση)
     default: Mastodon (Σκοτεινό)

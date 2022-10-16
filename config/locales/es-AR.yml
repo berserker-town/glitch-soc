@@ -39,7 +39,6 @@ es-AR:
       other: mensajes
     status_count_before: Que enviaron
     tagline: Red social descentralizada
-    terms: Términos del servicio
     unavailable_content: Servidores moderados
     unavailable_content_description:
       domain: Servidor
@@ -83,10 +82,8 @@ es-AR:
     posts_tab_heading: Mensajes
     posts_with_replies: Mensajes y respuestas
     roles:
-      admin: Administrador
       bot: Bot
       group: Grupo
-      moderator: Moderador
     unavailable: Perfil no disponible
     unfollow: Dejar de seguir
   admin:
@@ -105,12 +102,17 @@ es-AR:
       avatar: Avatar
       by_domain: Dominio
       change_email:
-        changed_msg: "¡Correo electrónico de cuenta cambiado exitosamente!"
+        changed_msg: "¡Correo electrónico cambiado exitosamente!"
         current_email: Correo electrónico actual
         label: Cambiar correo electrónico
         new_email: Nuevo correo electrónico
         submit: Cambiar correo electrónico
         title: Cambiar correo electrónico para %{username}
+      change_role:
+        changed_msg: "¡Rol cambiado exitosamente!"
+        label: Cambiar rol
+        no_role: Sin rol
+        title: Cambiar rol para %{username}
       confirm: Confirmar
       confirmed: Confirmado
       confirming: Confirmación
@@ -154,6 +156,7 @@ es-AR:
         active: Activas
         all: Todas
         pending: Pendientes
+        silenced: Limitada
         suspended: Suspendidas
         title: Moderación
       moderation_notes: Notas de moderación
@@ -161,6 +164,7 @@ es-AR:
       most_recent_ip: Dirección IP más reciente
       no_account_selected: No se cambió ninguna cuenta ya que ninguna fue seleccionada
       no_limits_imposed: Sin límites impuestos
+      no_role_assigned: Sin rol asignado
       not_subscribed: No suscripto
       pending: Revisión pendiente
       perform_full_suspension: Suspender
@@ -187,12 +191,7 @@ es-AR:
       reset: Restablecer
       reset_password: Cambiar contraseña
       resubscribe: Resuscribir
-      role: Permisos
-      roles:
-        admin: Administrador
-        moderator: Moderador
-        staff: Administración
-        user: Usuario
+      role: Rol
       search: Buscar
       search_same_email_domain: Otros usuarios con el mismo dominio de correo electrónico
       search_same_ip: Otros usuarios con la misma dirección IP
@@ -235,17 +234,21 @@ es-AR:
         approve_user: Aprobar usuario
         assigned_to_self_report: Asignar denuncia
         change_email_user: Cambiar correo electrónico del usuario
+        change_role_user: Cambiar rol del usuario
         confirm_user: Confirmar usuario
         create_account_warning: Crear advertencia
         create_announcement: Crear anuncio
+        create_canonical_email_block: Crear bloqueo de correo electrónico
         create_custom_emoji: Crear emoji personalizado
         create_domain_allow: Crear permiso de dominio
         create_domain_block: Crear bloqueo de dominio
         create_email_domain_block: Crear bloqueo de dominio de correo electrónico
         create_ip_block: Crear regla de dirección IP
         create_unavailable_domain: Crear dominio no disponible
+        create_user_role: Crear rol
         demote_user: Descender usuario
         destroy_announcement: Eliminar anuncio
+        destroy_canonical_email_block: Eliminar bloqueo de correo electrónico
         destroy_custom_emoji: Eliminar emoji personalizado
         destroy_domain_allow: Eliminar permiso de dominio
         destroy_domain_block: Eliminar bloqueo de dominio
@@ -254,6 +257,7 @@ es-AR:
         destroy_ip_block: Eliminar regla de dirección IP
         destroy_status: Eliminar mensaje
         destroy_unavailable_domain: Eliminar dominio no disponible
+        destroy_user_role: Destruir rol
         disable_2fa_user: Deshabilitar 2FA
         disable_custom_emoji: Deshabilitar emoji personalizado
         disable_sign_in_token_auth_user: Deshabilitar autenticación de token por correo electrónico para el usuario
@@ -280,24 +284,30 @@ es-AR:
         update_announcement: Actualizar anuncio
         update_custom_emoji: Actualizar emoji personalizado
         update_domain_block: Actualizar bloque de dominio
+        update_ip_block: Actualizar regla de dirección IP
         update_status: Actualizar mensaje
+        update_user_role: Actualizar rol
       actions:
         approve_appeal_html: "%{name} aprobó la solicitud de moderación de %{target}"
         approve_user_html: "%{name} aprobó el registro de %{target}"
         assigned_to_self_report_html: "%{name} se asignó la denuncia %{target} a sí"
         change_email_user_html: "%{name} cambió la dirección de correo electrónico del usuario %{target}"
+        change_role_user_html: "%{name} cambió el rol de %{target}"
         confirm_user_html: "%{name} confirmó la dirección de correo del usuario %{target}"
         create_account_warning_html: "%{name} envió una advertencia a %{target}"
         create_announcement_html: "%{name} creó el nuevo anuncio %{target}"
+        create_canonical_email_block_html: "%{name} bloqueó el correo electrónico con el hash %{target}"
         create_custom_emoji_html: "%{name} subió nuevo emoji %{target}"
         create_domain_allow_html: "%{name} permitió la federación con el dominio %{target}"
         create_domain_block_html: "%{name} bloqueó el dominio %{target}"
         create_email_domain_block_html: "%{name} bloqueó el dominio de correo electrónico %{target}"
         create_ip_block_html: "%{name} creó la regla para la dirección IP %{target}"
         create_unavailable_domain_html: "%{name} detuvo la entrega al dominio %{target}"
+        create_user_role_html: "%{name} creó el rol %{target}"
         demote_user_html: "%{name} bajó de nivel al usuario %{target}"
         destroy_announcement_html: "%{name} eliminó el anuncio %{target}"
-        destroy_custom_emoji_html: "%{name} destruyó el emoji %{target}"
+        destroy_canonical_email_block_html: "%{name} desbloqueó el correo electrónico con el hash %{target}"
+        destroy_custom_emoji_html: "%{name} eliminó el emoji %{target}"
         destroy_domain_allow_html: "%{name} no permitió la federación con el dominio %{target}"
         destroy_domain_block_html: "%{name} desbloqueó el dominio %{target}"
         destroy_email_domain_block_html: "%{name} desbloqueó el dominio de correo electrónico %{target}"
@@ -305,6 +315,7 @@ es-AR:
         destroy_ip_block_html: "%{name} eliminó la regla para la dirección IP %{target}"
         destroy_status_html: "%{name} eliminó el mensaje de %{target}"
         destroy_unavailable_domain_html: "%{name} reanudó la entrega al dominio %{target}"
+        destroy_user_role_html: "%{name} eliminó el rol %{target}"
         disable_2fa_user_html: "%{name} deshabilitó el requerimiento de dos factores para el usuario %{target}"
         disable_custom_emoji_html: "%{name} deshabilitó el emoji %{target}"
         disable_sign_in_token_auth_user_html: "%{name} deshabilitó la autenticación de token por correo electrónico para %{target}"
@@ -331,8 +342,9 @@ es-AR:
         update_announcement_html: "%{name} actualizó el anuncio %{target}"
         update_custom_emoji_html: "%{name} actualizó el emoji %{target}"
         update_domain_block_html: "%{name} actualizó el bloqueo de dominio para %{target}"
+        update_ip_block_html: "%{name} cambió la regla para la dirección IP %{target}"
         update_status_html: "%{name} actualizó el mensaje de %{target}"
-      deleted_status: "[mensaje eliminado]"
+        update_user_role_html: "%{name} cambió el rol %{target}"
       empty: No se encontraron registros.
       filter_by_action: Filtrar por acción
       filter_by_user: Filtrar por usuario
@@ -649,6 +661,67 @@ es-AR:
       unresolved: No resueltas
       updated_at: Actualizadas
       view_profile: Ver perfil
+    roles:
+      add_new: Agregar rol
+      assigned_users:
+        one: "%{count} usuario"
+        other: "%{count} usuarios"
+      categories:
+        administration: Administración
+        devops: Operadores de desarrollo
+        invites: Invitaciones
+        moderation: Moderación
+        special: Especial
+      delete: Eliminar
+      description_html: Con <strong>roles de usuario</strong>, podés personalizar las funciones y áreas de Mastodon a las que pueden acceder tus usuarios.
+      edit: Editar rol de «%{name}»
+      everyone: Permisos predeterminados
+      everyone_full_description_html: Este es el <strong>rol base</strong> que afecta a <strong>todos los usuarios</strong>, incluso aquellos sin un rol asignado. Todos los otros roles heredan permisos de él.
+      permissions_count:
+        one: "%{count} permiso"
+        other: "%{count} permisos"
+      privileges:
+        administrator: Administrador
+        administrator_description: Los usuarios con este permiso saltarán todos los permisos
+        delete_user_data: Eliminar datos del usuario
+        delete_user_data_description: Permite a los usuarios eliminar los datos de otros usuarios sin demora
+        invite_users: Invitar usuarios
+        invite_users_description: Permite a los usuarios invitar a nuevas personas al servidor
+        manage_announcements: Administrar anuncios
+        manage_announcements_description: Permite a los usuarios administrar anuncios en el servidor
+        manage_appeals: Administrar apelaciones
+        manage_appeals_description: Permite a los usuarios revisar apelaciones contra acciones de moderación
+        manage_blocks: Administrar bloqueos
+        manage_blocks_description: Permite a los usuarios bloquear proveedores de correo electrónico y direcciones IP
+        manage_custom_emojis: Administrar emojis personalizados
+        manage_custom_emojis_description: Permite a los usuarios administrar emojis personalizados en el servidor
+        manage_federation: Administrar Federación
+        manage_federation_description: Permite a los usuarios bloquear o permitir la federación con otros dominios y controlar las entregas
+        manage_invites: Administrar invitaciones
+        manage_invites_description: Permite a los usuarios navegar y desactivar los enlaces de invitación
+        manage_reports: Administrar denuncias
+        manage_reports_description: Permite a los usuarios revisar denuncias y realizar acciones de moderación contra ellas
+        manage_roles: Administrar roles
+        manage_roles_description: Permite a los usuarios administrar y asignar roles por debajo de los suyos
+        manage_rules: Administrar reglas
+        manage_rules_description: Permite a los usuarios cambiar las reglas del servidor
+        manage_settings: Administrar configuración
+        manage_settings_description: Permite a los usuarios cambiar la configuración del sitio
+        manage_taxonomies: Administrar taxonomías
+        manage_taxonomies_description: Permite a los usuarios revisar el contenido de tendencia y actualizar la configuración de las etiquetas
+        manage_user_access: Administrar acceso de usuario
+        manage_user_access_description: Permite a los usuarios deshabilitar la autenticación de dos factores de otros usuarios, cambiar su dirección de correo electrónico y restablecer su contraseña
+        manage_users: Administrar usuarios
+        manage_users_description: Permite a los usuarios ver los detalles de otros usuarios y realizar acciones de moderación contra ellos
+        manage_webhooks: Administrar Webhooks
+        manage_webhooks_description: Permite a los usuarios configurar webhooks para eventos administrativos
+        view_audit_log: Ver auditoría
+        view_audit_log_description: Permite a los usuarios ver un historial de acciones administrativas en el servidor
+        view_dashboard: Ver panel
+        view_dashboard_description: Permite a los usuarios acceder al panel de control y varias métricas
+        view_devops: Operadores de desarrollo
+        view_devops_description: Permite a los usuarios acceder a los paneles de Sidekiq y pgHero
+      title: Roles
     rules:
       add_new: Agregar regla
       delete: Eliminar
@@ -701,9 +774,6 @@ es-AR:
         deletion:
           desc_html: Permitir que cualquiera elimine su cuenta
           title: Abrir eliminación de cuenta
-        min_invite_role:
-          disabled: Nadie
-          title: Permitir invitaciones de
         require_invite_text:
           desc_html: Cuando los registros requieran aprobación manual, hacé que la solicitud de invitación "¿Por qué querés unirte?" sea obligatoria, en vez de opcional
           title: Requerir que los nuevos usuarios llenen un texto de solicitud de invitación
@@ -716,9 +786,6 @@ es-AR:
       show_known_fediverse_at_about_page:
         desc_html: Cuando está deshabilitado, restringe la línea temporal pública enlazada desde la página de inicio para mostrar sólo contenido local
         title: Incluir contenido federado en la página de línea temporal pública no autenticada
-      show_staff_badge:
-        desc_html: Mostrar una insignia de administración en la página de un usuario
-        title: Mostrar insignia de administración
       site_description:
         desc_html: Párrafo introductorio en la API. Describe qué hace especial a este servidor de Mastodon y todo lo demás que sea importante. Podés usar etiquetas HTML, en particular <code>&lt;a&gt;</code> y <code>&lt;em&gt;</code>.
         title: Descripción del servidor
@@ -729,8 +796,8 @@ es-AR:
         desc_html: Mostrado en la barra lateral y las etiquetas de metadatos. Describe qué es Mastodon y qué hace especial a este servidor en un solo párrafo.
         title: Descripción corta del servidor
       site_terms:
-        desc_html: Podés escribir tus propias políticas de privacidad, términos del servicio u otras cuestiones legales. Podés usar etiquetas HTML
-        title: Términos del servicio personalizados
+        desc_html: Podés escribir tu propia política de privacidad. Podés usar etiquetas HTML
+        title: Política de privacidad personalizada
       site_title: Nombre del servidor
       thumbnail:
         desc_html: Usado para previsualizaciones vía OpenGraph y APIs. Se recomienda 1200x630 píxeles
@@ -740,8 +807,8 @@ es-AR:
         title: Permitir acceso no autorizado a la línea temporal pública
       title: Configuración del sitio
       trendable_by_default:
-        desc_html: Afecta a etiquetas que no fueron rechazadas previamente
-        title: Permitir que las etiquetas sean tendencia sin revisión previa
+        desc_html: El contenido de tendencias específicas todavía puede ser explícitamente desactivado
+        title: Permitir tendencias sin revisión previa
       trends:
         desc_html: Mostrar públicamente etiquetas previamente revisadas que son tendencia actualmente
         title: Tendencias
@@ -1124,16 +1191,40 @@ es-AR:
       public: Líneas temporales públicas
       thread: Conversaciones
     edit:
+      add_keyword: Agregar palabra clave
+      keywords: Palabras clave
+      statuses: Mensajes individuales
+      statuses_hint_html: Este filtro se aplica a la selección de mensajes individuales, independientemente de si coinciden con las palabras clave a continuación. <a href="%{path}">Revisar o quitar mensajes del filtro</a>.
       title: Editar filtro
     errors:
+      deprecated_api_multiple_keywords: Estos parámetros no se pueden cambiar de esta aplicación porque se aplican a más de una palabra clave de filtro. Usá una aplicación más reciente o la interface web.
       invalid_context: Se suministró un contexto no válido o vacío
-      invalid_irreversible: El filtrado irreversible sólo funciona con los contextos de "Principal" o de "Notificaciones"
     index:
+      contexts: Filtros en %{contexts}
       delete: Eliminar
       empty: No tenés filtros.
+      expires_in: Caduca en %{distance}
+      expires_on: Caduca en %{date}
+      keywords:
+        one: "%{count} palabra clave"
+        other: "%{count} palabras clave"
+      statuses:
+        one: "%{count} mensaje"
+        other: "%{count} mensajes"
+      statuses_long:
+        one: "%{count} mensaje individual oculto"
+        other: "%{count} mensajes individuales ocultos"
       title: Filtros
     new:
+      save: Guardar nuevo filtro
       title: Agregar nuevo filtro
+    statuses:
+      back_to_filter: Volver al filtro
+      batch:
+        remove: Quitar del filtro
+      index:
+        hint: Este filtro se aplica a la selección de mensajes individuales, independientemente de otros criterios. Podés agregar más mensajes a este filtro desde la interface web.
+        title: Mensajes filtrados
   footer:
     developers: Desarrolladores
     more: Más…
@@ -1141,12 +1232,22 @@ es-AR:
     trending_now: Tendencia ahora
   generic:
     all: Todas
+    all_items_on_page_selected_html:
+      one: "<strong>%{count}</strong> elemento en esta página está seleccionado."
+      other: Todos los <strong>%{count}</strong> elementos en esta página están seleccionados.
+    all_matching_items_selected_html:
+      one: "<strong>%{count}</strong> elemento que coincide con tu búsqueda está seleccionado."
+      other: Todos los <strong>%{count}</strong> elementos que coinciden con tu búsqueda están seleccionados.
     changes_saved_msg: "¡Cambios guardados exitosamente!"
     copy: Copiar
     delete: Eliminar
+    deselect: Deseleccionar todo
     none: "[Ninguna]"
     order_by: Ordenar por
     save_changes: Guardar cambios
+    select_all_matching_items:
+      one: Seleccionar %{count} elemento que coincide con tu búsqueda.
+      other: Seleccionar todos los %{count} elementos que coinciden con tu búsqueda.
     today: hoy
     validation_errors:
       one: "¡Falta algo! Por favor, revisá el error abajo"
@@ -1251,19 +1352,10 @@ es-AR:
     copy_account_note_text: 'Este usuario se mudó desde %{acct}, acá están tus notas previas sobre él/ella:'
   notification_mailer:
     admin:
+      report:
+        subject: "%{name} envió una denuncia"
       sign_up:
         subject: Se registró %{name}
-    digest:
-      action: Ver todas las notificaciones
-      body: Acá tenés un resumen de los mensajes que te perdiste desde tu última visita, el %{since}
-      mention: "%{name} te mencionó en:"
-      new_followers_summary:
-        one: Además, ¡ganaste un nuevo seguidor mientras estabas ausente! ¡Esa!
-        other: Además, ¡ganaste %{count} nuevos seguidores mientras estabas ausente! ¡Esssa!
-      subject:
-        one: "1 nueva notificación desde tu última visita 🐘"
-        other: "%{count} nuevas notificaciones desde tu última visita 🐘"
-      title: En tu ausencia...
     favourite:
       body: 'Tu mensaje fue marcado como favorito por %{name}:'
       subject: "%{name} marcó tu mensaje como favorito"
@@ -1626,7 +1718,7 @@ es-AR:
       <p>Este documento se publica bajo la licencia CC-BY-SA (Creative Commons - Atribución - CompartirIgual) y fue actualizado por última vez el 26 de mayo de 2022.</p>
 
       <p>Originalmente adaptado de la <a href="https://github.com/discourse/discourse">Política de privacidad de Discourse</a>.</p>
-    title: Términos del servicio y Políticas de privacidad de %{instance}
+    title: Política de privacidad de %{instance}
   themes:
     contrast: Alto contraste
     default: Oscuro

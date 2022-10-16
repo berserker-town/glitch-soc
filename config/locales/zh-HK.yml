@@ -25,7 +25,6 @@ zh-HK:
       這個帳戶是代表伺服器，而非代表任何個人用戶的虛擬帳號。
       此帳戶是為聯盟協定而設。除非你想封鎖整個伺服器的話，否則請不要封鎖這個帳戶。如果你想封鎖伺服器，請使用網域封鎖以達到相同效果。
     learn_more: 了解更多
-    privacy_policy: 隱私權政策
     rules: 系統規則
     rules_html: 如果你想要在本站開一個新帳戶，以下是你需要遵守的規則：
     see_whats_happening: 看看發生什麼事
@@ -34,7 +33,6 @@ zh-HK:
     status_count_after:
       other: 篇文章
     status_count_before: 共發佈了
-    terms: 使用條款
     unavailable_content: 受限制的伺服器
     unavailable_content_description:
       domain: 伺服器
@@ -75,10 +73,8 @@ zh-HK:
     posts_tab_heading: 文章
     posts_with_replies: 包含回覆的文章
     roles:
-      admin: 管理員
       bot: 機械人
       group: 群組
-      moderator: 板主
     unavailable: 無法取得個人檔案
     unfollow: 取消關注
   admin:
@@ -97,7 +93,6 @@ zh-HK:
       avatar: 頭像
       by_domain: 域名
       change_email:
-        changed_msg: 帳號電郵更新成功！
         current_email: 現時電郵
         label: 更改電郵
         new_email: 新的電郵
@@ -174,12 +169,6 @@ zh-HK:
       reset: 重設
       reset_password: 重設密碼
       resubscribe: 重新訂閱
-      role: 權限
-      roles:
-        admin: 管理員
-        moderator: 管理員
-        staff: 工作人員
-        user: 普通使用者
       search: 搜尋
       search_same_email_domain: 其他有相同電郵網域的使用者
       search_same_ip: 其他有相同 IP 位址的使用者
@@ -272,7 +261,6 @@ zh-HK:
         create_unavailable_domain_html: "%{name} 停止了對網域 %{target} 的更新通知"
         demote_user_html: "%{name} 降權了 %{target}"
         destroy_announcement_html: "%{name} 刪除了公告 %{target}"
-        destroy_custom_emoji_html: "%{name} 刪除了 Emoji %{target}"
         destroy_domain_allow_html: "%{name} 禁止網域 %{target} 加入聯邦宇宙"
         destroy_domain_block_html: "%{name} 封鎖了網域 %{target}"
         destroy_email_domain_block_html: "%{name} 解除封鎖 e-mail 網域 %{target}"
@@ -303,7 +291,6 @@ zh-HK:
         update_custom_emoji_html: "%{name} 更新了 Emoji 表情符號 %{target}"
         update_domain_block_html: "%{name} 更新了對 %{target} 的網域封鎖"
         update_status_html: "%{name} 更新了 %{target} 的嘟文"
-      deleted_status: "（已刪除文章）"
       empty: 找不到任何日誌。
       filter_by_action: 按動作篩選
       filter_by_user: 按帳號篩選
@@ -568,9 +555,6 @@ zh-HK:
         deletion:
           desc_html: 允許所有人刪除自己的帳號
           title: 容許刪除帳號
-        min_invite_role:
-          disabled: 沒有人
-          title: 允許發送邀請的身份
         require_invite_text:
           desc_html: 如果已設定為手動審核注冊，請把「加入的原因」設定為必填項目。
           title: 要求新用戶填寫注冊申請
@@ -583,9 +567,6 @@ zh-HK:
       show_known_fediverse_at_about_page:
         desc_html: 如果停用，將會只在本站的歡迎頁顯示本站的文章。
         title: 在訪客預覽本站的時間軸上，顯示跨站文章
-      show_staff_badge:
-        desc_html: 在個人資料頁上顯示工作人員標誌
-        title: 顯示工作人員標誌
       site_description:
         desc_html: 在首頁顯示，及在 meta 標籤使用作網站介紹。<br/> 你可以在此使用 <code>&lt;a&gt;</code> 和 <code>&lt;em&gt;</code> 等 HTML 標籤。
         title: 本站介紹
@@ -595,9 +576,6 @@ zh-HK:
       site_short_description:
         desc_html: "顯示在側邊欄和網頁標籤(meta tags)。以一句話描述Mastodon是甚麼，有甚麼令這個伺服器脫𩓙而出。"
         title: 伺服器短描述
-      site_terms:
-        desc_html: 可以填寫自己的隱私權政策、使用條款或其他法律文本。可以使用 HTML 標籤
-        title: 自訂使用條款
       site_title: 本站名稱
       thumbnail:
         desc_html: 用於在 OpenGraph 和 API 中顯示預覽圖。推薦大小 1200×630px
@@ -606,9 +584,6 @@ zh-HK:
         desc_html: 在主頁顯示本站時間軸
         title: 時間軸預覽
       title: 網站設定
-      trendable_by_default:
-        desc_html: 影響之前並未禁止的標籤
-        title: 容許標籤不需要審核來成為今期流行
       trends:
         desc_html: 公開地顯示已審核的標籤為今期流行
         title: 趨勢主題標籤
@@ -836,7 +811,6 @@ zh-HK:
       title: 編輯篩選器
     errors:
       invalid_context: 沒有提供內文或內文無效
-      invalid_irreversible: 不可逆的篩選器只適用放主頁或通知頁面
     index:
       delete: 刪除
       empty: 你沒有過濾器。
@@ -955,13 +929,6 @@ zh-HK:
     carry_mutes_over_text: 此用戶從%{acct} 轉移，該帳號已被你靜音。
     copy_account_note_text: 此用戶從%{acct} 轉移，這是你之前在該帳號留下的備注：
   notification_mailer:
-    digest:
-      action: 查看所有通知
-      body: 這是自從你在%{since}使用以後，你錯失了的訊息︰
-      mention: "%{name} 在此提及了你︰"
-      new_followers_summary:
-        other: 你新獲得了 %{count} 位關注者了！好厲害！
-      title: 在你不在的這段時間……
     favourite:
       body: 你的文章被 %{name} 喜愛：
       subject: "%{name} 喜歡你的文章"
@@ -1219,8 +1186,6 @@ zh-HK:
     sensitive_content: 敏感內容
   tags:
     does_not_match_previous_name: 和舊有名稱並不符合
-  terms:
-    title: "%{instance} 使用條款和隱私權政策"
   themes:
     contrast: 高對比
     default: 萬象

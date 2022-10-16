@@ -23,7 +23,6 @@ hy:
     hosted_on: Մաստոդոնը տեղակայուած է %{domain}ում
     instance_actor_flash: "Այս հաշիւ վիրտուալ դերասան է, օգտագործուում է սպասարկիչը, այլ ոչ անհատ օգտատիրոջը ներկայացնելու, համար։ Օգտագործուում է ֆեդերացիայի նպատակով, ու չպէտք է արգելափակուի, եթէ չէք ցանկանում արգելափակել ողջ հանգոյցը, որի դէպքում պէտք է օգտագործէք տիրոյթի արգելափակումը։ \n"
     learn_more: Իմանալ ավելին
-    privacy_policy: Գաղտնիության քաղաքականություն
     rules: Սերուերի կանոնները
     rules_html: Այս սերուերում հաշիւ ունենալու համար անհրաժեշտ է պահպանել ստորեւ նշուած կանոնները։
     see_whats_happening: Տես ինչ կը կատարուի
@@ -33,7 +32,6 @@ hy:
       one: գրառում
       other: ստատուս
     status_count_before: Որոնք արել են՝
-    terms: Ծառայութեան պայմանները
     unavailable_content: Մոդերացուող սպասարկիչներ
     unavailable_content_description:
       domain: Սպասարկիչ
@@ -77,10 +75,8 @@ hy:
     posts_tab_heading: Գրառումներ
     posts_with_replies: Գրառումներ եւ պատասխաններ
     roles:
-      admin: Ադմինիստրատոր
       bot: Բոտ
       group: Խումբ
-      moderator: Մոդերատոր
     unavailable: Պրոֆիլը հասանելի չի
     unfollow: Չհետևել
   admin:
@@ -99,7 +95,6 @@ hy:
       avatar: Աւատար
       by_domain: Դոմէն
       change_email:
-        changed_msg: Հաշուի էլ․ հասցէն բարեյաջող փոփոխուեց
         current_email: Ներկայիս էլ․ հասցէ
         label: Փոխել էլ. հասցէն
         new_email: Նոր էլ․ փոստ
@@ -174,12 +169,6 @@ hy:
       reset: Վերականգնել
       reset_password: Վերականգնել գաղտանաբառը
       resubscribe: Կրկին բաժանորդագրուել
-      role: Թոյլտուութիւններ
-      roles:
-        admin: Ադմինիստրատոր
-        moderator: Մոդերատոր
-        staff: Անձնակազմ
-        user: Oգտատէր
       search: Որոնել
       search_same_email_domain: Այլ օգտատէրեր նոյն էլ․ փոստի դոմէյնով
       search_same_ip: Այլ օգտատէրեր նոյն IP֊ով
@@ -254,7 +243,6 @@ hy:
         update_custom_emoji: Թարմացնել սեփական էմոջիները
         update_domain_block: Թարմացնել տիրոյթի արգելափակումը
         update_status: Թարմացնել գրառումը
-      deleted_status: "(ջնջուած գրառում)"
       empty: Ոչ մի գրառում չկայ։
       filter_by_action: Զտել ըստ գործողութեան
       filter_by_user: Զտել ըստ օգտատիրոջ
@@ -466,25 +454,16 @@ hy:
         deletion:
           desc_html: Բոլորին թոյլատրել ջնջել իրենց հաշիւը
           title: Բացել հաշուի ջնջումը
-        min_invite_role:
-          disabled: Ոչ ոք
-          title: Թոյլատրել հրաւէրներ
       registrations_mode:
         modes:
           approved: Գրանցման համար անհրաժեշտ է հաստատում
           none: Ոչ ոք չի կարող գրանցուել
           open: Բոլորը կարող են գրանցուել
         title: Գրանցումային ռեժիմ
-      show_staff_badge:
-        desc_html: Ցուցադրել անձնակազմի անդամի նշանը օգտատիրոջ էջում
-        title: Ցուցադրել անձնակազմի անդամի նշանը
       site_description:
         title: Կայքի նկարագրութիւն
       site_short_description:
         title: Կայքի հակիրճ նկարագրութիւն
-      site_terms:
-        desc_html: Դու կարող ես գրել քո սեփական գաղտնիութեան քաղաքականութիւնը, օգտագործման պայմանները եւ այլ կանոններ։ Կարող ես օգտագործել HTML թեգեր
-        title: Սեփական օգտագործման կանոնները
       site_title: Սպասարկչի անուն
       thumbnail:
         title: Հանգոյցի նկարը
@@ -748,10 +727,6 @@ hy:
     admin:
       sign_up:
         subject: "%{name}-ը գրանցուած է"
-    digest:
-      action: Դիտել բոլոր ծանուցումները
-      mention: "%{name} նշել է քեզ՝"
-      title: Երբ բացակայ էիր...
     favourite:
       body: Քո գրառումը հաւանել է %{name}-ը։
       subject: "%{name} հաւանեց գրառումդ"

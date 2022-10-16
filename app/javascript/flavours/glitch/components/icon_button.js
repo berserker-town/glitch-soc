@@ -1,5 +1,5 @@
 import React from 'react';
-import Motion from 'flavours/glitch/util/optional_motion';
+import Motion from '../features/ui/util/optional_motion';
 import spring from 'react-motion/lib/spring';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -84,15 +84,21 @@ export default class IconButton extends React.PureComponent {
   }
 
   render () {
+    // Hack required for some icons which have an overriden size
+    let containerSize = '1.28571429em';
+    if (this.props.style?.fontSize) {
+      containerSize = `${this.props.size * 1.28571429}px`;
+    }
+
     let style = {
       fontSize: `${this.props.size}px`,
-      height: '1.28571429em',
+      height: containerSize,
       lineHeight: `${this.props.size}px`,
       ...this.props.style,
       ...(this.props.active ? this.props.activeStyle : {}),
     };
     if (!this.props.label) {
-      style.width = '1.28571429em';
+      style.width = containerSize;
     } else {
       style.textAlign = 'left';
     }
@@ -139,17 +145,9 @@ export default class IconButton extends React.PureComponent {
       </React.Fragment>
     );
 
-    if (href) {
-      return (
-        <a
-          href={href}
-          aria-label={title}
-          title={title}
-          target='_blank'
-          rel='noopener noreferrer'
-          className={classes}
-          style={style}
-        >
+    if (href && !this.prop) {
+      contents = (
+        <a href={href} target='_blank' rel='noopener noreferrer'>
           {contents}
         </a>
       );

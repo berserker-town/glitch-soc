@@ -22,7 +22,6 @@ oc:
     get_apps: Ensajatz una aplicacion mobil
     hosted_on: Mastodon albergat sus %{domain}
     learn_more: Ne saber mai
-    privacy_policy: Politica de confidencialitat
     rules: Règlas del servidor
     see_whats_happening: Agachatz çò qu’arriba
     server_stats: 'Estatisticas del servidor :'
@@ -31,7 +30,6 @@ oc:
       one: estatut
       other: estatuts
     status_count_before: qu’an escrich
-    terms: Condicions d’utilizacion
     unavailable_content: Contengut pas disponible
     unavailable_content_description:
       domain: Servidor
@@ -71,10 +69,8 @@ oc:
     posts_tab_heading: Tuts
     posts_with_replies: Tuts e responsas
     roles:
-      admin: Admin
       bot: Robòt
       group: Grop
-      moderator: Moderador
     unavailable: Perfil indisponible
     unfollow: Quitar de sègre
   admin:
@@ -92,7 +88,6 @@ oc:
       avatar: Avatar
       by_domain: Domeni
       change_email:
-        changed_msg: Adreça corrèctament cambiada !
         current_email: Adreça actuala
         label: Cambiar d’adreça
         new_email: Novèla adreça
@@ -160,12 +155,6 @@ oc:
       reset: Reïnicializar
       reset_password: Reïnicializar lo senhal
       resubscribe: Se tornar abonar
-      role: Autorizacions
-      roles:
-        admin: Administrator
-        moderator: Moderador
-        staff: Personnal
-        user: Uitlizaire
       search: Cercar
       search_same_ip: Autres utilizaires amb la meteissa IP
       security_measures:
@@ -225,7 +214,6 @@ oc:
         update_announcement: Actualizar l’anóncia
         update_custom_emoji: Actualizar l’emoji personalizat
         update_status: Actualizar l’estatut
-      deleted_status: "(estatut suprimit)"
       empty: Cap de jornal pas trobat.
       filter_by_action: Filtrar per accion
       filter_by_user: Filtrar per utilizaire
@@ -475,9 +463,6 @@ oc:
         deletion:
           desc_html: Autorizar lo monde a suprimir lor compte
           title: Possibilitat de suprimir lo compte
-        min_invite_role:
-          disabled: Degun
-          title: Autorizat amb invitacions
       registrations_mode:
         modes:
           approved: Validacion necessària per s’inscriure
@@ -487,9 +472,6 @@ oc:
       show_known_fediverse_at_about_page:
         desc_html: Un còp activat mostrarà los tuts de totes los fediverse dins l’apercebut. Autrament mostrarà pas que los tuts locals.
         title: Mostrar los fediverse coneguts dins l’apercebut del flux
-      show_staff_badge:
-        desc_html: Mostrar lo badge Personal sus la pagina de perfil
-        title: Mostrar lo badge personal
       site_description:
         desc_html: Paragraf d’introduccion sus la pagina d’acuèlh. Explicatz çò que fa diferent aqueste servidor Mastodon e tot çò qu’es important de dire. Podètz utilizare de balises HTML, en particular <code>&lt;a&gt;</code> e<code>&lt;em&gt;</code>.
         title: Descripcion del servidor
@@ -499,9 +481,6 @@ oc:
       site_short_description:
         desc_html: Mostrat dins la barra laterala e dins las meta balisas. Explica çò qu’es Mastodon e perque aqueste servidor es especial en un solet paragraf. S’es void, serà garnit amb la descripcion del servidor.
         title: Descripcion corta del servidor
-      site_terms:
-        desc_html: Afichada sus la pagina de las condicions d’utilizacion<br>Podètz utilizar de balisas HTML
-        title: Politica de confidencialitat del site
       site_title: Títol del servidor
       thumbnail:
         desc_html: Servís pels apercebuts via OpenGraph e las API. Talha de 1200x630px recomandada
@@ -711,7 +690,6 @@ oc:
       title: Modificar lo filtre
     errors:
       invalid_context: Cap de contèxte o contèxte invalid fornit
-      invalid_irreversible: Lo filtratge irreversible fonciona pas qu’amb lo flux d’actualitat o en contèxte de notificacion
     index:
       delete: Suprimir
       empty: Avètz pas cap de filtre.
@@ -809,14 +787,6 @@ oc:
   moderation:
     title: Moderacion
   notification_mailer:
-    digest:
-      action: Veire totas las notificacions
-      body: Trobatz aquí un resumit dels messatges qu’avètz mancats dempuèi vòstra darrièra visita lo %{since}
-      mention: "%{name} vos a mencionat dins :"
-      new_followers_summary:
-        one: Avètz un nòu seguidor dempuèi vòstra darrièra visita ! Ouà !
-        other: Avètz %{count} nòus seguidors dempuèi vòstra darrièra visita ! Qué crane !
-      title: Pendent vòstra abséncia…
     favourite:
       body: "%{name} a mes vòstre estatut en favorit :"
       subject: "%{name} a mes vòstre estatut en favorit"
@@ -1039,8 +1009,6 @@ oc:
     sensitive_content: Contengut sensible
   tags:
     does_not_match_previous_name: correspond pas al nom precedent
-  terms:
-    title: Condicions d’utilizacion e politica de confidencialitat de %{instance}
   themes:
     contrast: Mastodon (Fòrt contrast)
     default: Mastodon (Escur)

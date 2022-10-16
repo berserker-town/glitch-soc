@@ -28,7 +28,7 @@ it:
     learn_more: Scopri altro
     logged_in_as_html: Sei correntemente connesso come %{username}.
     logout_before_registering: Hai già effettuato l'accesso.
-    privacy_policy: Politica della privacy
+    privacy_policy: Politica sulla Privacy
     rules: Regole del server
     rules_html: 'Di seguito è riportato un riassunto delle regole che devi seguire se vuoi avere un account su questo server di Mastodon:'
     see_whats_happening: Guarda cosa succede
@@ -39,7 +39,6 @@ it:
       other: stati
     status_count_before: Che hanno pubblicato
     tagline: Social network decentralizzato
-    terms: Termini di Servizio
     unavailable_content: Server moderati
     unavailable_content_description:
       domain: Server
@@ -83,10 +82,8 @@ it:
     posts_tab_heading: Toot
     posts_with_replies: Toot e risposte
     roles:
-      admin: Amministratore
       bot: Bot
       group: Gruppo
-      moderator: Moderatore
     unavailable: Profilo non disponibile
     unfollow: Non seguire più
   admin:
@@ -105,12 +102,17 @@ it:
       avatar: Immagine di profilo
       by_domain: Dominio
       change_email:
-        changed_msg: Account email cambiato con successo!
+        changed_msg: Email modificata!
         current_email: Email attuale
         label: Cambia email
         new_email: Nuova email
         submit: Cambia email
         title: Cambia email per %{username}
+      change_role:
+        changed_msg: Ruolo modificato correttamente!
+        label: Cambia ruolo
+        no_role: Nessun ruolo
+        title: Cambia ruolo per %{username}
       confirm: Conferma
       confirmed: Confermato
       confirming: Confermando
@@ -154,6 +156,7 @@ it:
         active: Attivo
         all: Tutto
         pending: In attesa
+        silenced: Limitato
         suspended: Sospesi
         title: Moderazione
       moderation_notes: Note di moderazione
@@ -161,6 +164,7 @@ it:
       most_recent_ip: IP più recente
       no_account_selected: Nessun account è stato modificato visto che non ne è stato selezionato nessuno
       no_limits_imposed: Nessun limite imposto
+      no_role_assigned: Nessun ruolo assegnato
       not_subscribed: Non sottoscritto
       pending: Revisioni in attesa
       perform_full_suspension: Sospendi
@@ -187,12 +191,7 @@ it:
       reset: Reimposta
       reset_password: Reimposta password
       resubscribe: Riscriversi
-      role: Permessi
-      roles:
-        admin: Amministratore
-        moderator: Moderatore
-        staff: Personale
-        user: Utente
+      role: Ruolo
       search: Cerca
       search_same_email_domain: Altri utenti con lo stesso dominio e-mail
       search_same_ip: Altri utenti con lo stesso IP
@@ -235,17 +234,21 @@ it:
         approve_user: Approva Utente
         assigned_to_self_report: Assegna report
         change_email_user: Cambia l'e-mail per l'utente
+        change_role_user: Cambia il Ruolo dell'Utente
         confirm_user: Conferma utente
         create_account_warning: Crea avviso
         create_announcement: Crea un annuncio
+        create_canonical_email_block: Crea Blocco E-mail
         create_custom_emoji: Crea emoji personalizzata
         create_domain_allow: Crea permesso di dominio
         create_domain_block: Crea blocco di dominio
         create_email_domain_block: Crea blocco dominio e-mail
         create_ip_block: Crea regola IP
         create_unavailable_domain: Crea dominio non disponibile
+        create_user_role: Crea Ruolo
         demote_user: Degrada l'utente
         destroy_announcement: Cancella annuncio
+        destroy_canonical_email_block: Elimina Blocco E-mail
         destroy_custom_emoji: Cancella emoji personalizzata
         destroy_domain_allow: Cancella permesso di dominio
         destroy_domain_block: Cancella blocco di dominio
@@ -254,6 +257,7 @@ it:
         destroy_ip_block: Elimina regola IP
         destroy_status: Cancella stato
         destroy_unavailable_domain: Elimina dominio non disponibile
+        destroy_user_role: Distruggi Ruolo
         disable_2fa_user: Disabilita l'autenticazione a due fattori
         disable_custom_emoji: Disabilita emoji personalizzata
         disable_sign_in_token_auth_user: Disabilita autenticazione con codice via email per l'utente
@@ -280,24 +284,30 @@ it:
         update_announcement: Aggiorna annuncio
         update_custom_emoji: Aggiorna emoji personalizzata
         update_domain_block: Aggiorna blocco di dominio
+        update_ip_block: Aggiorna regola IP
         update_status: Aggiorna stato
+        update_user_role: Aggiorna Ruolo
       actions:
         approve_appeal_html: "%{name} ha approvato il ricorso contro la decisione di moderazione da %{target}"
         approve_user_html: "%{name} ha approvato la registrazione da %{target}"
         assigned_to_self_report_html: "%{name} ha assegnato il rapporto %{target} a se stesso"
         change_email_user_html: "%{name} ha cambiato l'indirizzo e-mail dell'utente %{target}"
+        change_role_user_html: "%{name} ha cambiato il ruolo di %{target}"
         confirm_user_html: "%{name} ha confermato l'indirizzo e-mail dell'utente %{target}"
         create_account_warning_html: "%{name} ha inviato un avviso a %{target}"
         create_announcement_html: "%{name} ha creato un nuovo annuncio %{target}"
+        create_canonical_email_block_html: "%{name} ha bloccato l'e-mail con l'hash %{target}"
         create_custom_emoji_html: "%{name} ha caricato una nuova emoji %{target}"
         create_domain_allow_html: "%{name} ha consentito alla federazione col dominio %{target}"
         create_domain_block_html: "%{name} ha bloccato dominio %{target}"
         create_email_domain_block_html: "%{name} ha bloccato dominio e-mail %{target}"
         create_ip_block_html: "%{name} ha creato una regola per l'IP %{target}"
         create_unavailable_domain_html: "%{name} ha interrotto la consegna al dominio %{target}"
+        create_user_role_html: "%{name} ha creato il ruolo %{target}"
         demote_user_html: "%{name} ha retrocesso l'utente %{target}"
         destroy_announcement_html: "%{name} ha eliminato l'annuncio %{target}"
-        destroy_custom_emoji_html: "%{name} ha eliminato emoji %{target}"
+        destroy_canonical_email_block_html: "%{name} ha sbloccato l'email con l'hash %{target}"
+        destroy_custom_emoji_html: "%{name} ha eliminato l'emoji %{target}"
         destroy_domain_allow_html: "%{name} ha negato la federazione al dominio %{target}"
         destroy_domain_block_html: "%{name} ha sbloccato dominio %{target}"
         destroy_email_domain_block_html: "%{name} ha sbloccato il dominio e-mail %{target}"
@@ -305,6 +315,7 @@ it:
         destroy_ip_block_html: "%{name} ha eliminato la regola per l'IP %{target}"
         destroy_status_html: "%{name} ha eliminato lo status di %{target}"
         destroy_unavailable_domain_html: "%{name} ha ripreso la consegna al dominio %{target}"
+        destroy_user_role_html: "%{name} ha eliminato il ruolo %{target}"
         disable_2fa_user_html: "%{name} ha disabilitato l'autenticazione a due fattori per l'utente %{target}"
         disable_custom_emoji_html: "%{name} ha disabilitato emoji %{target}"
         disable_sign_in_token_auth_user_html: "%{name} ha disabilitato l'autenticazione con codice via email per %{target}"
@@ -331,8 +342,9 @@ it:
         update_announcement_html: "%{name} ha aggiornato l'annuncio %{target}"
         update_custom_emoji_html: "%{name} ha aggiornato emoji %{target}"
         update_domain_block_html: "%{name} ha aggiornato il blocco dominio per %{target}"
+        update_ip_block_html: "%{name} ha cambiato la regola per l'IP %{target}"
         update_status_html: "%{name} ha aggiornato lo status di %{target}"
-      deleted_status: "(stato cancellato)"
+        update_user_role_html: "%{name} ha modificato il ruolo %{target}"
       empty: Nessun log trovato.
       filter_by_action: Filtra per azione
       filter_by_user: Filtra per utente
@@ -649,6 +661,67 @@ it:
       unresolved: Non risolto
       updated_at: Aggiornato
       view_profile: Visualizza profilo
+    roles:
+      add_new: Aggiungi ruolo
+      assigned_users:
+        one: "%{count} utente"
+        other: "%{count} utenti"
+      categories:
+        administration: Amministrazione
+        devops: Devops
+        invites: Inviti
+        moderation: Moderazione
+        special: Speciale
+      delete: Cancella
+      description_html: Con i <strong>ruoli utente</strong>, puoi personalizzare a quali funzioni e aree di Mastodon i tuoi utenti possono accedere.
+      edit: Modifica il ruolo '%{name}'
+      everyone: Permessi predefiniti
+      everyone_full_description_html: Questo è il ruolo <strong>base</strong> che influenza <strong>tutti gli utenti</strong>, anche quelli senza un ruolo assegnato. Tutti gli altri ruoli ereditano i permessi da esso.
+      permissions_count:
+        one: "%{count} permesso"
+        other: "%{count} permessi"
+      privileges:
+        administrator: Amministratore
+        administrator_description: Gli utenti con questo permesso saranno esentati da ogni permesso
+        delete_user_data: Cancella dati utente
+        delete_user_data_description: Consente agli utenti di eliminare subito i dati degli altri utenti
+        invite_users: Invita Utenti
+        invite_users_description: Consente agli utenti di invitare nuove persone su questo server
+        manage_announcements: Gestisci Annunci
+        manage_announcements_description: Consente agli utenti di gestire gli annunci sul server
+        manage_appeals: Gestisci appelli
+        manage_appeals_description: Consente agli utenti di esaminare i ricorsi contro le azioni di moderazione
+        manage_blocks: Gestisci Blocchi
+        manage_blocks_description: Consente agli utenti di bloccare provider e-mail e indirizzi IP
+        manage_custom_emojis: Gestisci emoji personalizzate
+        manage_custom_emojis_description: Consente agli utenti di gestire emoji personalizzate sul server
+        manage_federation: Gestisci Federazione
+        manage_federation_description: Consente agli utenti di bloccare o consentire la federazione con altri domini e controllare la consegnabilità
+        manage_invites: Gestisci Inviti
+        manage_invites_description: Consente agli utenti di esaminare e disattivare i link di invito
+        manage_reports: Gestisci report
+        manage_reports_description: Consente agli utenti di esaminare i report ed eseguire azioni di moderazione su di essi
+        manage_roles: Gestisci Ruoli
+        manage_roles_description: Consente agli utenti di gestire e assegnare i ruoli inferiori al loro
+        manage_rules: Gestisci Regole
+        manage_rules_description: Consente agli utenti di modificare le regole del server
+        manage_settings: Gestisci impostazioni
+        manage_settings_description: Consente agli utenti di modificare le impostazioni del sito
+        manage_taxonomies: Gestisci Tassonomie
+        manage_taxonomies_description: Consente agli utenti di esaminare i contenuti di tendenza e aggiornare le impostazioni degli hashtag
+        manage_user_access: Gestisci accesso utenti
+        manage_user_access_description: Consente agli utenti di disabilitare l'autenticazione a due fattori degli altri utenti, modificare il loro indirizzo e-mail e reimpostare la password
+        manage_users: Gestisci utenti
+        manage_users_description: Consente agli utenti di visualizzare le informazioni sugli altri utenti ed eseguire azioni di moderazione contro di loro
+        manage_webhooks: Gestisci Webhook
+        manage_webhooks_description: Consente agli utenti di impostare webhook per eventi amministrativi
+        view_audit_log: Visualizza Registro Attività
+        view_audit_log_description: Consente agli utenti di vedere una cronologia delle azioni amministrative sul server
+        view_dashboard: Mostra dashboard
+        view_dashboard_description: Consente agli utenti di accedere alla dashboard e alle varie metriche
+        view_devops: Devops
+        view_devops_description: Consente agli utenti di accedere alle dashboard Sidekiq e pgHero
+      title: Ruoli
     rules:
       add_new: Aggiungi regola
       delete: Cancella
@@ -701,9 +774,6 @@ it:
         deletion:
           desc_html: Consenti a chiunque di cancellare il proprio account
           title: Apri la cancellazione dell'account
-        min_invite_role:
-          disabled: Nessuno
-          title: Permetti inviti da
         require_invite_text:
           desc_html: Quando le iscrizioni richiedono l'approvazione manuale, rendere la richiesta “Perché si desidera iscriversi?” obbligatoria invece che opzionale
           title: Richiedi ai nuovi utenti di rispondere alla richiesta di motivazione per l'iscrizione
@@ -716,9 +786,6 @@ it:
       show_known_fediverse_at_about_page:
         desc_html: Quando attivato, mostra nell'anteprima i toot da tutte le istanze conosciute. Altrimenti mostra solo i toot locali.
         title: Mostra la fediverse conosciuta nell'anteprima della timeline
-      show_staff_badge:
-        desc_html: Mostra un distintivo dello staff sulla pagina dell'utente
-        title: Mostra badge staff
       site_description:
         desc_html: Paragrafo introduttivo nella pagina iniziale. Descrive ciò che rende speciale questo server Mastodon e qualunque altra cosa sia importante dire. Potete usare marcatori HTML, in particolare <code>&lt;a&gt;</code> e <code>&lt;em&gt;</code>.
         title: Descrizione del server
@@ -729,8 +796,8 @@ it:
         desc_html: Mostrato nella barra laterale e nei tag meta. Descrive in un paragrafo che cos'è Mastodon e che cosa rende questo server speciale. Se vuoto, sarà usata la descrizione predefinita del server.
         title: Breve descrizione del server
       site_terms:
-        desc_html: Potete scrivere la vostra politica sulla privacy, condizioni del servizio o altre informazioni legali. Potete usare tag HTML
-        title: Termini di servizio personalizzati
+        desc_html: Puoi scrivere la tua politica sulla privacy. Puoi usare i tag HTML
+        title: Politica sulla privacy personalizzata
       site_title: Nome del server
       thumbnail:
         desc_html: Usato per anteprime tramite OpenGraph e API. 1200x630px consigliati
@@ -740,8 +807,8 @@ it:
         title: Anteprima timeline
       title: Impostazioni sito
       trendable_by_default:
-        desc_html: Interessa gli hashtag che non sono stati precedentemente disattivati
-        title: Permetti agli hashtag di comparire nei trend senza prima controllarli
+        desc_html: I contenuti di tendenza specifici possono ancora essere esplicitamente vietati
+        title: Consenti tendenze senza controllo preliminare
       trends:
         desc_html: Visualizza pubblicamente gli hashtag precedentemente esaminati che sono attualmente in tendenza
         title: Hashtag di tendenza
@@ -1126,16 +1193,40 @@ it:
       public: Timeline pubbliche
       thread: Conversazioni
     edit:
+      add_keyword: Aggiungi parola chiave
+      keywords: Parole chiave
+      statuses: Post singoli
+      statuses_hint_html: Questo filtro si applica a singoli post indipendentemente dal fatto che corrispondano alle parole chiave qui sotto. <a href="%{path}">Rivedi o rimuovi i post dal filtro</a>.
       title: Modifica filtro
     errors:
+      deprecated_api_multiple_keywords: Questi parametri non possono essere modificati da questa applicazione perché si applicano a più di una parola chiave che fa da filtro. Utilizzare un'applicazione più recente o l'interfaccia web.
       invalid_context: Contesto mancante o non valido
-      invalid_irreversible: Il filtraggio irreversibile funziona solo nei contesti di home o notifiche
     index:
+      contexts: Filtri in %{contexts}
       delete: Cancella
       empty: Non hai alcun filtro.
+      expires_in: Scade tra %{distance}
+      expires_on: Scade il %{date}
+      keywords:
+        one: "%{count} parola chiave"
+        other: "%{count} parole chiave"
+      statuses:
+        one: "%{count} post"
+        other: "%{count} post"
+      statuses_long:
+        one: "%{count} singolo post nascosto"
+        other: "%{count} singoli post nascosti"
       title: Filtri
     new:
+      save: Salva nuovo filtro
       title: Aggiungi filtro
+    statuses:
+      back_to_filter: Torna al filtro
+      batch:
+        remove: Togli dal filtro
+      index:
+        hint: Questo filtro si applica a singoli post indipendentemente da altri criteri. Puoi aggiungere più post a questo filtro dall'interfaccia Web.
+        title: Post filtrati
   footer:
     developers: Sviluppatori
     more: Altro…
@@ -1143,12 +1234,22 @@ it:
     trending_now: Di tendenza ora
   generic:
     all: Tutto
+    all_items_on_page_selected_html:
+      one: "<strong>%{count}</strong> elemento su questa pagina è selezionato."
+      other: Tutti i <strong>%{count}</strong> elementi su questa pagina sono selezionati.
+    all_matching_items_selected_html:
+      one: "<strong>%{count}</strong> elemento corrispondente alla tua ricerca è selezionato."
+      other: Tutti i <strong>%{count}</strong> elementi corrispondenti alla tua ricerca sono selezionati.
     changes_saved_msg: Modifiche effettuate con successo!
     copy: Copia
     delete: Cancella
+    deselect: Deseleziona tutto
     none: Nessuno
     order_by: Ordina per
     save_changes: Salva modifiche
+    select_all_matching_items:
+      one: Seleziona %{count} elemento corrispondente alla tua ricerca.
+      other: Seleziona tutti gli elementi %{count} corrispondenti alla tua ricerca.
     today: oggi
     validation_errors:
       one: Qualcosa ancora non va bene! Per favore, controlla l'errore qui sotto
@@ -1253,19 +1354,10 @@ it:
     copy_account_note_text: 'Questo utente si è spostato da %{acct}, ecco le tue note precedenti su di loro:'
   notification_mailer:
     admin:
+      report:
+        subject: "%{name} ha inviato una segnalazione"
       sign_up:
         subject: "%{name} si è iscritto"
-    digest:
-      action: Vedi tutte le notifiche
-      body: Ecco un breve riassunto di quello che ti sei perso dalla tua ultima visita del %{since}
-      mention: "%{name} ti ha menzionato:"
-      new_followers_summary:
-        one: E inoltre hai ricevuto un nuovo seguace mentre eri assente! Urrà!
-        other: Inoltre, hai acquisito %{count} nuovi seguaci mentre eri assente! Incredibile!
-      subject:
-        one: "1 nuova notifica dalla tua ultima visita 🐘"
-        other: "%{count} nuove notifiche dalla tua ultima visita 🐘"
-      title: In tua assenza…
     favourite:
       body: 'Il tuo status è stato apprezzato da %{name}:'
       subject: "%{name} ha apprezzato il tuo status"
@@ -1628,7 +1720,7 @@ it:
       <p>Questo documento è CC-BY-SA. L'ultimo aggiornamento è del 26 maggio 2022.</p>
 
       <p>Adattato originalmente dal <a href="https://github.com/discourse/discourse">Discorso Politica della Privacy</a>.</p>
-    title: "%{instance} Termini di servizio e politica della privacy"
+    title: Politica sulla privacy di %{instance}
   themes:
     contrast: Mastodon (contrasto elevato)
     default: Mastodon (scuro)
