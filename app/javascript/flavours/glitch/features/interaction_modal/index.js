@@ -5,9 +5,17 @@ import { registrationsOpen } from 'flavours/glitch/initial_state';
 import { connect } from 'react-redux';
 import Icon from 'flavours/glitch/components/icon';
 import classNames from 'classnames';
+import { openModal, closeModal } from 'flavours/glitch/actions/modal';
 
 const mapStateToProps = (state, { accountId }) => ({
   displayNameHtml: state.getIn(['accounts', accountId, 'display_name_html']),
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onSignupClick() {
+    dispatch(closeModal());
+    dispatch(openModal('CLOSED_REGISTRATIONS'));
+  },
 });
 
 class Copypaste extends React.PureComponent {
@@ -66,14 +74,19 @@ class Copypaste extends React.PureComponent {
 
 }
 
-export default @connect(mapStateToProps)
+export default @connect(mapStateToProps, mapDispatchToProps)
 class InteractionModal extends React.PureComponent {
 
   static propTypes = {
     displayNameHtml: PropTypes.string,
     url: PropTypes.string,
     type: PropTypes.oneOf(['reply', 'reblog', 'favourite', 'follow']),
+    onSignupClick: PropTypes.func.isRequired,
   };
+
+  handleSignupClick = () => {
+    this.props.onSignupClick();
+  }
 
   render () {
     const { url, type, displayNameHtml } = this.props;
@@ -105,6 +118,22 @@ class InteractionModal extends React.PureComponent {
       break;
     }
 
+    let signupButton;
+
+    if (registrationsOpen) {
+      signupButton = (
+        <a href='/auth/sign_up' className='button button--block button-tertiary'>
+          <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
+        </a>
+      );
+    } else {
+      signupButton = (
+        <button className='button button--block button-tertiary' onClick={this.handleSignupClick}>
+          <FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' />
+        </button>
+      );
+    }
+
     return (
       <div className='modal-root__modal interaction-modal'>
         <div className='interaction-modal__lead'>
@@ -116,12 +145,12 @@ class InteractionModal extends React.PureComponent {
           <div className='interaction-modal__choices__choice'>
             <h3><FormattedMessage id='interaction_modal.on_this_server' defaultMessage='On this server' /></h3>
             <a href='/auth/sign_in' className='button button--block'><FormattedMessage id='sign_in_banner.sign_in' defaultMessage='Sign in' /></a>
-            <a href={registrationsOpen ? '/auth/sign_up' : 'https://joinmastodon.org/servers'} className='button button--block button-tertiary'><FormattedMessage id='sign_in_banner.create_account' defaultMessage='Create account' /></a>
+            {signupButton}
           </div>
 
           <div className='interaction-modal__choices__choice'>
             <h3><FormattedMessage id='interaction_modal.on_another_server' defaultMessage='On a different server' /></h3>
-            <p><FormattedMessage id='interaction_modal.other_server_instructions' defaultMessage='Simply copy and paste this URL into the search bar of your favourite app or the web interface where you are signed in.' /></p>
+            <p><FormattedMessage id='interaction_modal.other_server_instructions' defaultMessage='Copy and paste this URL into the search field of your favourite Mastodon app or the web interface of your Mastodon server.' /></p>
             <Copypaste value={url} />
           </div>
         </div>

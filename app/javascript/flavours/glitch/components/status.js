@@ -499,7 +499,6 @@ class Status extends ImmutablePureComponent {
       settings,
       collapsed,
       muted,
-      prepend,
       intersectionObserverWrapper,
       onOpenVideo,
       onOpenMedia,
@@ -688,7 +687,7 @@ class Status extends ImmutablePureComponent {
       if (!status.get('sensitive') && !(status.get('spoiler_text').length > 0) && settings.getIn(['collapsed', 'backgrounds', 'preview_images'])) {
         background = attachments.getIn([0, 'preview_url']);
       }
-    } else if (status.get('card') && settings.get('inline_preview_cards')) {
+    } else if (status.get('card') && settings.get('inline_preview_cards') && !this.props.muted) {
       media.push(
         <Card
           onOpenMedia={this.handleOpenMedia}
@@ -713,20 +712,31 @@ class Status extends ImmutablePureComponent {
       'data-status-by': `@${status.getIn(['account', 'acct'])}`,
     };
 
-    if (prepend && account) {
+    let prepend;
+
+    if (this.props.prepend && account) {
       const notifKind = {
         favourite: 'favourited',
         reblog: 'boosted',
         reblogged_by: 'boosted',
         status: 'posted',
-      }[prepend];
+      }[this.props.prepend];
 
       selectorAttribs[`data-${notifKind}-by`] = `@${account.get('acct')}`;
+
+      prepend = (
+        <StatusPrepend
+          type={this.props.prepend}
+          account={account}
+          parseClick={parseClick}
+          notificationId={this.props.notificationId}
+        />
+      );
     }
 
     let rebloggedByText;
 
-    if (prepend === 'reblog') {
+    if (this.props.prepend === 'reblog') {
       rebloggedByText = intl.formatMessage({ id: 'status.reblogged_by', defaultMessage: '{name} boosted' }, { name: account.get('acct') });
     }
 
@@ -749,16 +759,10 @@ class Status extends ImmutablePureComponent {
           data-featured={featured ? 'true' : null}
           aria-label={textForScreenReader(intl, status, rebloggedByText, !status.get('hidden'))}
         >
+          {!muted && prepend}
           <header className='status__info'>
             <span>
-              {prepend && account ? (
-                <StatusPrepend
-                  type={prepend}
-                  account={account}
-                  parseClick={parseClick}
-                  notificationId={this.props.notificationId}
-                />
-              ) : null}
+              {muted && prepend}
               {!muted || !isCollapsed ? (
                 <StatusHeader
                   status={status}

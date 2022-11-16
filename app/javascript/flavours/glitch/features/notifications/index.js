@@ -30,7 +30,6 @@ import compareId from 'flavours/glitch/compare_id';
 import NotificationsPermissionBanner from './components/notifications_permission_banner';
 import NotSignedInIndicator from 'flavours/glitch/components/not_signed_in_indicator';
 import { Helmet } from 'react-helmet';
-import { title } from 'flavours/glitch/initial_state';
 
 import NotificationPurgeButtonsContainer from 'flavours/glitch/containers/notification_purge_buttons_container';
 
@@ -65,7 +64,7 @@ const mapStateToProps = state => ({
   showFilterBar: state.getIn(['settings', 'notifications', 'quickFilter', 'show']),
   notifications: getNotifications(state),
   localSettings:  state.get('local_settings'),
-  isLoading: state.getIn(['notifications', 'isLoading'], true),
+  isLoading: state.getIn(['notifications', 'isLoading'], 0) > 0,
   isUnread: state.getIn(['notifications', 'unread']) > 0 || state.getIn(['notifications', 'pendingItems']).size > 0,
   hasMore: state.getIn(['notifications', 'hasMore']),
   numPending: state.getIn(['notifications', 'pendingItems'], ImmutableList()).size,
@@ -373,7 +372,8 @@ class Notifications extends React.PureComponent {
         {scrollContainer}
 
         <Helmet>
-          <title>{intl.formatMessage(messages.title)} - {title}</title>
+          <title>{intl.formatMessage(messages.title)}</title>
+          <meta name='robots' content='noindex' />
         </Helmet>
       </Column>
     );
