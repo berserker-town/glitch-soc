@@ -120,8 +120,10 @@ module Mastodon
               bucket.objects(start_after: last_key, prefix: prefix).limit(1000).map { |x| x }
             rescue => e
               progress.log(pastel.red("Error fetching list of files: #{e}"))
-              progress.log("If you want to continue from this point, add --start-after=#{last_key} to your command") if last_key
-              break
+              progress.log("Sleeping for 5 seconds")
+              sleep 5
+              progress.log("Retrying")
+              retry
             end
           end
 
