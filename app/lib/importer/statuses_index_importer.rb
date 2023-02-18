@@ -17,29 +17,8 @@ class Importer::StatusesIndexImporter < Importer::BaseImporter
             Chewy::Index::Import::BulkBuilder.new(index, to_index: Status.includes(:media_attachments, :preloadable_poll).where(id: status_ids)).bulk_body
           end
 
-          indexed = 0
+          indexed = bulk.length
           deleted = 0
-
-          # We can't use the delete_if proc to do the filtering because delete_if
-          # is called before rendering the data and we need to filter based
-          # on the results of the filter, so this filtering happens here instead
-          bulk.map! do |entry|
-            new_entry = begin
-              if entry[:index] && entry.dig(:index, :data, 'searchable_by').blank?
-                { delete: entry[:index].except(:data) }
-              else
-                entry
-              end
-            end
-
-            if new_entry[:index]
-              indexed += 1
-            else
-              deleted += 1
-            end
-
-            new_entry
-          end
 
           Chewy::Index::Import::BulkRequest.new(index).perform(bulk)
 
@@ -68,11 +47,11 @@ class Importer::StatusesIndexImporter < Importer::BaseImporter
   end
 
   def local_mentions_scope
-    Mention.where(account: Account.local, silent: false).select(:id, :status_id)
+    Mention.where(silent: false).select(:id, :status_id)
   end
 
   def local_favourites_scope
-    Favourite.where(account: Account.local).select(:id, :status_id)
+    Favourite.select(:id, :status_id)
   end
 
   def local_bookmarks_scope
@@ -80,10 +59,10 @@ class Importer::StatusesIndexImporter < Importer::BaseImporter
   end
 
   def local_votes_scope
-    Poll.joins(:votes).where(votes: { account: Account.local }).select('polls.id, polls.status_id')
+    Poll.joins(:votes).select('polls.id, polls.status_id')
   end
 
   def local_statuses_scope
-    Status.local.select('"statuses"."id", COALESCE("statuses"."reblog_of_id", "statuses"."id") AS status_id')
+    Status.select('"statuses"."id", COALESCE("statuses"."reblog_of_id", "statuses"."id") AS status_id')
   end
 end

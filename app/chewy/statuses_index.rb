@@ -38,27 +38,27 @@ class StatusesIndex < Chewy::Index
   index_scope ::Status.unscoped.kept.without_reblogs.includes(:media_attachments, :preloadable_poll)
 
   crutch :mentions do |collection|
-    data = ::Mention.where(status_id: collection.map(&:id)).where(account: Account.local, silent: false).pluck(:status_id, :account_id)
+    data = ::Mention.where(status_id: collection.map(&:id)).where(silent: false).pluck(:status_id, :account_id)
     data.each.with_object({}) { |(id, name), result| (result[id] ||= []).push(name) }
   end
 
   crutch :favourites do |collection|
-    data = ::Favourite.where(status_id: collection.map(&:id)).where(account: Account.local).pluck(:status_id, :account_id)
+    data = ::Favourite.where(status_id: collection.map(&:id)).pluck(:status_id, :account_id)
     data.each.with_object({}) { |(id, name), result| (result[id] ||= []).push(name) }
   end
 
   crutch :reblogs do |collection|
-    data = ::Status.where(reblog_of_id: collection.map(&:id)).where(account: Account.local).pluck(:reblog_of_id, :account_id)
+    data = ::Status.where(reblog_of_id: collection.map(&:id)).pluck(:reblog_of_id, :account_id)
     data.each.with_object({}) { |(id, name), result| (result[id] ||= []).push(name) }
   end
 
   crutch :bookmarks do |collection|
-    data = ::Bookmark.where(status_id: collection.map(&:id)).where(account: Account.local).pluck(:status_id, :account_id)
+    data = ::Bookmark.where(status_id: collection.map(&:id)).pluck(:status_id, :account_id)
     data.each.with_object({}) { |(id, name), result| (result[id] ||= []).push(name) }
   end
 
   crutch :votes do |collection|
-    data = ::PollVote.joins(:poll).where(poll: { status_id: collection.map(&:id) }).where(account: Account.local).pluck(:status_id, :account_id)
+    data = ::PollVote.joins(:poll).where(poll: { status_id: collection.map(&:id) }).pluck(:status_id, :account_id)
     data.each.with_object({}) { |(id, name), result| (result[id] ||= []).push(name) }
   end
 
@@ -69,7 +69,5 @@ class StatusesIndex < Chewy::Index
     field :text, type: 'text', value: ->(status) { status.searchable_text } do
       field :stemmed, type: 'text', analyzer: 'content'
     end
-
-    field :searchable_by, type: 'long', value: ->(status, crutches) { status.searchable_by(crutches) }
   end
 end
