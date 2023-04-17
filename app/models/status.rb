@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: statuses
@@ -50,12 +51,12 @@ class Status < ApplicationRecord
 
   update_index('statuses', :proper)
 
-  enum visibility: [:public, :unlisted, :private, :direct, :limited], _suffix: :visibility
+  enum visibility: { public: 0, unlisted: 1, private: 2, direct: 3, limited: 4 }, _suffix: :visibility
 
   belongs_to :application, class_name: 'Doorkeeper::Application', optional: true
 
   belongs_to :account, inverse_of: :statuses
-  belongs_to :in_reply_to_account, foreign_key: 'in_reply_to_account_id', class_name: 'Account', optional: true
+  belongs_to :in_reply_to_account, class_name: 'Account', optional: true
   belongs_to :conversation, optional: true
   belongs_to :preloadable_poll, class_name: 'Poll', foreign_key: 'poll_id', optional: true
 
@@ -97,23 +98,26 @@ class Status < ApplicationRecord
   scope :local,  -> { where(local: true).or(where(uri: nil)) }
   scope :with_accounts, ->(ids) { where(id: ids).includes(:account) }
   scope :without_replies, -> { where('statuses.reply = FALSE OR statuses.in_reply_to_account_id = statuses.account_id') }
-  scope :without_reblogs, -> { where('statuses.reblog_of_id IS NULL') }
+  scope :without_reblogs, -> { where(statuses: { reblog_of_id: nil }) }
   scope :with_public_visibility, -> { where(visibility: :public) }
   scope :tagged_with, ->(tag_ids) { joins(:statuses_tags).where(statuses_tags: { tag_id: tag_ids }) }
   scope :excluding_silenced_accounts, -> { left_outer_joins(:account).where(accounts: { silenced_at: nil }) }
   scope :including_silenced_accounts, -> { left_outer_joins(:account).where.not(accounts: { silenced_at: nil }) }
   scope :not_excluded_by_account, ->(account) { where.not(account_id: account.excluded_from_timeline_account_ids) }
   scope :not_domain_blocked_by_account, ->(account) { account.excluded_from_timeline_domains.blank? ? left_outer_joins(:account) : left_outer_joins(:account).where('accounts.domain IS NULL OR accounts.domain NOT IN (?)', account.excluded_from_timeline_domains) }
-  scope :tagged_with_all, ->(tag_ids) {
+  scope :tagged_with_all, lambda { |tag_ids|
     Array(tag_ids).map(&:to_i).reduce(self) do |result, id|
       result.joins("INNER JOIN statuses_tags t#{id} ON t#{id}.status_id = statuses.id AND t#{id}.tag_id = #{id}")
     end
   }
-  scope :tagged_with_none, ->(tag_ids) {
+  scope :tagged_with_none, lambda { |tag_ids|
     where('NOT EXISTS (SELECT * FROM statuses_tags forbidden WHERE forbidden.status_id = statuses.id AND forbidden.tag_id IN (?))', tag_ids)
   }
 
   scope :not_local_only, -> { where(local_only: [false, nil]) }
+
+  after_create_commit :trigger_create_webhooks
+  after_update_commit :trigger_update_webhooks
 
   cache_associated :application,
                    :media_attachments,
@@ -140,6 +144,10 @@ class Status < ApplicationRecord
   delegate :domain, to: :account, prefix: true
 
   REAL_TIME_WINDOW = 6.hours
+
+  def cache_key
+    "v2:#{super}"
+  end
 
   def searchable_text
     [
@@ -308,7 +316,7 @@ class Status < ApplicationRecord
       visibilities.keys - %w(direct limited)
     end
 
-    def as_direct_timeline(account, limit = 20, max_id = nil, since_id = nil, cache_ids = false)
+    def as_direct_timeline(account, limit = 20, max_id = nil, since_id = nil)
       # direct timeline is mix of direct message from_me and to_me.
       # 2 queries are executed with pagination.
       # constant expression using arel_table is required for partial index
@@ -339,14 +347,9 @@ class Status < ApplicationRecord
         query_to_me = query_to_me.where('mentions.status_id > ?', since_id)
       end
 
-      if cache_ids
-        # returns array of cache_ids object that have id and updated_at
-        (query_from_me.cache_ids.to_a + query_to_me.cache_ids.to_a).uniq(&:id).sort_by(&:id).reverse.take(limit)
-      else
-        # returns ActiveRecord.Relation
-        items = (query_from_me.select(:id).to_a + query_to_me.select(:id).to_a).uniq(&:id).sort_by(&:id).reverse.take(limit)
-        Status.where(id: items.map(&:id))
-      end
+      # returns ActiveRecord.Relation
+      items = (query_from_me.select(:id).to_a + query_to_me.select(:id).to_a).uniq(&:id).sort_by(&:id).reverse.take(limit)
+      Status.where(id: items.map(&:id))
     end
 
     def favourites_map(status_ids, account_id)
@@ -393,13 +396,12 @@ class Status < ApplicationRecord
       return [] if text.blank?
 
       text.scan(FetchLinkCardService::URL_PATTERN).map(&:second).uniq.filter_map do |url|
-        status = begin
-          if TagManager.instance.local_url?(url)
-            ActivityPub::TagManager.instance.uri_to_resource(url, Status)
-          else
-            EntityCache.instance.status(url)
-          end
-        end
+        status = if TagManager.instance.local_url?(url)
+                   ActivityPub::TagManager.instance.uri_to_resource(url, Status)
+                 else
+                   EntityCache.instance.status(url)
+                 end
+
         status&.distributable? ? status : nil
       end
     end
@@ -524,9 +526,9 @@ class Status < ApplicationRecord
   end
 
   def set_locality
-    if account.domain.nil? && !attribute_changed?(:local_only)
-      self.local_only = marked_local_only?
-    end
+    return unless account.domain.nil? && !attribute_changed?(:local_only)
+
+    self.local_only = marked_local_only?
   end
 
   def set_conversation
@@ -574,5 +576,13 @@ class Status < ApplicationRecord
     account&.decrement_count!(:statuses_count)
     reblog&.decrement_count!(:reblogs_count) if reblog?
     thread&.decrement_count!(:replies_count) if in_reply_to_id.present? && distributable?
+  end
+
+  def trigger_create_webhooks
+    TriggerWebhookWorker.perform_async('status.created', 'Status', id) if local?
+  end
+
+  def trigger_update_webhooks
+    TriggerWebhookWorker.perform_async('status.updated', 'Status', id) if local?
   end
 end

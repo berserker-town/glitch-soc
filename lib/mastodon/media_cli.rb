@@ -35,7 +35,6 @@ module Mastodon
       follow status. By default, only accounts that are not followed by or
       following anyone locally are pruned.
     DESC
-    # rubocop:disable Metrics/PerceivedComplexity
     def remove
       if options[:prune_profiles] && options[:remove_headers]
         say('--prune-profiles and --remove-headers should not be specified simultaneously', :red, true)
@@ -228,7 +227,6 @@ module Mastodon
 
       say("Removed #{removed} orphans (approx. #{number_to_human_size(reclaimed_bytes)})#{dry_run}", :green, true)
     end
-    # rubocop:enable Metrics/PerceivedComplexity
 
     option :account, type: :string
     option :domain, type: :string
@@ -279,9 +277,7 @@ module Mastodon
         exit(1)
       end
 
-      if options[:days].present?
-        scope = scope.where('media_attachments.id > ?', Mastodon::Snowflake.id_at(options[:days].days.ago, with_random: false))
-      end
+      scope = scope.where('media_attachments.id > ?', Mastodon::Snowflake.id_at(options[:days].days.ago, with_random: false)) if options[:days].present?
 
       processed, aggregate = parallelize_with_progress(scope) do |media_attachment|
         next if media_attachment.remote_url.blank? || (!options[:force] && media_attachment.file_file_name.present?)
